@@ -1,0 +1,27 @@
+%%% Проверка используемого TeX-движка %%%
+\usepackage{iftex}[2013/04/04]
+\newif\ifxetexorluatex   % определяем новый условный оператор (http://tex.stackexchange.com/a/47579/79756)
+\ifXeTeX
+	\xetexorluatextrue
+\else
+	\ifLuaTeX
+		\xetexorluatextrue
+	\else
+		\xetexorluatexfalse
+	\fi
+\fi
+
+%% Режим черновика
+\makeatletter
+\@ifundefined{c@draft}{
+  \newcounter{draft}
+  \setcounter{draft}{1}  % 0 --- чистовик (максимальное соблюдение ГОСТ)
+                         % 1 --- черновик (отклонения от ГОСТ, но быстрая сборка итоговых PDF)
+}{}
+\makeatother
+
+%% Библиография
+%% Внимание! При использовании bibtex8 необходимо удалить все цитирования из  ../common/characteristic.tex
+\newcounter{bibliosel}
+\setcounter{bibliosel}{1}  % 0 --- встроенная реализация с загрузкой файла через движок bibtex8
+                           % 1 --- реализация пакетом biblatex через движок biber

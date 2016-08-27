@@ -1,0 +1,21 @@
+\PassOptionsToPackage{bookmarks=false}{hyperref}
+\documentclass[a5paper,10pt,twoside,openany,article]{memoir}
+
+\input{common/settings}
+\input{common/packages}
+\input{common/styles}
+\input{common/names}
+\input{common/data}
+\input{biblio/setup}
+\input{synopsis/setup}
+\input{synopsis/style}
+
+\begin{document}
+    \input{synopsis/title}
+    
+    %\mainmatter                  % В том числе начинает нумерацию страниц арабскими цифрами с единицы
+    \mainmatter*                  % Нумерация страниц не изменится, но начнётся с новой страницы
+    %\input{synopsis/content}      % Содержание автореферата
+    
+    \input{synopsis/imprint}
+\end{document}

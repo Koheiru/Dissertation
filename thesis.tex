@@ -1,0 +1,32 @@
+% Формат А4, 14pt (ГОСТ Р 7.0.11-2011, 5.3.6)
+\documentclass[a4paper,14pt,oneside,openany]{memoir}
+
+\input{common/settings}
+\input{common/packages}
+\input{common/styles}
+\input{common/names}
+\input{common/data}
+\input{biblio/setup}
+\input{glossary/setup}
+\input{glossary/acronyms}
+\input{thesis/setup}
+\input{thesis/style}
+
+\begin{document}
+    \input{common/renames}
+    
+    % Структура диссертации (ГОСТ Р 7.0.11-2011, 4)
+    \include{thesis/title}
+    \include{thesis/contents}
+    \include{thesis/introduction}
+    \include{thesis/part1}
+    \include{thesis/part2}
+    \include{thesis/part3}
+    %\include{thesis/part4}
+    \include{thesis/conclusion}
+    \include{thesis/glossary}
+    %\include{thesis/dictionary}
+    \include{thesis/references}
+    %\include{thesis/lists}
+    \include{thesis/appendix}	
+\end{document}

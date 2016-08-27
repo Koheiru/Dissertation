@@ -1,0 +1,29 @@
+\usepackage[acronym,nomain,toc,nopostdot,nonumberlist,xindy={glsnumbers=false}]{glossaries}
+\makeglossaries
+\usepackage[xindy]{imakeidx}
+\makeindex
+
+\newglossarystyle{acronyms-custom-style}{%
+    \renewenvironment{theglossary}%
+    {\addtocounter{table}{-1}% Нужно откатить на единицу счетчик номеров таблиц, так как следующая таблица сделана для удобства представления информации по ГОСТ
+     \begin{longtabu} to \textwidth {l X}}%
+     {\end{longtabu}}%  
+    % have nothing after \begin{theglossary}:  
+    \renewcommand*{\glossaryheader}{}%  
+    % have nothing between glossary groups:  
+    \renewcommand*{\glsgroupheading}[1]{}%  
+    \renewcommand*{\glsgroupskip}{}%  
+    % set how each entry should appear:  
+    \renewcommand*{\glossentry}[2]{%  
+        \textbf{\glstarget{##1}{\glossentryname{##1}}} & \glossentrydesc{##1} \\
+    }%  
+    % set how sub-entries appear:  
+    \renewcommand*{\subglossentry}[3]{%  
+    \glossentry{##2}{##3}}%  
+}
+
+\newcommand{\insertglossary}
+{\printglossary[title=\fullglossarytitle,type=\acronymtype,style=acronyms-custom-style]}
+
+\newcommand{\acr}[1]
+{\acrshort{#1}}

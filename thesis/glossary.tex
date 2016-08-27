@@ -1,0 +1,6 @@
+\clearpage                                  % В том числе гарантирует, что список в оглавлении будет с правильным номером страницы
+
+% не рекомендуется применять пакет микротипографики к автоматически генерируемому списку литературы
+\ifthenelse{\NOT \isundefined{\microtypesetup}}{ \microtypesetup{protrusion=false} }{} 
+\insertglossary
+\ifthenelse{\NOT \isundefined{\microtypesetup}}{\microtypesetup{protrusion=true}}{}
