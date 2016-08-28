@@ -1,0 +1,11 @@
+*.acn
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.idx
+*.toc
+*.xdy
+thesis.pdf
+thesis.run.xml
+thesis.synctex.gz
