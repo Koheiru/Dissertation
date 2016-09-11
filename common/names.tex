@@ -51,3 +51,13 @@
 \newcommand{\customset}[1]{\mathcal{#1}}
 \newcommand{\expectation}[1]{\mathbf{E}\left[#1\right]}
 
+%%% Другое... %%%
+\newcommand{\IncludeFigure}[2]{%
+    \begin{figure}[ht]
+        \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{#1}}
+        \caption{#2}
+        \label{fig:#1}
+    \end{figure}
+}
+
+
