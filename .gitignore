@@ -6,6 +6,7 @@
 *.idx
 *.toc
 *.xdy
+images/*.pdf
 thesis.pdf
 thesis.run.xml
 thesis.synctex.gz
