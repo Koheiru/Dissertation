@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -36,16 +36,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1280"
-     inkscape:window-height="1002"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
      id="namedview1873"
      showgrid="false"
      borderlayer="true"
      units="mm"
-     inkscape:zoom="1.5683026"
-     inkscape:cx="549.47467"
-     inkscape:cy="725.98013"
-     inkscape:window-x="1912"
+     inkscape:zoom="0.7841513"
+     inkscape:cx="191.03196"
+     inkscape:cy="469.22357"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="surface422" />
@@ -4744,229 +4744,6 @@
          id="path1633"
          inkscape:connector-curvature="0" />
     </g>
-    <path
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
-       d="m 318.95859,165.16016 166.8707,0 0,-71.519535 -166.8707,0 z m 0,0"
-       id="path1635"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95859,165.16016 0,-71.51953 162.72266,0 0,71.51953 -162.72266,0"
-       id="path1637"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95859,93.64063 162.72266,0"
-       id="path1639"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95859,165.16016 162.72266,0"
-       id="path1641"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 485.01772,165.16016 0,-71.51953"
-       id="path1643"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95859,165.16016 0,-71.51953"
-       id="path1645"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95859,165.16016 162.72266,0"
-       id="path1647"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95859,165.16016 0,-71.51953"
-       id="path1649"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999896;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95857,93.640625 165.96895,0"
-       id="path1651"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999896;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95857,165.16015 165.96895,0"
-       id="path1653"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95859,165.16016 0,-71.51953"
-       id="path1657"
-       inkscape:connector-curvature="0" />
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g1659"
-       transform="translate(-80,38.4)">
-      <use
-         xlink:href="#glyph3-1"
-         x="389.92001"
-         y="66.120003"
-         id="use1671"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph3-1"
-         x="427.17001"
-         y="66.120003"
-         id="use1685"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph3-12"
-         x="429.95001"
-         y="66.120003"
-         id="use1687"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-13"
-         x="433.28"
-         y="66.120003"
-         id="use1689"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-14"
-         x="438.84"
-         y="66.120003"
-         id="use1691"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-15"
-         x="444.67999"
-         y="66.120003"
-         id="use1693"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-16"
-         x="450.23999"
-         y="66.120003"
-         id="use1695"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-17"
-         x="453.01999"
-         y="66.120003"
-         id="use1697"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-18"
-         x="458.57999"
-         y="66.120003"
-         id="use1699"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-    </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.49999898, 1.49999693;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 323.35859,102.28125 30,0"
-       id="path1701"
-       inkscape:connector-curvature="0" />
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g1703"
-       transform="translate(-80,40)">
-      <use
-         xlink:href="#glyph3-1"
-         x="389.92001"
-         y="80.041"
-         id="use1715"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph3-1"
-         x="427.17001"
-         y="80.041"
-         id="use1729"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph3-12"
-         x="429.95001"
-         y="80.041"
-         id="use1731"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-13"
-         x="433.28"
-         y="80.041"
-         id="use1733"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-14"
-         x="438.84"
-         y="80.041"
-         id="use1735"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-15"
-         x="444.67999"
-         y="80.041"
-         id="use1737"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-16"
-         x="450.23999"
-         y="80.041"
-         id="use1739"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-15"
-         x="453.01999"
-         y="80.041"
-         id="use1741"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-17"
-         x="458.57999"
-         y="80.041"
-         id="use1743"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-      <use
-         xlink:href="#glyph3-18"
-         x="464.14001"
-         y="80.041"
-         id="use1745"
-         width="100%"
-         height="100%"
-         transform="translate(78.4,0)" />
-    </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.9999918, 0.99999795, 0.49999898, 0.99999795;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 323.35859,116.19922 30,0"
-       id="path1747"
-       inkscape:connector-curvature="0" />
     <g
        style="fill:#000000;fill-opacity:1"
        id="g1749"
@@ -4986,159 +4763,6 @@
          width="100%"
          height="100%" />
     </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g1779"
-       transform="translate(-91.2,39.569872)">
-      <use
-         xlink:href="#glyph3-1"
-         x="412.98999"
-         y="105.7207"
-         id="use1801"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph3-12"
-         x="415.76999"
-         y="105.7207"
-         id="use1803"
-         width="100%"
-         height="100%"
-         transform="translate(92.8,0)" />
-      <use
-         xlink:href="#glyph3-13"
-         x="419.10001"
-         y="105.7207"
-         id="use1805"
-         width="100%"
-         height="100%"
-         transform="translate(92.8,0)" />
-      <use
-         xlink:href="#glyph3-14"
-         x="424.66"
-         y="105.7207"
-         id="use1807"
-         width="100%"
-         height="100%"
-         transform="translate(92.8,0)" />
-      <use
-         xlink:href="#glyph3-15"
-         x="430.5"
-         y="105.7207"
-         id="use1809"
-         width="100%"
-         height="100%"
-         transform="translate(92.8,0)" />
-      <use
-         xlink:href="#glyph3-16"
-         x="436.06"
-         y="105.7207"
-         id="use1811"
-         width="100%"
-         height="100%"
-         transform="translate(92.8,0)" />
-      <use
-         xlink:href="#glyph3-17"
-         x="438.84"
-         y="105.7207"
-         id="use1813"
-         width="100%"
-         height="100%"
-         transform="translate(92.8,0)" />
-      <use
-         xlink:href="#glyph3-18"
-         x="444.39999"
-         y="105.7207"
-         id="use1815"
-         width="100%"
-         height="100%"
-         transform="translate(92.8,0)" />
-    </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:1.9999959, 1.9999959;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 323.35859,136.35938 30,0"
-       id="path1817"
-       inkscape:connector-curvature="0" />
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g1819"
-       transform="translate(-56,38.4)">
-      <use
-         xlink:href="#glyph3-1"
-         x="389.92001"
-         y="120.12"
-         id="use1831"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph3-1"
-         x="454.13"
-         y="120.12"
-         id="use1855"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph3-12"
-         x="456.91"
-         y="120.12"
-         id="use1857"
-         width="100%"
-         height="100%"
-         transform="translate(51.2,0)" />
-      <use
-         xlink:href="#glyph3-13"
-         x="460.23999"
-         y="120.12"
-         id="use1859"
-         width="100%"
-         height="100%"
-         transform="translate(51.2,0)" />
-      <use
-         xlink:href="#glyph3-14"
-         x="465.79999"
-         y="120.12"
-         id="use1861"
-         width="100%"
-         height="100%"
-         transform="translate(51.2,0)" />
-      <use
-         xlink:href="#glyph3-15"
-         x="471.64001"
-         y="120.12"
-         id="use1863"
-         width="100%"
-         height="100%"
-         transform="translate(51.2,0)" />
-      <use
-         xlink:href="#glyph3-16"
-         x="477.20001"
-         y="120.12"
-         id="use1865"
-         width="100%"
-         height="100%"
-         transform="translate(51.2,0)" />
-      <use
-         xlink:href="#glyph3-17"
-         x="479.98001"
-         y="120.12"
-         id="use1867"
-         width="100%"
-         height="100%"
-         transform="translate(51.2,0)" />
-      <use
-         xlink:href="#glyph3-18"
-         x="485.54001"
-         y="120.12"
-         id="use1869"
-         width="100%"
-         height="100%"
-         transform="translate(51.2,0)" />
-    </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 323.35859,156.28125 30,0"
-       id="path1871"
-       inkscape:connector-curvature="0" />
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.40000002;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
        d="m 180.34958,260.47107 166.13968,-6.44134"
@@ -5161,54 +4785,6 @@
        inkscape:connector-curvature="0" />
     <text
        xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="355.73047"
-       y="105.03843"
-       id="text6026"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="355.73047"
-         y="105.03843"
-         id="tspan6030">метод Эйлера</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="355.73047"
-       y="120.00744"
-       id="text6026-8"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="355.73047"
-         y="120.00744"
-         id="tspan6030-0">метод Эйлера</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:89.99999762%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="355.73047"
-       y="134.32448"
-       id="text6026-2"
-       sodipodi:linespacing="89.999998%"><tspan
-         sodipodi:role="line"
-         x="355.73047"
-         y="134.32448"
-         id="tspan6030-6">метод Эйлера с</tspan><tspan
-         sodipodi:role="line"
-         x="355.73047"
-         y="145.12448"
-         id="tspan6068">пересчётом</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="355.73047"
-       y="159.14331"
-       id="text6026-7"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="355.73047"
-         y="159.14331"
-         id="tspan6030-9">метод Рунге-Кутта</tspan></text>
-    <text
-       xml:space="preserve"
        style="font-style:normal;font-weight:normal;font-size:12.00000095px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
        x="12.752641"
        y="481.03857"
@@ -5217,7 +4793,7 @@
          sodipodi:role="line"
          id="tspan6080"
          x="12.752641"
-         y="481.03857"></tspan></text>
+         y="481.03857" /></text>
     <g
        id="g6249">
       <g
@@ -5284,10 +4860,145 @@
            id="tspan6084-1"
            sodipodi:role="line">Δ</tspan></text>
     </g>
+    <g
+       id="g9127"
+       transform="matrix(1.0703106,0,0,1,-28.817536,190.4)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1635"
+         d="m 318.95859,-25.239843 166.8707,0 0,-71.519534 -166.8707,0 z m 0,0"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1637"
+         d="m 318.95859,-25.239843 0,-71.519529 162.72266,0 0,71.519529 -162.72266,0"
+         style="fill:none;stroke:#ffffff;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1639"
+         d="m 318.95859,-96.759372 162.72266,0"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1641"
+         d="m 318.95859,-25.239843 162.72266,0"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1643"
+         d="m 485.01772,-25.239843 0,-71.519529"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1645"
+         d="m 318.95859,-25.239843 0,-71.519529"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1647"
+         d="m 318.95859,-25.239843 162.72266,0"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1649"
+         d="m 318.95859,-25.239843 0,-71.519529"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1651"
+         d="m 318.95857,-96.759377 165.96895,0"
+         style="fill:none;stroke:#000000;stroke-width:0.48329711;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1653"
+         d="m 318.95857,-25.239853 165.96895,0"
+         style="fill:none;stroke:#000000;stroke-width:0.48329711;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1657"
+         d="m 318.95859,-25.239843 0,-71.519529"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1657-6"
+         d="m 485.1252,-25.480053 0,-71.519499"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.49999898, 1.49999693;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 318.55859,102.28125 30,0"
+       id="path1701"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.9999918, 0.99999795, 0.49999898, 0.99999795;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 318.55859,116.19922 30,0"
+       id="path1747"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:1.9999959, 1.9999959;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 318.55859,136.35938 30,0"
+       id="path1817"
+       inkscape:connector-curvature="0" />
     <path
        style="fill:none;stroke:#000000;stroke-width:0.49999899;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 485.1252,164.91995 0,-71.5195"
-       id="path1657-6"
+       d="m 318.55859,156.28125 30,0"
+       id="path1871"
        inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="352.53046"
+       y="105.03842"
+       id="text6026"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="352.53046"
+         y="105.03842"
+         id="tspan6030">метод Эйлера (<tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan9123">h</tspan>=0,1)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="352.53046"
+       y="120.00744"
+       id="text6026-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="352.53046"
+         y="120.00744"
+         id="tspan6030-0">метод Эйлера (<tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan9121">h</tspan>=0,01)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:89.99999762%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="352.53046"
+       y="134.32448"
+       id="text6026-2"
+       sodipodi:linespacing="89.999998%"><tspan
+         sodipodi:role="line"
+         x="352.53046"
+         y="134.32448"
+         id="tspan6030-6">метод Эйлера с</tspan><tspan
+         sodipodi:role="line"
+         x="352.53046"
+         y="145.12448"
+         id="tspan6068">пересчётом (<tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan9125">h</tspan>=0,1)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="352.53046"
+       y="159.14333"
+       id="text6026-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="352.53046"
+         y="159.14333"
+         id="tspan6030-9">метод Рунге-Кутта (<tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan9141">h</tspan>=0,1)</tspan></text>
   </g>
 </svg>

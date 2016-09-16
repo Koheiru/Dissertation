@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -42,9 +42,9 @@
      showgrid="false"
      units="mm"
      borderlayer="true"
-     inkscape:zoom="0.78415131"
-     inkscape:cx="392.04948"
-     inkscape:cy="396.69348"
+     inkscape:zoom="1.1089574"
+     inkscape:cx="265.9579"
+     inkscape:cy="390.77152"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -1023,11 +1023,6 @@
   <g
      id="surface629"
      transform="translate(0,-71.551177)">
-    <path
-       style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none"
-       d="m 318.95877,165.16039 166.87068,0 0,-71.519526 -166.87068,0 z m 0,0"
-       id="path1635"
-       inkscape:connector-curvature="0" />
     <g
        clip-path="url(#clip1)"
        id="g357"
@@ -4897,483 +4892,6 @@
          id="path1731"
          inkscape:connector-curvature="0" />
     </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g1757"
-       transform="translate(0,-78.399997)">
-      <use
-         xlink:href="#glyph0-8"
-         x="384"
-         y="66.599998"
-         id="use1769"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph0-8"
-         x="416.48001"
-         y="66.599998"
-         id="use1783"
-         width="100%"
-         height="100%" />
-      <g
-         id="g6613"
-         transform="translate(9.3739581,116.25936)">
-        <use
-           height="100%"
-           width="100%"
-           id="use1785"
-           y="66.599998"
-           x="418.98001"
-           xlink:href="#glyph0-25" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1787"
-           y="66.599998"
-           x="422.31"
-           xlink:href="#glyph0-26" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1789"
-           y="66.599998"
-           x="427.31"
-           xlink:href="#glyph0-27" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1791"
-           y="66.599998"
-           x="432.95001"
-           xlink:href="#glyph0-1" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1793"
-           y="66.599998"
-           x="437.95001"
-           xlink:href="#glyph0-7" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1795"
-           y="66.599998"
-           x="440.45001"
-           xlink:href="#glyph0-3" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1797"
-           y="66.599998"
-           x="445.45001"
-           xlink:href="#glyph0-28" />
-      </g>
-    </g>
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g1801"
-       transform="translate(9.3739581,-52.860631)">
-      <use
-         xlink:href="#glyph0-8"
-         x="384"
-         y="80.519997"
-         id="use1813"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph0-8"
-         x="416.48001"
-         y="80.519997"
-         id="use1827"
-         width="100%"
-         height="100%" />
-      <g
-         id="g6622"
-         transform="translate(0,92.8)">
-        <use
-           height="100%"
-           width="100%"
-           id="use1829"
-           y="80.519997"
-           x="418.98001"
-           xlink:href="#glyph0-25" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1831"
-           y="80.519997"
-           x="422.31"
-           xlink:href="#glyph0-26" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1833"
-           y="80.519997"
-           x="427.31"
-           xlink:href="#glyph0-27" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1835"
-           y="80.519997"
-           x="432.95001"
-           xlink:href="#glyph0-1" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1837"
-           y="80.519997"
-           x="437.95001"
-           xlink:href="#glyph0-7" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1839"
-           y="80.519997"
-           x="440.45001"
-           xlink:href="#glyph0-1" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1841"
-           y="80.519997"
-           x="445.45001"
-           xlink:href="#glyph0-3" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1843"
-           y="80.519997"
-           x="450.45001"
-           xlink:href="#glyph0-28" />
-      </g>
-    </g>
-    <path
-       style="fill:none;stroke:#ffffff;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95877,165.16039 0,-71.519521 162.72264,0 0,71.519521 -162.72264,0"
-       id="path1637"
-       inkscape:connector-curvature="0" />
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g1917"
-       transform="translate(-8.2260409,-78.399997)">
-      <use
-         xlink:href="#glyph0-8"
-         x="384"
-         y="120.6"
-         id="use1929"
-         width="100%"
-         height="100%" />
-      <use
-         xlink:href="#glyph0-8"
-         x="442.13"
-         y="120.6"
-         id="use1953"
-         width="100%"
-         height="100%" />
-      <g
-         id="g6641"
-         transform="translate(15.999999,116.8)">
-        <use
-           height="100%"
-           width="100%"
-           id="use1955"
-           y="120.6"
-           x="444.63"
-           xlink:href="#glyph0-25" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1957"
-           y="120.6"
-           x="447.95999"
-           xlink:href="#glyph0-26" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1959"
-           y="120.6"
-           x="452.95999"
-           xlink:href="#glyph0-27" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1961"
-           y="120.6"
-           x="458.60001"
-           xlink:href="#glyph0-1" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1963"
-           y="120.6"
-           x="463.60001"
-           xlink:href="#glyph0-7" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1965"
-           y="120.6"
-           x="466.10001"
-           xlink:href="#glyph0-3" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1967"
-           y="120.6"
-           x="471.10001"
-           xlink:href="#glyph0-28" />
-      </g>
-    </g>
-    <g
-       id="g6197">
-      <g
-         transform="translate(-16.111315,46.399911)"
-         id="g873"
-         style="fill:#000000;fill-opacity:1">
-        <use
-           height="100%"
-           width="100%"
-           id="use875"
-           y="325.55991"
-           x="34.0802"
-           xlink:href="#glyph2-3" />
-        <use
-           height="100%"
-           width="100%"
-           id="use877"
-           y="325.55991"
-           x="37.0802"
-           xlink:href="#glyph2-2" />
-      </g>
-      <text
-         sodipodi:linespacing="125%"
-         id="text6082-9"
-         y="373.41922"
-         x="12.17263"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           y="373.41922"
-           x="12.17263"
-           id="tspan6084-1"
-           sodipodi:role="line">Δ</tspan></text>
-    </g>
-    <g
-       id="g6204"
-       transform="translate(3.0365006e-7,-2.0589862e-5)">
-      <g
-         transform="translate(-19.5993,44.800173)"
-         id="g1477"
-         style="fill:#000000;fill-opacity:1">
-        <use
-           height="100%"
-           width="100%"
-           id="use1479"
-           y="560.76031"
-           x="38.639999"
-           xlink:href="#glyph2-3" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1481"
-           y="560.76031"
-           x="41.639999"
-           xlink:href="#glyph2-4" />
-      </g>
-      <text
-         sodipodi:linespacing="125%"
-         id="text6082"
-         y="605.90717"
-         x="14.28303"
-         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-         xml:space="preserve"><tspan
-           y="605.90717"
-           x="14.28303"
-           id="tspan6084"
-           sodipodi:role="line">Δ</tspan></text>
-    </g>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95877,93.640869 162.72264,0"
-       id="path1639"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95877,165.16039 162.72264,0"
-       id="path1641-9"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 485.01788,165.16039 0,-71.519521"
-       id="path1643-0"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95877,165.16039 0,-71.519521"
-       id="path1645"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95877,165.16039 162.72264,0"
-       id="path1647"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95877,165.16039 0,-71.519521"
-       id="path1649"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95875,93.640864 165.96893,0"
-       id="path1651"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95875,165.16038 165.96893,0"
-       id="path1653-9"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 318.95877,165.16039 0,-71.519521"
-       id="path1657"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.49999891, 1.49999673;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 323.35877,102.28149 29.99999,0"
-       id="path1701"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.99999126, 0.99999782, 0.49999891, 0.99999782;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 323.35877,116.19946 29.99999,0"
-       id="path1747-4"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:1.99999563, 1.99999563;stroke-dashoffset:0;stroke-opacity:1"
-       d="m 323.35877,136.35961 29.99999,0"
-       id="path1817"
-       inkscape:connector-curvature="0" />
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 323.35877,156.28148 29.99999,0"
-       id="path1871"
-       inkscape:connector-curvature="0" />
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="355.73065"
-       y="105.03867"
-       id="text6026"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="355.73065"
-         y="105.03867"
-         id="tspan6030">метод Эйлера</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="355.73065"
-       y="120.00768"
-       id="text6026-8"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="355.73065"
-         y="120.00768"
-         id="tspan6030-0">метод Эйлера</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:89.99999762%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="355.73065"
-       y="134.32472"
-       id="text6026-2"
-       sodipodi:linespacing="89.999998%"><tspan
-         sodipodi:role="line"
-         x="355.73065"
-         y="134.32472"
-         id="tspan6030-6">метод Эйлера с</tspan><tspan
-         sodipodi:role="line"
-         x="355.73065"
-         y="145.12473"
-         id="tspan6068">пересчётом</tspan></text>
-    <text
-       xml:space="preserve"
-       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="355.73065"
-       y="159.14354"
-       id="text6026-7"
-       sodipodi:linespacing="125%"><tspan
-         sodipodi:role="line"
-         x="355.73065"
-         y="159.14354"
-         id="tspan6030-9">метод Рунге-Кутта</tspan></text>
-    <path
-       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
-       d="m 485.12536,164.92018 0,-71.519491"
-       id="path1657-6"
-       inkscape:connector-curvature="0" />
-    <g
-       style="fill:#000000;fill-opacity:1"
-       id="g1877"
-       transform="translate(7.7739581,39.058566)">
-      <use
-         xlink:href="#glyph0-8"
-         x="405.75"
-         y="106.2008"
-         id="use1899"
-         width="100%"
-         height="100%" />
-      <g
-         id="g6632">
-        <use
-           height="100%"
-           width="100%"
-           id="use1901"
-           y="106.2008"
-           x="408.25"
-           xlink:href="#glyph0-25" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1903"
-           y="106.2008"
-           x="411.57999"
-           xlink:href="#glyph0-26" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1905"
-           y="106.2008"
-           x="416.57999"
-           xlink:href="#glyph0-27" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1907"
-           y="106.2008"
-           x="422.22"
-           xlink:href="#glyph0-1" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1909"
-           y="106.2008"
-           x="427.22"
-           xlink:href="#glyph0-7" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1911"
-           y="106.2008"
-           x="429.72"
-           xlink:href="#glyph0-3" />
-        <use
-           height="100%"
-           width="100%"
-           id="use1913"
-           y="106.2008"
-           x="434.72"
-           xlink:href="#glyph0-28" />
-      </g>
-    </g>
     <path
        style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.39999996;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
        d="m 180.06727,235.16766 167.64668,-8.28791"
@@ -5394,5 +4912,213 @@
        d="M 190.77948,401.46209 348.14706,376.53067"
        id="path6986"
        inkscape:connector-curvature="0" />
+    <g
+       id="g9127"
+       transform="matrix(1.0703105,0,0,0.99999982,-28.817319,190.39978)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path1635"
+         d="m 318.95859,-25.239843 166.8707,0 0,-71.519534 -166.8707,0 z m 0,0"
+         style="fill:#ffffff;fill-opacity:1;fill-rule:evenodd;stroke:none" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1637"
+         d="m 318.95859,-25.239843 0,-71.519529 162.72266,0 0,71.519529 -162.72266,0"
+         style="fill:none;stroke:#ffffff;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1639"
+         d="m 318.95859,-96.759372 162.72266,0"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1641-0"
+         d="m 318.95859,-25.239843 162.72266,0"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1643-2"
+         d="m 485.01772,-25.239843 0,-71.519529"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1645"
+         d="m 318.95859,-25.239843 0,-71.519529"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1647"
+         d="m 318.95859,-25.239843 162.72266,0"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1649"
+         d="m 318.95859,-25.239843 0,-71.519529"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1651"
+         d="m 318.95857,-96.759377 165.96895,0"
+         style="fill:none;stroke:#000000;stroke-width:0.48329711;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1653-3"
+         d="m 318.95857,-25.239853 165.96895,0"
+         style="fill:none;stroke:#000000;stroke-width:0.48329711;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1657"
+         d="m 318.95859,-25.239843 0,-71.519529"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+      <path
+         inkscape:connector-curvature="0"
+         id="path1657-6"
+         d="m 485.1252,-25.480053 0,-71.519499"
+         style="fill:none;stroke:#000000;stroke-width:0.48329714;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1" />
+    </g>
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:0.49999891, 1.49999673;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 318.55878,102.28105 29.99999,0"
+       id="path1701"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:3.99999126, 0.99999782, 0.49999891, 0.99999782;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 318.55878,116.19902 29.99999,0"
+       id="path1747"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-dasharray:1.99999563, 1.99999563;stroke-dashoffset:0;stroke-opacity:1"
+       d="m 318.55878,136.35918 29.99999,0"
+       id="path1817"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.4999989;stroke-linecap:butt;stroke-linejoin:round;stroke-miterlimit:10;stroke-opacity:1"
+       d="m 318.55878,156.28105 29.99999,0"
+       id="path1871"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="352.53073"
+       y="105.03822"
+       id="text6026"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="352.53073"
+         y="105.03822"
+         id="tspan6030">метод Эйлера (<tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan9123">h</tspan>=0,1)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="352.53073"
+       y="120.00724"
+       id="text6026-8"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="352.53073"
+         y="120.00724"
+         id="tspan6030-0">метод Эйлера (<tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan9121">h</tspan>=0,01)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:89.99999762%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="352.53073"
+       y="134.3242"
+       id="text6026-2"
+       sodipodi:linespacing="89.999998%"><tspan
+         sodipodi:role="line"
+         x="352.53073"
+         y="134.3242"
+         id="tspan6030-6">метод Эйлера с</tspan><tspan
+         sodipodi:role="line"
+         x="352.53073"
+         y="145.12421"
+         id="tspan6068">пересчётом (<tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan9125">h</tspan>=0,1)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="352.53073"
+       y="159.14305"
+       id="text6026-7"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="352.53073"
+         y="159.14305"
+         id="tspan6030-9">метод Рунге-Кутта (<tspan
+   style="font-style:italic;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman,  Italic'"
+   id="tspan9141">h</tspan>=0,1)</tspan></text>
+    <g
+       transform="translate(1.3228858e-4,-8.9004781e-5)"
+       id="g6242">
+      <g
+         transform="translate(-16.11145,46.4)"
+         id="g873-1"
+         style="fill:#000000;fill-opacity:1">
+        <use
+           height="100%"
+           width="100%"
+           id="use875-8"
+           y="325.55991"
+           x="34.0802"
+           xlink:href="#glyph2-3" />
+        <use
+           height="100%"
+           width="100%"
+           id="use877-4"
+           y="325.55991"
+           x="37.0802"
+           xlink:href="#glyph2-2" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text6082-9-6"
+         y="373.41937"
+         x="12.172498"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="373.41937"
+           x="12.172498"
+           id="tspan6084-1-2"
+           sodipodi:role="line">Δ</tspan></text>
+    </g>
+    <g
+       transform="translate(7.1805941e-5,1.0148045e-4)"
+       id="g6249">
+      <g
+         transform="translate(-19.599374,44.8)"
+         id="g1477"
+         style="fill:#000000;fill-opacity:1">
+        <use
+           height="100%"
+           width="100%"
+           id="use1479"
+           y="560.76031"
+           x="38.639999"
+           xlink:href="#glyph2-3" />
+        <use
+           height="100%"
+           width="100%"
+           id="use1481"
+           y="560.76031"
+           x="41.639999"
+           xlink:href="#glyph2-4" />
+      </g>
+      <text
+         sodipodi:linespacing="125%"
+         id="text6082"
+         y="605.90704"
+         x="14.282958"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:12.00000095px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, ';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="605.90704"
+           x="14.282958"
+           id="tspan6084"
+           sodipodi:role="line">Δ</tspan></text>
+    </g>
   </g>
 </svg>
