@@ -117,3 +117,19 @@
 \renewcommand{\chaptername}{Глава}
 \renewcommand{\appendixname}{Приложение} % (ГОСТ Р 7.0.11-2011, 5.7)
 
+%%% Определения, теоремы и т.п. %%%
+\newtheoremstyle{normal}
+    {0pt} % space above
+    {0pt} % space below
+    {} % body font
+    {\parindent} % indent amount
+    {\itshape} % header font
+    {.} % punctuation after header
+    {.5em} % space after header
+    {} % manually specify header (set empty for normal behaviour)
+
+\theoremstyle{normal}
+\newtheorem{Definition}{Определение}    % определения с нумерацией
+\newtheorem*{Definition*}{Определение}  % определения без нумерации
+
+
