@@ -72,48 +72,43 @@
 \begin{Definition*}
     Будем называть микроансамбль $A$ \textit{простым микроансамблем}, если выполнены следующие условия:
     \begin{itemize}
-        \item все нейроны микроансамбля соединены друг с другом связями весом $\omega$, \ie: $\matrix{V} = \omega \cdot \left( \matrix{J} - \matrix{I} \right)$, где матрицы $\matrix{J}_{N\!\times\!N}$ и $\matrix{I}_{N\!\times\!N}$  --- матрица единиц и единичная матрица соответственно;
-        \item все нейроны микроансамбля имеют одинаковые связи с входным вектором $\vector{x}$, \ie: $\forall\ i,j \in \overline{1,N}\ \vector{w}_{i} = \vector{w}_{j}$;
-        \item начальные условия для всех нейронов микроансамбля равны, \ie: $\vector{u} = $.
+        \item все нейроны микроансамбля соединены друг с другом связями весом $\omega$, \ie: $\matrix{V} = \omega \cdot \left( \matrix{J}_{N\!\times\!N} - \matrix{I}_{N} \right)$, где матрицы $\matrix{J}$ и $\matrix{I}$  --- матрица единиц и единичная матрица соответственно;
+        \item все нейроны микроансамбля имеют одинаковые связи с входным вектором $\vector{x}$, \ie: $\forall\ i \in \overline{1,N}\ \vector{w}_{i} = \vector{w}$;
+        \item начальные условия для всех нейронов микроансамбля совпадают, \ie: \par $\vector{u}|_{t=0} = \scalar{u}^{0} \cdot \matrix{J}_{N\!\times\!1}$ и $\vector{p}_{t=0} = \scalar{p}^{0} \cdot \matrix{J}_{N\!\times\!1}$.
     \end{itemize}
 \end{Definition*}
 
-В этом случае можно говорить об эквивалентности всех нейронов микроансамбля, а значит всё множество нейронов $\customset{N}$ может быть представленно в виде одного гипер-нейрона с рекуррентной связью на себя, как показано на рис. ???. Выражение~\eqref{eq:microensemble_model} при этом примет более простую форму:
+В этом случае можно говорить об эквивалентности всех нейронов микроансамбля, а значит всё множество нейронов $\customset{N}$ может быть представленно в виде одного гипер-нейрона с рекуррентной связью на себя, как показано \onfigure~\ref{fig:model_simple_microensemble}. Выражение~\eqref{eq:microensemble_model} при этом примет более простую форму:
 \begin{equation}
     \label{eq:simple_microensemble_model}
     \begin{cases}
-    d\vector{u}/d\scalar{t} &= \alpha \vector{y} + \vector{w}^{\top} \vector{x} - \vector{p} - \mu \vector{u}, \\
-    \vector{y}              &= f\left( \vector{u}, \theta \right), \\
+    d\scalar{u}/d\scalar{t} &= \alpha \scalar{y} + \vector{w}^{\top} \vector{x} - \scalar{p} - \mu \scalar{u}, \\
+    \scalar{y}              &= f\left( \scalar{u}, \theta \right), \\
     \end{cases}
 \end{equation}
-где параметр $\alpha = \omega \cdot \left( N - 1 \right)$ --- весовой коэффициент рекуррентной связи, который отражает связность нейронов микроансамбля.
+где параметр $\alpha = \omega \cdot \left( N - 1 \right)$ --- весовой коэффициент рекуррентной связи, который по смыслу отражает связность нейронов микроансамбля.
 
-\newpage
+\IncludeFigure{model_simple_microensemble}{Приведение простого микроансамбля с 3-мя нейронами к виду эквивалентного гипер-нейрона с рекуррентной связью.}
+
+
 %==============================================================================
 %                       Анализ точек равновесия модели
 %==============================================================================
 \section{Качественный анализ} \label{section:neuron_equilibrium}
 
+
+Для удобства анализа системы~\eqref{eq:simple_microensemble_model} введём величину $\scalar{i} = \vector{w}^{\top} \vector{x}$ --- внешнее возбуждение микроансамбля, а так же обозначим правую часть дифференциального уравнения как:
+\begin{equation}
+    F() = \alpha \scalar{y} + \scalar{i} - \scalar{p} - \mu \scalar{u}
+\end{equation}
+
+
 % TODO: упомянуть работу Пчёлкина, как одно из проведённых исследований микроансамбля, хотя и с точки зрения биологич-их тезисов.
 
-
-\begin{figure}[ht]
-    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{model_sigm_equilibriums}}
-    \caption{Анализ устойчивости особых точек.}
-    \label{img:model_sigm_equilibriums}
-\end{figure}
-
-\begin{figure}[ht]
-    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{model_sigm_bifurcations}}
-    \caption{Бифуркационные диаграммы.}
-    \label{img:model_sigm_bifurcations}
-\end{figure}
-
-\begin{figure}[ht]
-    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{model_sigm_configurations}}
-    \caption{Конфигурации решения в различных точках плоскости параметров.}
-    \label{img:model_sigm_configurations}
-\end{figure}
+\newpage
+\IncludeFigure{model_sigm_equilibriums}{Анализ устойчивости особых точек.}
+\IncludeFigure{model_sigm_bifurcations}{Бифуркационные диаграммы.}
+\IncludeFigure{model_sigm_configurations}{Конфигурации решения в различных точках плоскости параметров.}
 
 
 %==============================================================================
@@ -122,12 +117,12 @@
 \section{Характерные свойства и динамика} \label{section:neuron_dynamic}
 
 Для выполнения численных экспериментов с рабочей моделью необходимо в первую очередь привести её к эквивалентной дискретной форме, применив один из разностных методов. Для этого в ходе исследований было рассмотрено применение классических методов, таких как явный метод Эйлера, модифицированный метод Эйлера с пересчётом (разновидность метода Рунге-Кутты второго порядка точности), а так же явный метод Рунге-Кутты четвёртого порядка точности~\cite{Hairer1990}. Более подробно этот вопрос освещён \inappendix~\ref{appendix:differential_schemes_compare}. Здесь же отметим, что при выборе разумного с точки зрения точности и вычислительной эффективности шага $h$ использование того или иного метода не вносило существенных изменений в результаты численных экспериментов. Поэтому описанные далее в главе результаты подразумевают применение явного метода Эйлера с шагом $h = 0,01$:
-$$
+\begin{equation*}
     \begin{cases}
         \scalar{u^{t+1}} = \scalar{u^{t}} + h \times ( \alpha\scalar{y^{t}} + \scalar{i^{t}} - \scalar{p^{t}} - \mu\scalar{u^{t}} ), \\ 
         \scalar{y^{t+1}} = f(\scalar{u^{t+1}}, \theta).
     \end{cases}
-$$
+\end{equation*}
 
 
 \subsection{Динамика модели с сигмоидальной функцией активации}
