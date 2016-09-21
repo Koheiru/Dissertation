@@ -16,22 +16,34 @@
 
 Таким образом, формальная модель нейрона приобрела следующий вид:
 \begin{equation}
-	\label{eq:single_neuron_model}
+	\label{eq:full_single_neuron_model}
     \begin{cases}
 	    d\scalar{u}/d\scalar{t} &= \vector{w}^{\top} \vector{x} - \scalar{p} - \mu \scalar{u}, \\
         \scalar{y}              &= f\left( \scalar{u}, \theta \right), \\
     \end{cases}
 \end{equation}
-где $\scalar{u} \in \specialset{R}$ --- потенциал нейрона, $\vector{x} \in \specialset{R}^{M}$ -- входной вектор нейрона (входной сигнал), $\vector{w} \in \specialset{R}^{M}$ --- вектор весовых коэффициентов нейрона,  $\scalar{p}$ --- внутренний порог нейрона, $\mu$ --- константа, характеризующая скорость убывания потенциала нейрона, $\scalar{y} \in \left[0;1\right]$ --- частота нейрона (выходной сигнал), $\theta$ --- управляющий параметр сети, который будет рассмотрен более подробно в следующих главах.
+где $\scalar{u} \in \specialset{R}$ --- потенциал нейрона, $\vector{x} \in \specialset{R}^{M}$ -- входной вектор нейрона (входной сигнал), $\vector{w} \in \specialset{R}^{M}$ --- вектор весовых коэффициентов нейрона,  $\scalar{p}$ --- внутренний порог нейрона, $\mu$ --- константа, характеризующая скорость убывания потенциала нейрона, $\scalar{y} \in \left[0;1\right]$ --- частота нейрона (выходной сигнал), $\theta$ --- управляющий параметр сети, который будет рассмотрен более подробно в следующих главах. 
 
-Функция активации $f: \specialset{R} \to \left[0;1\right]$ преобразует потенциала нейрона $\scalar{u}$ в его выходную частоту $\scalar{y}$ в виде:
+Для удобства дальнейшего изложения мы применим приём, который часто используется в области нейросетевого моделирования, а именно: положим, что $\vectoritem{x}{0}$ в любой момент времени равно $1$ и $\vectoritem{w}{0}$ равно $-\scalar{p}$, тогда выражением~\eqref{eq:full_single_neuron_model} можно записать в более компактной эквивалентной форме:
 \begin{equation}
+    \label{eq:single_neuron_model}
+    \begin{cases}
+    d\scalar{u}/d\scalar{t} &= \vector{w}^{\top} \vector{x} - \mu \scalar{u}, \\
+    \scalar{y}              &= f\left( \scalar{u}, \theta \right), \\
+    \end{cases}
+\end{equation}
+которая будет использована на равне с выражением~\eqref{eq:full_single_neuron_model} в зависимости от удобства использования.
+
+Функция активации $f: \specialset{R} \to \left[0;1\right]$ преобразует потенциал нейрона $\scalar{u}$ в его выходную частоту $\scalar{y}$ в виде:
+\begin{equation}
+    \label{eq:activation_function}
     f\left( \scalar{u}, \theta \right) = g\left( \tilde{\scalar{u}} \right), 
 \end{equation}
 где $\tilde{\scalar{u}} = \scalar{u} / \theta$, а в качестве функции $g$ в главе будут рассмотрены две функции, изображённые \onfigure~\ref{fig:model_activation_functions} (далее функции $f$ и $g$ будут в равной степени называться функциями активации):
 \begin{itemize}
 	\item \textit{Оригинальная} функция $g_{s}$, полученная на основе функции динамического порога нейрона $\text{П}^\text{Д}$ из работы~\cite{EmelyanovYaroslavsky1990}, но отличающаяся от неё в виду того, что аргументом функции  $\text{П}^\text{Д}$ является межимпульсный интервал и кроме того, она не была задана автором аналитически (подробнее вывод функции $s$ рассмотрен \inappendix~\ref{appendix:activation_function}):
 		\begin{equation}
+            \label{eq:activation_function_original}
             g_{s}(\tilde{\scalar{u}}) = 
             \begin{cases}
                 0                                                                                               &, \tilde{\scalar{u}} < u_{01} \\
@@ -48,6 +60,7 @@
         где $\sigma$ --- логистическая функция.
 	\item \textit{Сигмоидальная} функция $g_{\sigma}$, которая получила широкое распространение в области нейронных сетей, нечёткой логики и \other, в виде:
 		\begin{equation}
+            \label{eq:activation_function_sigma}
 			g_{\sigma}(\tilde{\scalar{u}}) = \dfrac{1}{1 + e^{\displaystyle -(\tilde{\scalar{u}} - 3)}}.
 		\end{equation}
 \end{itemize}
@@ -62,7 +75,7 @@
 \begin{equation}
     \label{eq:microensemble_model}
     \begin{cases}
-        d\vector{u}/d\scalar{t} &= \matrix{V}^{\top} \vector{y} + \matrix{W}^{\top} \vector{x} - \vector{p} - \mu \vector{u}, \\
+        d\vector{u}/d\scalar{t} &= \matrix{V}^{\top} \vector{y} + \matrix{W}^{\top} \vector{x} - \mu \vector{u}, \\
         \vector{y}              &= f\left( \vector{u}, \theta \right), \\
     \end{cases}
 \end{equation}
@@ -82,11 +95,16 @@
 \begin{equation}
     \label{eq:simple_microensemble_model}
     \begin{cases}
-    d\scalar{u}/d\scalar{t} &= \alpha \scalar{y} + \vector{w}^{\top} \vector{x} - \scalar{p} - \mu \scalar{u}, \\
+    d\scalar{u}/d\scalar{t} &= \alpha \scalar{y} + \vector{w}^{\top} \vector{x} - \mu \scalar{u}, \\
     \scalar{y}              &= f\left( \scalar{u}, \theta \right), \\
     \end{cases}
 \end{equation}
-где параметр $\alpha = \omega \cdot \left( N - 1 \right)$ --- весовой коэффициент рекуррентной связи, который по смыслу отражает связность нейронов микроансамбля.
+где параметр $\alpha = \omega \cdot \left( N - 1 \right)$ --- весовой коэффициент рекуррентной связи, который по смыслу отражает связность нейронов микроансамбля. Кроме того выражение~\eqref{eq:simple_microensemble_model} можно записать в виде:
+\begin{equation}
+    \nonumber
+    d\scalar{u}/d\scalar{t} = \alpha f\left( \scalar{u}, \theta \right) + \vector{w}^{\top} \vector{x} - \mu \scalar{u},
+\end{equation}
+которое является одной из форм описания рекуррентных нейронов в нейродинамике.
 
 \IncludeFigure{model_simple_microensemble}{Приведение простого микроансамбля с 3-мя нейронами к виду эквивалентного гипер-нейрона с рекуррентной связью.}
 
@@ -94,14 +112,23 @@
 %==============================================================================
 %                       Анализ точек равновесия модели
 %==============================================================================
-\section{Качественный анализ} \label{section:neuron_equilibrium}
+\section{Анализ устойчивости и бифуркационный анализ} \label{section:neuron_equilibrium}
 
-
-Для удобства анализа системы~\eqref{eq:simple_microensemble_model} введём величину $\scalar{i} = \vector{w}^{\top} \vector{x}$ --- внешнее возбуждение микроансамбля, а так же обозначим правую часть дифференциального уравнения как:
+Для удобства дальнейшего анализа введём величину $\scalar{i} = \vector{w}^{\top} \vector{x}$ --- внешнее возбуждение микроансамбля, и обозначим правую часть дифференциального уравнения системы~\eqref{eq:simple_microensemble_model} как:
 \begin{equation}
-    F() = \alpha \scalar{y} + \scalar{i} - \scalar{p} - \mu \scalar{u}
+    \label{eq:functional_u}
+    F(\scalar{u}) = \alpha f\left( \scalar{u}, \theta \right) + \scalar{i} - \mu \scalar{u}.
 \end{equation}
-
+Сразу отметим, что в такой форме записи выходная переменная $y$ присутствует неявно через внутреннюю переменную $u$, поэтому, применив формулу~\eqref{eq:activation_function}, определяющую функцию $f$, данное выражение можно переписать в виде:
+\begin{equation}
+    \label{eq:functional_y}
+    F(\scalar{y}) = \alpha \scalar{y} + \scalar{i} - \mu \theta g^{-1}(\scalar{y}),
+\end{equation}
+где $g^{-1}$ --- обратная функция к $g$. Для определённых нами ранее функций активации обратные будут определяться следующим образом:
+\begin{itemize}
+    \item Для \textit{оригинальной} функции $g_{s}$, заданной выражением~\eqref{eq:activation_function_original}:
+    \item Для \textit{сигмоидальной} функции $g_{\sigma}$, заданной выражением~\eqref{eq:activation_function_sigma}:
+\end{itemize}
 
 % TODO: упомянуть работу Пчёлкина, как одно из проведённых исследований микроансамбля, хотя и с точки зрения биологич-их тезисов.
 
