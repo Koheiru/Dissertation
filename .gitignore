@@ -8,7 +8,7 @@
 *.idx
 *.toc
 *.xdy
-images/*.pdf
+images/*-eps-converted-to.pdf
 thesis.pdf
 thesis.run.xml
 thesis.synctex.gz
