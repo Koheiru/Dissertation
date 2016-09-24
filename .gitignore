@@ -8,6 +8,7 @@
 *.idx
 *.toc
 *.xdy
+code/figures/*
 images/*-eps-converted-to.pdf
 thesis.pdf
 thesis.run.xml
