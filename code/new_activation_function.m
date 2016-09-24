@@ -85,15 +85,15 @@ y2 = frequency;
 subplot(3, 1, 1);
 hold on; grid on;
 xlabel('u');
-ylabel('y');
+ylabel('old');
 plot(x, y1, 'Color', 'black', 'LineWidth', 1);
 ylim([0 1]);
 
 subplot(3, 1, 2);
 hold on; grid on;
 xlabel('u');
-ylabel('y');
-plot(x, y2, 'Color', 'blue', 'LineWidth', 1);
+ylabel('new');
+plot(x, y2, 'Color', 'black', 'LineWidth', 1);
 ylim([0 1]);
 
 subplot(3, 1, 3);

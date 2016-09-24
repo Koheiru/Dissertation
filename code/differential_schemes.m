@@ -1,10 +1,26 @@
+%% common part for all blocks
+
+% y12 = 1 / 3.5;
+% z12 = 0.35;
+% k12 = 2.6 * logsig((y12 - 0.1935) * 120.0) - 0.49;
+% u01 = 2.6 * logsig(0.1935 * -120);
+% u12 = 2.6 * logsig((y12 - 0.1935) * 120.0);
+y12 = 0.245;
+z12 = 2.6 * 120 * (1 - y12)^2 * logsig((y12 - 0.1935) .* 120.0) * (1.0 - logsig((y12 - 0.1935) .* 120.0));
+k12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0) - z12 ./ (1.0 - y12);
+u01 = 2.6 * logsig(0.1935 * -120);
+u12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0);
+f_origin = @(u) (heaviside_restricted(u - u12)) .* (1.0 - z12 ./ (u - k12 + eps)) + ...
+                (heaviside_restricted(u - u01) - heaviside_restricted(u - u12)) .* (0.1935 + log(u ./ (2.6 - u) + eps) ./ 120.0);
+f_sigm = @(u) logsig(u - 3.0);
+
 %% [sigmoidal model] differential models: model simulation
 mu = 0.75;
 threshold = 1.0;
 alpha = 3.5;
 theta = 1.0;
 
-f = @(u) logsig(u - 3.0);
+f = @(u) f_sigm(u);
 du = @(u, y, i) alpha .* y + i - threshold - mu .* u;
 
 duration = 175;
@@ -157,12 +173,7 @@ threshold = 1.0;
 alpha = 3.5;
 theta = 1.0;
 
-k12 = 2.6 * logsig(38.73/3.5) - 0.49;
-u01 = 2.6 * logsig(-23.22);
-u12 = 2.6 * logsig(38.73/3.5);
-f = @(u) (heaviside_restricted(u - u12)) .* (1.0 - 0.35 ./ (u - k12)) + ...
-         (heaviside_restricted(u - u01) - heaviside_restricted(u - u12)) .* (0.1935 + log(u ./ (2.6 - u)) ./ 120.0);
-       
+f = @(u) f_origin(u);
 du = @(u, y, i) alpha .* y + i - threshold - mu .* u;
 
 duration = 175;

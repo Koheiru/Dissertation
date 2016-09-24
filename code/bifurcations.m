@@ -1,54 +1,22 @@
 %% common part for all blocks
 
-k12 = 2.6 * logsig(38.73 / 3.5) - 0.49;
-u01 = 2.6 * logsig(-23.22);
-u12 = 2.6 * logsig(38.73 / 3.5);
-f_origin = @(u) heaviside_restricted(u - u12) .* (1.0 - 0.35 ./ (u - k12)) + ...
-                (heaviside_restricted(u - u01) - heaviside_restricted(u - u12)) .* (0.1935 + log(u ./ (2.6 - u)) ./ 120.0);
+% y12 = 1 / 3.5;
+% z12 = 0.35;
+% k12 = 2.6 * logsig((y12 - 0.1935) * 120.0) - 0.49;
+% u01 = 2.6 * logsig(0.1935 * -120);
+% u12 = 2.6 * logsig((y12 - 0.1935) * 120.0);
+y12 = 0.245;
+z12 = 2.6 * 120 * (1 - y12)^2 * logsig((y12 - 0.1935) .* 120.0) * (1.0 - logsig((y12 - 0.1935) .* 120.0));
+k12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0) - z12 ./ (1.0 - y12);
+u01 = 2.6 * logsig(0.1935 * -120);
+u12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0);
+f_origin = @(u) (heaviside_restricted(u - u12)) .* (1.0 - z12 ./ (u - k12 + eps)) + ...
+                (heaviside_restricted(u - u01) - heaviside_restricted(u - u12)) .* (0.1935 + log(u ./ (2.6 - u) + eps) ./ 120.0);
+s_origin = @(y) (heaviside_restricted(y - y12)) .* (k12 + z12 ./ (1.0 - y + eps)) + ...
+                (heaviside_restricted(y) - heaviside_restricted(y - y12)) .* (2.6 .* logsig(120.0 .* (y - 0.1935)));
+
 f_sigm = @(u) logsig(u - 3.0);
-
-%% activation functions
-figure();
-hold on;
-grid on;
-xlabel('u');
-ylabel('y');
-
-u = -5.0 : 0.01 : 20;
-y_sigm = f_sigm(u);
-y_origin = f_origin(u);
-
-plot(u, y_sigm,   '--k');
-plot(u, y_origin, '-k');
-legend('function \sigma', 'function s');
-ylim([0 1]);
-
-%% solution curves: activation function variations
-figure();
-hold on;
-grid on;
-xlabel('\nu');
-ylabel('i');
-
-mu = 0.75;
-threshold = 1.0;
-theta = 1.0;
-alpha = 0.35;%6.5;
-
-f = 0.00 : 0.001 : 0.999;
-i = alpha .* f - threshold - mu .* theta .* (log(f) - log(1.0 - f) + 3.0);
-plot(f, -i, 'Color', 'black');
-
-f = 0.00 : 0.001 : 0.98;
-frequency = f;
-middle_frequency = 1.0 / 3.5;
-highFilter = heaviside_restricted(frequency - middle_frequency);
-lowFilter = heaviside_restricted(frequency) - highFilter;
-highActive = 2.46 + 0.35 ./ (1.0 ./ frequency - 1.0);
-lowActive  = 2.6 ./ (1.0 + exp((1.0 ./ frequency - 5.2) ./ 0.23));
-potential = highFilter .* highActive + lowFilter .* lowActive;
-i = alpha .* f - threshold - mu .* theta .* potential;
-plot(f, -i, 'Color', 'black');
+s_sigm = @(y) 3.0 + log(y ./ (1 - y));
 
 
 %% [sigmoidal model] bifurcation: i vs alpha diagram
@@ -100,51 +68,52 @@ end
 % end
 
 
-%% [original model] bifurcation: equlibrium intervals
-figure();
-hold on;
-grid on;
-
-x_bound = 1.0 / 3.5;
-x = 0.01 : 0.01 : x_bound;
-k = 1.0 ./ (1.0 + exp((1.0 ./ x - 5.2) ./ 0.23));
-y = 2.6 .* k .* (1.0 - k) ./ (0.23 .* x.^2);
-
-plot(x, y);
-
-x = x_bound : 0.01 : 0.95;
-y = 0.35 ./ (x - 1.0).^2;
-
-plot(x, y);
-
-mu = 0.75;
-threshold = 1.0;
-theta = 1.0;
-alpha = 6.5;
-
-plot([0.0 1.0], [alpha./(mu.*theta) alpha./(mu.*theta)]);
-
-
-%% [original model] bifurcation: i vs alpha diagram
-figure();
-hold on;
-grid on;
-xlabel('i');
-ylabel('\alpha');
-
-mu = 0.75;
-threshold = 1.0;
-theta = 1.0;
-
-%alpha = 1.4 * mu * theta / 3.0 : 0.1 : 25;
-alpha = 1.4 * mu * theta / 3.0  .* [1 2 3];
-f1 = (1.0 + sqrt(-1.4 .* mu .* theta ./ alpha + 3.0)) ./ 2.0;
-i1 = alpha .* f1 - threshold - mu .* theta .* (2.11 + 0.35 ./ (1.0 - f1));
-f2 = (1.0 - sqrt(-1.4 .* mu .* theta ./ alpha + 3.0)) ./ 2.0;
-i2 = alpha .* f2 - threshold - mu .* theta .* (2.11 + 0.35 ./ (1.0 - f2));
-
-plot(i1, alpha, 'Color', 'green');
-plot(i2, alpha, 'Color', 'blue');
+%% [original model]: replace s- and f-function derivative!
+% %% [original model] bifurcation: equlibrium intervals
+% figure();
+% hold on;
+% grid on;
+% 
+% x_bound = 1.0 / 3.5;
+% x = 0.01 : 0.01 : x_bound;
+% k = 1.0 ./ (1.0 + exp((1.0 ./ x - 5.2) ./ 0.23));
+% y = 2.6 .* k .* (1.0 - k) ./ (0.23 .* x.^2);
+% 
+% plot(x, y);
+% 
+% x = x_bound : 0.01 : 0.95;
+% y = 0.35 ./ (x - 1.0).^2;
+% 
+% plot(x, y);
+% 
+% mu = 0.75;
+% threshold = 1.0;
+% theta = 1.0;
+% alpha = 6.5;
+% 
+% plot([0.0 1.0], [alpha./(mu.*theta) alpha./(mu.*theta)]);
+% 
+% 
+% %% [original model] bifurcation: i vs alpha diagram
+% figure();
+% hold on;
+% grid on;
+% xlabel('i');
+% ylabel('\alpha');
+% 
+% mu = 0.75;
+% threshold = 1.0;
+% theta = 1.0;
+% 
+% %alpha = 1.4 * mu * theta / 3.0 : 0.1 : 25;
+% alpha = 1.4 * mu * theta / 3.0  .* [1 2 3];
+% f1 = (1.0 + sqrt(-1.4 .* mu .* theta ./ alpha + 3.0)) ./ 2.0;
+% i1 = alpha .* f1 - threshold - mu .* theta .* (2.11 + 0.35 ./ (1.0 - f1));
+% f2 = (1.0 - sqrt(-1.4 .* mu .* theta ./ alpha + 3.0)) ./ 2.0;
+% i2 = alpha .* f2 - threshold - mu .* theta .* (2.11 + 0.35 ./ (1.0 - f2));
+% 
+% plot(i1, alpha, 'Color', 'green');
+% plot(i2, alpha, 'Color', 'blue');
 
 
 

@@ -43,22 +43,19 @@ ah_list = findobj(fh, 'type', 'axes');
 ah_count = length(ah_list);
 
 % horizontal subplots
-%{
-if (ah_count > 2)
-  error('Fix me, friend!');
-elseif (ah_count > 1)
-  set(ah_list(1), 'Units', 'normalized');
-  set(ah_list(1), 'Position', [0.1 0.175 0.35 0.8]);
-  set(ah_list(2), 'Units', 'normalized');
-  set(ah_list(2), 'Position', [0.6 0.175 0.35 0.8]);
-elseif (ah_count > 0)
-  set(ah_list(1), 'Units', 'normalized');
-  set(ah_list(1), 'Position', [0.1 0.175 0.85 0.8]);
-end
-%}
+% if (ah_count > 2)
+%   error('Fix me, friend!');
+% elseif (ah_count > 1)
+%   set(ah_list(1), 'Units', 'normalized');
+%   set(ah_list(1), 'Position', [0.1 0.175 0.35 0.8]);
+%   set(ah_list(2), 'Units', 'normalized');
+%   set(ah_list(2), 'Position', [0.6 0.175 0.35 0.8]);
+% elseif (ah_count > 0)
+%   set(ah_list(1), 'Units', 'normalized');
+%   set(ah_list(1), 'Position', [0.1 0.175 0.85 0.8]);
+% end
 
 % vertical subplots
-%{
 if (ah_count > 3)
   error('Fix me, friend!');
 elseif (ah_count > 2)
@@ -77,7 +74,6 @@ elseif (ah_count > 0)
   set(ah_list(1), 'Units', 'normalized');
   set(ah_list(1), 'Position', [0.1 0.175 0.85 0.8]);
 end
-%}
 
 % squared subplots
 

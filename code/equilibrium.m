@@ -1,10 +1,19 @@
 %% common part for all blocks
 
-% k12 = 2.6 * logsig(38.73 / 3.5) - 0.49;
-% u01 = 2.6 * logsig(-23.22);
-% u12 = 2.6 * logsig(38.73 / 3.5);
-% f_origin = @(u) heaviside_restricted(u - u12) .* (1.0 - 0.35 ./ (u - k12)) + ...
-%                 (heaviside_restricted(u - u01) - heaviside_restricted(u - u12)) .* (0.1935 + log(u ./ (2.6 - u)) ./ 120.0);
+% y12 = 1 / 3.5;
+% z12 = 0.35;
+% k12 = 2.6 * logsig((y12 - 0.1935) * 120.0) - 0.49;
+% u01 = 2.6 * logsig(0.1935 * -120);
+% u12 = 2.6 * logsig((y12 - 0.1935) * 120.0);
+y12 = 0.245;
+z12 = 2.6 * 120 * (1 - y12)^2 * logsig((y12 - 0.1935) .* 120.0) * (1.0 - logsig((y12 - 0.1935) .* 120.0));
+k12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0) - z12 ./ (1.0 - y12);
+u01 = 2.6 * logsig(0.1935 * -120);
+u12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0);
+f_origin = @(u) (heaviside_restricted(u - u12)) .* (1.0 - z12 ./ (u - k12 + eps)) + ...
+                (heaviside_restricted(u - u01) - heaviside_restricted(u - u12)) .* (0.1935 + log(u ./ (2.6 - u) + eps) ./ 120.0);
+s_origin = @(y) (heaviside_restricted(y - y12)) .* (k12 + z12 ./ (1.0 - y + eps)) + ...
+                (heaviside_restricted(y) - heaviside_restricted(y - y12)) .* (2.6 .* logsig(120.0 .* (y - 0.1935)));
 
 f_sigm = @(u) logsig(u - 3.0);
 s_sigm = @(y) 3.0 + log(y ./ (1 - y));
@@ -126,58 +135,4 @@ plot([0 1], [0 0], '--k');
 xlabel('y');
 ylabel('F''(y)');
 ylim([-3 3]);
-
-
-%%
-figure();
-
-mu = 0.75;
-threshold = 1.0;
-alpha = 2.5;
-theta = 1.0;
-
-subplot(2, 2, 1);
-hold on; grid on;
-xlabel('y');
-ylabel('\alpha');
-zlabel('i');
-
-y = 0.001 : 0.01 : 0.999;
-alpha_values = 0.0 : 0.1 : 10.0;
-i = -alpha_values' * y + repmat(mu .* theta .* s_sigm(y), length(alpha_values), 1);
-surf(y, alpha_values, i, 'FaceColor', 'none');
-view(-132, 24);
-
-%%
-figure();
-
-mu = 0.75;
-threshold = 1.0;
-alpha = 2.5;
-theta = 1.0;
-
-hold on; grid on;
-xlabel('y');
-ylabel('\theta');
-zlabel('i');
-
-mu = 0.75;
-threshold = 1.0;
-alpha = 4.5;
-theta = 1.0;
-
-y = 0.001 : 0.01 : 0.999;
-theta_values = 0.01 : 0.1 : 2.0;
-i = repmat(-alpha .* y, length(theta_values), 1) + mu .* theta_values' * s_sigm(y);
-surf(y, theta_values, i, 'FaceColor', 'none');
-view(-132, 24);
-
-
-
-
-
-
-
-
-
 
