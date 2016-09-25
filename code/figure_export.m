@@ -40,7 +40,6 @@ set(fh, 'PaperSize', [target_width target_height]);
 set(fh, 'PaperPosition', [0.0 0.0 target_width target_height]);
 
 ah_list = findobj(fh, 'type', 'axes');
-ah_count = length(ah_list);
 
 % horizontal subplots
 % if (ah_count > 2)
@@ -56,27 +55,24 @@ ah_count = length(ah_list);
 % end
 
 % vertical subplots
-if (ah_count > 3)
-  error('Fix me, friend!');
-elseif (ah_count > 2)
-  set(ah_list(1), 'Units', 'normalized');
-  set(ah_list(2), 'Units', 'normalized');
-  set(ah_list(3), 'Units', 'normalized');
-  set(ah_list(1), 'Position', [0.1 (0.075 + 0.1)         0.85 0.175]);
-  set(ah_list(2), 'Position', [0.1 (0.35 + 0.025 + 0.1)  0.85 0.175]);
-  set(ah_list(3), 'Position', [0.1 (0.65  + 0.025 + 0.1)  0.85 0.175]);
-elseif (ah_count > 1)
-  set(ah_list(1), 'Units', 'normalized');
-  set(ah_list(2), 'Units', 'normalized');
-  set(ah_list(1), 'Position', [0.1 (0.075 + 0.1)        0.85 0.3]);
-  set(ah_list(2), 'Position', [0.1 (0.5 + 0.025 + 0.1)  0.85 0.3]);
-elseif (ah_count > 0)
-  set(ah_list(1), 'Units', 'normalized');
-  set(ah_list(1), 'Position', [0.1 0.175 0.85 0.8]);
-end
-
-% squared subplots
-
+% if (ah_count > 3)
+%   error('Fix me, friend!');
+% elseif (ah_count > 2)
+%   set(ah_list(1), 'Units', 'normalized');
+%   set(ah_list(2), 'Units', 'normalized');
+%   set(ah_list(3), 'Units', 'normalized');
+%   set(ah_list(1), 'Position', [0.1 (0.075 + 0.1)         0.85 0.175]);
+%   set(ah_list(2), 'Position', [0.1 (0.35 + 0.025 + 0.1)  0.85 0.175]);
+%   set(ah_list(3), 'Position', [0.1 (0.65  + 0.025 + 0.1)  0.85 0.175]);
+% elseif (ah_count > 1)
+%   set(ah_list(1), 'Units', 'normalized');
+%   set(ah_list(2), 'Units', 'normalized');
+%   set(ah_list(1), 'Position', [0.1 (0.075 + 0.1)        0.85 0.3]);
+%   set(ah_list(2), 'Position', [0.1 (0.5 + 0.025 + 0.1)  0.85 0.3]);
+% elseif (ah_count > 0)
+%   set(ah_list(1), 'Units', 'normalized');
+%   set(ah_list(1), 'Position', [0.1 0.175 0.85 0.8]);
+% end
 
 for ah = ah_list(:)'
   set(ah, 'FontName', 'Times New Roman');

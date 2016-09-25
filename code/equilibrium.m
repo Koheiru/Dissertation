@@ -20,6 +20,7 @@ s_sigm = @(y) 3.0 + log(y ./ (1 - y));
 
 %% [sigmoidal model] figures of equilibrium: soft and hard states
 figure();
+figure_adjust(fh, [17.5 10.0]);
 
 mu = 0.75;
 threshold = 1.25;
@@ -35,7 +36,7 @@ I_soft = -(alpha_soft .* y - threshold - mu .* theta .* s_sigm(y));
 F_hard = i_hard + alpha_hard .* y - threshold - mu .* theta .* s_sigm(y);
 I_hard = -(alpha_hard .* y -threshold - mu .* theta .* s_sigm(y));
 
-subplot(2, 2, 1);
+figure_subplot(2, 2, 1);
 hold on; grid off; box on;
 plot(I_soft, y, '-k');
 plot([i_soft i_soft], [0 1], '--k');
@@ -44,7 +45,7 @@ ylabel('y');
 xlim([-1 5]);
 ylim([-0.02 1.02]);
 
-subplot(2, 2, 3);
+figure_subplot(2, 2, 3);
 hold on; grid off; box on;
 plot(y, F_soft, '-k');
 plot([0 1], [0 0], '--k');
@@ -52,7 +53,7 @@ xlabel('y');
 ylabel('F(y)');
 ylim([-3.0 3.0])
 
-subplot(2, 2, 2);
+figure_subplot(2, 2, 2);
 hold on; grid off; box on;
 plot(I_hard, y, '-k');
 plot([i_hard i_hard], [0 1], '--k');
@@ -61,7 +62,7 @@ ylabel('y');
 xlim([-1 4]);
 ylim([-0.02 1.02]);
 
-subplot(2, 2, 4);
+figure_subplot(2, 2, 4);
 hold on; grid off; box on;
 plot(y, F_hard, '-k');
 plot([0 1], [0 0], '--k');
@@ -71,7 +72,8 @@ ylim([-3.0 3.0])
 
 
 %% [sigmoidal model] figures of equilibrium conditions
-figure();
+fh = figure();
+figure_adjust(fh, [17.5 12]);
 
 mu = 0.75;
 threshold = 1.0;
@@ -86,53 +88,56 @@ F_zero = i + alpha_zero .* y - threshold - mu .* theta .* s_sigm(y);
 F_soft = i + alpha_soft .* y - threshold - mu .* theta .* s_sigm(y);
 F_hard = i + alpha_hard .* y - threshold - mu .* theta .* s_sigm(y);
 
-subplot(2, 3, 1);
+figure_subplot(2, 3, 1);
 hold on; grid off; box on;
 plot(y, F_soft, '-k');
 plot([0 1], [0 0], '--k');
 xlabel('y');
-ylabel('F(y)');
+ylabel('F');
+ylim([-3 3]);
 
-subplot(2, 3, 2);
+figure_subplot(2, 3, 2);
 hold on; grid off; box on;
 plot(y, F_zero, '-k');
 plot([0 1], [0 0], '--k');
 xlabel('y');
-ylabel('F(y)');
+ylabel('F');
+ylim([-3 3]);
 
-subplot(2, 3, 3);
+figure_subplot(2, 3, 3);
 hold on; grid off; box on;
 plot(y, F_hard, '-k');
 plot([0 1], [0 0], '--k');
 xlabel('y');
-ylabel('F(y)');
+ylabel('F');
+ylim([-3 3]);
 
 y = 0.1 : 0.01 : 0.9;
 dF_zero = alpha_zero - mu .* theta .* (1 ./ y + 1.0 ./ (1.0 - y));
 dF_soft = alpha_soft - mu .* theta .* (1 ./ y + 1.0 ./ (1.0 - y));
 dF_hard = alpha_hard - mu .* theta .* (1 ./ y + 1.0 ./ (1.0 - y));
 
-subplot(2, 3, 4);
+figure_subplot(2, 3, 4);
 hold on; grid off; box on;
 plot(y, dF_soft, '-k');
 plot([0 1], [0 0], '--k');
 xlabel('y');
-ylabel('F''(y)');
+ylabel('F''');
 ylim([-3 3]);
 
-subplot(2, 3, 5);
+figure_subplot(2, 3, 5);
 hold on; grid off; box on;
 plot(y, dF_zero, '-k');
 plot([0 1], [0 0], '--k');
 xlabel('y');
-ylabel('F''(y)');
+ylabel('F''');
 ylim([-3 3]);
 
-subplot(2, 3, 6);
+figure_subplot(2, 3, 6);
 hold on; grid off; box on;
 plot(y, dF_hard, '-k');
 plot([0 1], [0 0], '--k');
 xlabel('y');
-ylabel('F''(y)');
+ylabel('F''');
 ylim([-3 3]);
 

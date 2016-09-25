@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -32,9 +32,9 @@
      inkscape:window-maximized="1"
      inkscape:window-y="-8"
      inkscape:window-x="-8"
-     inkscape:cy="186.44354"
-     inkscape:cx="234.10766"
-     inkscape:zoom="2.0000001"
+     inkscape:cy="226.18466"
+     inkscape:cx="199.59868"
+     inkscape:zoom="1.4142136"
      borderlayer="true"
      units="mm"
      showgrid="false"
@@ -2284,27 +2284,27 @@
     <text
        xml:space="preserve"
        style="font-style:italic;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14.02646065px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="251.48138"
+       x="264.3056"
        y="252.53278"
        id="text9017-7-1"
        sodipodi:linespacing="125%"
        transform="scale(0.9999989,1.0000011)"><tspan
          sodipodi:role="line"
          id="tspan9019-7-3"
-         x="251.48138"
-         y="252.53278">F(y)</tspan></text>
+         x="264.3056"
+         y="252.53278">F</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:italic;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14.02646065px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="16.447802"
+       x="29.27199"
        y="252.53278"
        id="text9017-7-1-9"
        sodipodi:linespacing="125%"
        transform="scale(0.9999989,1.0000011)"><tspan
          sodipodi:role="line"
          id="tspan9019-7-3-0"
-         x="16.447802"
-         y="252.53278">F(y)</tspan></text>
+         x="29.27199"
+         y="252.53278">F</tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.02646065px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
