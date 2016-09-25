@@ -41,7 +41,7 @@
 \end{equation}
 где $\tilde{\scalar{u}} = \scalar{u} / \theta$, а в качестве $g$ в главе будут рассмотрены две функции, изображённые \onfigure~\ref{fig:model_activation_functions} (далее функции $f$ и $g$ будут в равной степени называться функциями активации):
 \begin{itemize}
-	\item \textit{Оригинальная} функция $g_{s}$, полученная на основе функции динамического порога $\text{П}^\text{Д}$ из работы~\cite{EmelyanovYaroslavsky1990}, но отличающаяся от неё в виду того, что аргументом функции  $\text{П}^\text{Д}$ является межимпульсный интервал и, что важнее, она не была задана автором аналитически (подробнее вывод функции $s$ рассмотрен \inappendix~\ref{appendix:activation_function}):
+	\item \textit{Оригинальная} функция $g_{s}$, полученная на основе функции динамического порога $\text{П}^\text{Д}$ из работы~\cite{EmelyanovYaroslavsky1990}, но отличающаяся от неё в виду того, что аргументом функции  $\text{П}^\text{Д}$ является межимпульсный интервал и, что важнее, она не была задана автором аналитически (подробнее вывод функции $g_{s}$ рассмотрен \inappendix~\ref{appendix:activation_function}):
 		\begin{equation}
             \label{eq:activation_function_original}
             g_{s}(\tilde{\scalar{u}}) = 
@@ -51,11 +51,12 @@
                 1 - \dfrac{0,35}{\tilde{\scalar{u}} - k_{12}}                                                   &, \tilde{\scalar{u}} > u_{12} \\
             \end{cases}
 		\end{equation}
-        где коэффициенты были подобраны в том числе таким образом, чтобы обеспечить непрерывность функции, и равны: 
+        где значения коэффициентов равны:
         \begin{align*}
-            &k_{12} = 2,6 \cdot \sigma\left(\sfrac{38,73}{3,5}\right) - 0,49 \approx 2,11, \\
-            &u_{01} = 2,6\cdot\sigma\left(-23,22\right) \approx 0, \\
-            &u_{12} = 2,6 \cdot \sigma\left(\sfrac{38,73}{3,5}\right) \approx 2,6,
+            &z_{12} = 177,84 \cdot \sigma\left(6,18\right) \cdot \left(1 - \sigma\left(6,18\right)\right) \approx 0,37, \\
+            &k_{12} = 2,6 \cdot \sigma\left(6,18\right) - z_{12} / 0,755 \approx 2,11, \\
+            &u_{01} = 2,6 \cdot \sigma\left(-23,22\right) \approx 0, \\
+            &u_{12} = 2,6 \cdot \sigma\left(6,18\right) \approx 2,6,
         \end{align*}
         где $\sigma$ --- логистическая функция.
 	\item \textit{Сигмоидальная} функция $g_{\sigma}$, которая получила широкое распространение в области нейронных сетей, нечёткой логики и \other, в виде:
