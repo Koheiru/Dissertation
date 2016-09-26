@@ -26,7 +26,7 @@ figure_adjust(fh, [17.5 6.5]);
 mu = 0.75;
 threshold = 1.0;
 theta = 1.0;
-alpha = 4.0 * mu * theta : 0.1 : 25;
+alpha = 4.0 * mu * theta : 0.1 : 20;
 
 f1 = (1.0 + sqrt(1.0 - 4.0 .* mu .* theta ./ alpha)) ./ 2.0;
 f2 = (1.0 - sqrt(1.0 - 4.0 .* mu .* theta ./ alpha)) ./ 2.0;
@@ -37,30 +37,43 @@ i_mid = (i1 + i2) ./ 2.0;
 k = (i_mid(2) - i_mid(1)) / (alpha(2) - alpha(1));
 pre_alpha = 0 : 0.1 : 4.0 * mu * theta;
 pre_i = pre_alpha .* k + (i_mid(1) - pre_alpha(end) .* k);
-pre_alpha = 0.0 .* pre_alpha(1 : end - 1); % pre_alpha = pre_alpha(1 : end - 1);
+pre_alpha = pre_alpha(1 : end - 1);
 pre_i = pre_i(1 : end - 1);
 post_alpha = alpha;
-post_i = 0.0 .* i_mid; %post_i = i_mid;
+post_i = i_mid;
 
 y_star = zeros(1, length(pre_alpha));
 for n = 1 : length(pre_alpha)
-  y_star(n) = fsolve(@(y) pre_alpha(n) * y + pre_i(n) - threshold - mu * theta * s_sigm(y), 0.5);
+  y0 = 0.1; y_star(n) = find_solution_dyn(pre_alpha(n), -pre_i(n), threshold, mu, theta, f_sigm, y0, theta * s_sigm(y0));
 end
 
 y1_star = zeros(1, length(post_alpha));
 y2_star = zeros(1, length(post_alpha));
 for n = 1 : length(post_alpha)
-  y1_star(n) = fsolve(@(y) post_alpha(n) * y + post_i(n) - threshold - mu * theta * s_sigm(y) + 1000 * (y > 0.5) + 10000 * (y < 0), 0.1);
-  y2_star(n) = fsolve(@(y) post_alpha(n) * y + post_i(n) - threshold - mu * theta * s_sigm(y) + 1000 * (y < 0.5) + 10000 * (y > 1), 0.9);
+  y0 = 0.1; y1_star(n) = find_solution_dyn(post_alpha(n), -post_i(n), threshold, mu, theta, f_sigm, y0, theta * s_sigm(y0));
+  y0 = 0.9; y2_star(n) = find_solution_dyn(post_alpha(n), -post_i(n), threshold, mu, theta, f_sigm, y0, theta * s_sigm(y0));
 end
+
+% y_star = zeros(1, length(pre_alpha));
+% for n = 1 : length(pre_alpha)
+%   y_star(n) = fsolve(@(y) pre_alpha(n) * y - pre_i(n) - threshold - mu * theta * s_sigm(y), 0.5);
+% end
+% 
+% y1_star = zeros(1, length(post_alpha));
+% y2_star = zeros(1, length(post_alpha));
+% for n = 1 : length(post_alpha)
+%   y1_star(n) = fsolve(@(y) post_alpha(n) * y - post_i(n) - threshold - mu * theta * s_sigm(y), 0.1);
+%   y2_star(n) = fsolve(@(y) post_alpha(n) * y - post_i(n) - threshold - mu * theta * s_sigm(y), 0.9);
+% end
 
 figure_subplot(1, 2, 1);
 hold on; grid off; box on;
 xlabel('\alpha');
 ylabel('y^{*}');
-plot(pre_alpha, y_star, '*r');
-plot(post_alpha, y1_star, '*b');
-plot(post_alpha, y2_star, '*g');
+plot(pre_alpha, y_star, '.k');
+plot(post_alpha, y1_star, '.k');
+plot(post_alpha, y2_star, '.k');
+ylim([-0.05 1.05]);
 
 figure_subplot(1, 2, 2);
 hold on; grid off; box on;
@@ -69,6 +82,23 @@ ylabel('\alpha');
 plot(-i1, alpha, '-k');
 plot(-i2, alpha, '-k');
 plot([-pre_i, -post_i], [pre_alpha post_alpha], ':k');
+
+%% [sigmoidal model] bifurcation: F surface
+fh = figure();
+figure_adjust(fh, [17.5 10.5]);
+
+mu = 0.75;
+threshold = 1.0;
+theta = 1.0;
+alpha = 2.0 : 0.5 : 15;
+y = [0.00001, 0.0001, 0.001, 0.01:0.01:0.1, 0.1 : 0.1 : 0.9, 0.9:0.01:0.99, 0.999, 0.9999, 0.99999];
+i = -(alpha' * y - threshold - repmat(mu .* theta .* s_sigm(y), length(alpha), 1));
+
+surf(y, alpha, i, 'FaceColor', 'white');
+grid on;
+xlabel('y');
+ylabel('\alpha');
+zlabel('i');
 
 
 %% [sigmoidal model] solution curves: alpha variations
