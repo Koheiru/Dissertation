@@ -181,9 +181,22 @@
     \nonumber
     \hat{\scalar{y}}^{2} - \hat{\scalar{y}} + \mu \theta / \alpha = 0,
 \end{equation}
-решением которого будут корни: $\hat{\scalar{y}}_{1,2} = 0,5 \mp \sqrt{0,25 - \mu \theta / \alpha}$.
+решением которого будут корни:
+\begin{equation}
+    \label{eq:sigm_stability_solution}
+    \hat{\scalar{y}}_{1,2} = 0,5 \mp \sqrt{0,25 - \mu \theta / \alpha}.
+\end{equation}
+
+Так как в полученном решении выражение под знаком корня может принимать отрицательные значения, рассмотрим результат подробнее, обозначив через $d = 0,25 - \mu \theta / \alpha$:
+\begin{itemize}
+    \item[а)] Если $d < 0$, то решение будет представлять собой пару комплексно-сопряжённых чисел $\hat{\scalar{y}}_{1,2} = 0,5 \mp \mathrm{i}\sqrt{-d}$ и $F^{\prime}(\scalar{y}^{*}) < 0\ \forall\scalar{y}^{*}$, как показано \onfigure~\ref{fig:analysis_sigm_stability}а. В результате, в модели всегда будет существовать точка устойчивого равновесия и при том только одна.
+    \item[б)] Если $d = 0$, то решение обратится в единственный корень $\hat{\scalar{y}} = 0,5$ и $F^{\prime}(\scalar{y}) \le 0\ \forall\scalar{y}$, как показано \onfigure~\ref{fig:analysis_sigm_stability}б. Как и в первом случае, в модели всегда будет существовать точка устойчивого равновесия и при том только одна.
+    \item[в)] Если $d > 0$, то область устойчивых решений модели, как показано \onfigure~\ref{fig:analysis_sigm_stability}в, определяется интервалами $\left[0; \hat{\scalar{y}}_{1}\right]$ и $\left[\hat{\scalar{y}}_{1}; 1\right]$.
+\end{itemize}
 
 \IncludeFigure{analysis_sigm_stability}{Анализ устойчивости особых точек.}
+
+С точки зрения бифуркационного анализа, корни~\eqref{eq:sigm_stability_solution} позволяют определить качестенное свойство модели, а именно
 
 
 \newpage
