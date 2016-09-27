@@ -194,13 +194,26 @@
     \item Если $d > 0$, то корни представляют собой пару вещественных чисел и, как показано \onfigure~\ref{fig:analysis_sigm_stability}в, область устойчивых решений модели определяется интервалом $\left[0; \tilde{\scalar{y}}_{1}\right) \cup \left(\tilde{\scalar{y}}_{2}; 1\right]$, на котором $F^{\prime}(\scalar{y}) < 0$.
 \end{itemize}
 
-\IncludeFigure{analysis_sigm_stability}{Определяемые функцией $F^{\prime}(\scalar{y})$ интервалы устойчивости точек равновесия системы~\eqref{eq:simple_microensemble_model} при параметрах модели, таких что: а)~$0,25 - \mu \theta / \alpha < 0$; б)~$0,25 - \mu \theta / \alpha = 0$; в)~$0,25 - \mu \theta / \alpha > 0$.}
+
+\begin{figure}[ht]
+    \begin{minipage}{\textwidth}
+        \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_sigm_stability}}
+        \caption{Определяемые функцией $F^{\prime}(\scalar{y})$ интервалы устойчивости точек равновесия системы~\eqref{eq:simple_microensemble_model} при параметрах модели, таких что: а)~$0,25 - \mu \theta / \alpha < 0$; б)~$0,25 - \mu \theta / \alpha = 0$; в)~$0,25 - \mu \theta / \alpha > 0$.}
+        \label{fig:analysis_sigm_stability}
+    \end{minipage}
+    \begin{minipage}{\textwidth}
+        \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{model_sigm_bound_points}}
+        \caption{\todo{Определение устойчивости пограничных точек...}.} 
+        \label{fig:model_sigm_bound_points}
+    \end{minipage}
+\end{figure}
+
+%\IncludeFigure{analysis_sigm_stability}{Определяемые функцией $F^{\prime}(\scalar{y})$ интервалы устойчивости точек равновесия системы~\eqref{eq:simple_microensemble_model} при параметрах модели, таких что: а)~$0,25 - \mu \theta / \alpha < 0$; б)~$0,25 - \mu \theta / \alpha = 0$; в)~$0,25 - \mu \theta / \alpha > 0$.}
+%\IncludeFigure{model_sigm_bound_points}{\todo{Определение устойчивости пограничных точек...}.}
 
 Отметим, что включение точки $\tilde{\scalar{y}}$ в область устойчивых решений при $d = 0$, так же как и выключение точек $\tilde{\scalar{y}}_{1,2}$ при $d > 0$, можно определить, рассмотрев их на графиках решения системы~\eqref{eq:simple_microensemble_model}. В первом случае (\seefigure~\ref{fig:model_sigm_bound_points}а) устойчивость точки равновесия $\scalar{y}^{*} = \tilde{\scalar{y}}$ является результатом того, что в точках её окрестности градиент $\nabla y$, пропорциональный по величине и знаку $F(\scalar{y})$, будет направлять траекторию системы к этой точке равновесия, хотя скорость сходимости при этом будет крайне медленной в виду пологости функции $F(\scalar{y})$ в окрестности $\tilde{\scalar{y}}$. Во втором случае (\seefigure~\ref{fig:model_sigm_bound_points}б) в точках правой полуокрестности точки равновесия $\scalar{y}^{*} = \tilde{\scalar{y}}_{1}$ градиент $\nabla y$ уводит траекторию системы от неё, а в точках левой полуокрестности --- направляет к ней, но при условии, что величина градиента не позволит переменной $\scalar{y}$ оказаться в области $\left(\scalar{y}^{*}; 1\right]$, иначе градиент снова будет уводить траекторию от данной точки равновесия (для точки $\scalar{y}^{*} = \tilde{\scalar{y}}_{2}$ ситуация симметрична). Поэтому в дальнейшем без потери общности в рассуждениях мы будем подразумевать неустойчивость решений $\scalar{y}^{*} = \tilde{\scalar{y}}_{1,2}$.
 
-\IncludeFigure{model_sigm_bound_points}{\todo{Определение устойчивости пограничных точек...}.}
-
-Корни~\eqref{eq:sigm_stability_solution} определяют важное свойство модели и с точки зрения бифуркационного анализа, а именно они определяют бифуркацию типа
+Корни~\eqref{eq:sigm_stability_solution} так же позволяют определить важные свойства модели с точки зрения бифуркационного анализа, а именно они определяют бифуркацию типа суперкритическая \inquotes{вилка}, которая изображена \onfigure~\ref{fig:analysis_sigm_bifurcations}а: видно, как при монотонном возрастании параметра точка устойчивого равновесия преобразуется в точку неустойчивого равновесия, порождая при этом две новых устойчивых точки (\onfigure~\ref{fig:analysis_sigm_bifurcations}б пунктиром обозначены соответствующие при этом значения параметра $i$, обеспечивающие симметрию \inquotes{вилки}). Это происходит благодаря тому, что...
 
 %С точки зрения бифуркационного анализа, корни~\eqref{eq:sigm_stability_solution} позволяют определить качестенное свойство модели, а именно
 
