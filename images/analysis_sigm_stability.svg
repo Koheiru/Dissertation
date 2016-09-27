@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -42,9 +42,9 @@
      showgrid="false"
      units="mm"
      borderlayer="true"
-     inkscape:zoom="1"
-     inkscape:cx="280.18668"
-     inkscape:cy="183.39028"
+     inkscape:zoom="2"
+     inkscape:cx="336.25957"
+     inkscape:cy="252.40896"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -2590,7 +2590,7 @@
            y="284.08524"
            x="249.39246"
            id="tspan8770"
-           sodipodi:role="line">^</tspan></text>
+           sodipodi:role="line">~</tspan></text>
     </g>
     <g
        transform="translate(-2.2914538e-6,-156.69627)"
@@ -2619,7 +2619,7 @@
            y="284.08524"
            x="249.39246"
            id="tspan8770-1"
-           sodipodi:role="line">^</tspan></text>
+           sodipodi:role="line">~</tspan></text>
     </g>
     <g
        id="g8861"
@@ -2651,7 +2651,7 @@
              id="tspan8770-2"
              x="249.39246"
              y="284.08524"
-             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14.02645969px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium';text-align:start;writing-mode:lr-tb;text-anchor:start">^</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14.02645969px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium';text-align:start;writing-mode:lr-tb;text-anchor:start">~</tspan></text>
       </g>
       <text
          transform="scale(0.9999989,1.0000011)"
@@ -2697,7 +2697,7 @@
              id="tspan8770-2-5"
              x="249.39246"
              y="284.08524"
-             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14.02645969px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium';text-align:start;writing-mode:lr-tb;text-anchor:start">^</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14.02645969px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium';text-align:start;writing-mode:lr-tb;text-anchor:start">~</tspan></text>
       </g>
       <text
          transform="scale(0.9999989,1.0000011)"
@@ -2743,7 +2743,7 @@
              id="tspan8770-2-51"
              x="249.39246"
              y="284.08524"
-             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14.02645969px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium';text-align:start;writing-mode:lr-tb;text-anchor:start">^</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14.02645969px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium';text-align:start;writing-mode:lr-tb;text-anchor:start">~</tspan></text>
       </g>
       <text
          transform="scale(0.9999989,1.0000011)"
@@ -2789,7 +2789,7 @@
              id="tspan8770-2-5-1"
              x="249.39246"
              y="284.08524"
-             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14.02645969px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium';text-align:start;writing-mode:lr-tb;text-anchor:start">^</tspan></text>
+             style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14.02645969px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium';text-align:start;writing-mode:lr-tb;text-anchor:start">~</tspan></text>
       </g>
       <text
          transform="scale(0.9999989,1.0000011)"
