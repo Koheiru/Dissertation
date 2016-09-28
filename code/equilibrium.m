@@ -18,7 +18,7 @@ s_origin = @(y) (heaviside_restricted(y - y12)) .* (k12 + z12 ./ (1.0 - y + eps)
 f_sigm = @(u) logsig(u - 3.0);
 s_sigm = @(y) 3.0 + log(y ./ (1 - y));
 
-%% [sigmoidal model] figures of equilibrium: soft and hard states
+%% [sigmoidal model] equilibrium points for soft and hard states
 figure();
 figure_adjust(fh, [17.5 10.0]);
 
@@ -71,7 +71,7 @@ ylabel('F(y)');
 ylim([-3.0 3.0])
 
 
-%% [sigmoidal model] figures of equilibrium conditions
+%% [sigmoidal model] equilibrium conditions
 fh = figure();
 figure_adjust(fh, [17.5 12]);
 
@@ -140,4 +140,48 @@ plot([0 1], [0 0], '--k');
 xlabel('y');
 ylabel('F''');
 ylim([-3 3]);
+
+
+%% [sigmoidal model] equilibrium bound points
+fh = figure();
+figure_adjust(fh, [17.5 6.5]);
+
+mu = 0.75;
+threshold = 1.0;
+theta     = 1.0;
+i         = 1.0;
+alpha_zero = 4.0 * mu * theta;
+alpha_hard = alpha_zero * 1.5;
+
+f_zero = 0.5;
+f_hard = (1.0 - sqrt(1.0 - 4.0 .* mu .* theta ./ alpha_hard)) ./ 2.0;
+i_zero = -(alpha_zero .* f_zero - threshold - mu .* theta .* s_sigm(f_zero));
+i_hard = -(alpha_hard .* f_hard - threshold - mu .* theta .* s_sigm(f_hard));
+
+y = 0.001 : 0.001 : 0.999;
+F_zero = i_zero + alpha_zero .* y - threshold - mu .* theta .* s_sigm(y);
+F_hard = i_hard + alpha_hard .* y - threshold - mu .* theta .* s_sigm(y);
+
+figure_subplot(1, 2, 1);
+hold on; grid off; box on;
+plot(y, F_zero, '-k');
+plot([0 1], [0 0], '--k');
+xlabel('y');
+ylabel('F');
+xlim([0.46 0.54]);
+ylim([-0.0002 0.0002]);
+%set(gca, 'YTickMode','manual');
+%set(gca, 'YTickLabel',num2str(get(gca,'YTick')'));
+
+figure_subplot(1,2 , 2);
+hold on; grid off; box on;
+plot(y, F_hard, '-k');
+plot([0 1], [0 0], '--k');
+xlabel('y');
+ylabel('F');
+xlim([0.1 0.4]);
+ylim([-0.1 0.3]);
+%set(gca, 'YTickMode','manual');
+%set(gca, 'YTickLabel',num2str(get(gca,'YTick')'));
+
 
