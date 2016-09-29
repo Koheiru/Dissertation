@@ -94,11 +94,20 @@ alpha = 2.0 : 0.5 : 15;
 y = [0.00001, 0.0001, 0.001, 0.01:0.01:0.1, 0.1 : 0.1 : 0.9, 0.9:0.01:0.99, 0.999, 0.9999, 0.99999];
 i = -(alpha' * y - threshold - repmat(mu .* theta .* s_sigm(y), length(alpha), 1));
 
+alpha_s = 4.0 * mu * theta : 0.5 : 15;
+f1 = (1.0 + sqrt(1.0 - 4.0 .* mu .* theta ./ alpha_s)) ./ 2.0;
+f2 = (1.0 - sqrt(1.0 - 4.0 .* mu .* theta ./ alpha_s)) ./ 2.0;
+i1 = alpha_s .* f1 - threshold - mu .* theta .* (log(f1) - log(1.0 - f1) + 3.0);
+i2 = alpha_s .* f2 - threshold - mu .* theta .* (log(f2) - log(1.0 - f2) + 3.0);
+
 surf(y, alpha, i, 'FaceColor', 'white');
-grid on;
+grid on; hold on;
+plot3(f1, alpha_s, -i1, '-k', 'LineWidth', 2);
+plot3(f2, alpha_s, -i2, '-k', 'LineWidth', 2);
 xlabel('y');
 ylabel('\alpha');
 zlabel('i');
+view([-141, 36]);
 
 
 %% [sigmoidal model] solution curves: alpha variations
