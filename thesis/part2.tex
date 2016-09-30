@@ -184,20 +184,19 @@
 решением которого будут корни:
 \begin{equation}
     \label{eq:sigm_stability_bounds_y}
-    \scalar{y}_{1,2} = 0,5 \mp \sqrt{0,25 - \mu \theta / \alpha}.
+    \scalar{y}_{1,2} = 0,5 \pm \sqrt{0,25 - \mu \theta / \alpha}.
 \end{equation}
 
 Так как в полученном решении выражение под знаком корня может принимать отрицательные значения, рассмотрим результат подробнее, обозначив через $d = 0,25 - \mu \theta / \alpha$:
 \begin{itemize}
     \item Если $d < 0$, то корни представляют собой пару комплексно-сопряжённых чисел и, как показано \onfigure~\ref{fig:analysis_sigm_stability}а, $\forall\scalar{y}\ F^{\prime}(\scalar{y}) < 0$, поэтому интервал устойчивых решений модели определяется как вся область определения $F(\scalar{y})$.
     \item Если $d = 0$, то корень обратится в константу $\scalar{y} = 0,5$ --- обозначим его через $\scalar{y}^{\sim}$. Как показано \onfigure~\ref{fig:analysis_sigm_stability}б, $\forall\scalar{y}\ F^{\prime}(\scalar{y}) \le 0$ (где равенство достигается при $\scalar{y} = \scalar{y}^{\sim}$), поэтому, как и в первом случае, интервал устойчивых решений модели определяется как вся область определения $F(\scalar{y})$.
-    \item Если $d > 0$, то корни представляют собой пару вещественных чисел $\scalar{y}_{1,2}$ --- обозначим их через $\scalar{y}^{+} = \scalar{y}_{1}$ и $\scalar{y}^{-} = \scalar{y}_{2}$. Как показано \onfigure~\ref{fig:analysis_sigm_stability}в, область устойчивых решений модели определяется интервалом $\left[0; \tilde{\scalar{y}}^{+}\right) \cup \left(\tilde{\scalar{y}}^{-}; 1\right]$, на котором $F^{\prime}(\scalar{y}) < 0$.
+    \item Если $d > 0$, то корни представляют собой пару вещественных чисел $\scalar{y}_{1,2}$ --- обозначим их через $\scalar{y}^{+} = 0,5 - \sqrt{d}$ и $\scalar{y}^{-} = 0,5 + \sqrt{d}$. Как показано \onfigure~\ref{fig:analysis_sigm_stability}в, область устойчивых решений модели определяется интервалом $\left[0; \scalar{y}^{+}\right) \cup \left(\scalar{y}^{-}; 1\right]$, на котором $F^{\prime}(\scalar{y}) < 0$.
 \end{itemize}
 
 \begin{figure}[ht]
     \begin{minipage}{\textwidth}
         \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_sigm_stability}}
-        %\caption{Определяемые функцией $F^{\prime}(\scalar{y})$ интервалы устойчивости точек равновесия системы~\eqref{eq:simple_microensemble_model} при параметрах модели, таких что: а)~$0,25 - \mu \theta / \alpha < 0$; б)~$0,25 - \mu \theta / \alpha = 0$; в)~$0,25 - \mu \theta / \alpha > 0$.}
         \caption{Интервалы устойчивости решений системы~\eqref{eq:simple_microensemble_model} (сплошная линия соответствует интервалам устойчивости, пунктирная -- неустойчивости), определяемые знаком функции $F^{\prime}(\scalar{y})$ при условии, что: а)~$0,25 < \mu \theta / \alpha$; б)~$0,25 = \mu \theta / \alpha$; в)~$0,25 > \mu \theta / \alpha$.}
         \label{fig:analysis_sigm_stability}
     \end{minipage}
@@ -215,32 +214,52 @@
 
 Корни~\eqref{eq:sigm_stability_bounds_y} так же позволяют определить важные свойства модели с точки зрения бифуркационного анализа, а именно они определяют бифуркацию типа суперкритическая \inquotes{вилка}, которая изображена \onfigure~\ref{fig:analysis_sigm_bifurcations}а: видно, как при монотонном возрастании значения $\theta$ точка устойчивого равновесия преобразуется в точку неустойчивого равновесия, порождая при этом две новых устойчивых точки (\onfigure~\ref{fig:analysis_sigm_bifurcations}б пунктиром обозначены соответствующие при этом значения параметра $i$, обеспечивающие симметрию \inquotes{вилки}). Это происходит благодаря тому, что кривая решений $F(\scalar{y})$ теряет монотонность и приобретает $s$-образную складку (\seefigure~\ref{fig:analysis_sigm_stability}в) --- в этом случае точка бифуркации соответствует условию возникновения двух вещественных корней в~\eqref{eq:sigm_stability_bounds_y} (как отмечалось выше, оно определяется равенством $0,25 - \mu \theta / \alpha = 0$) и равна:
 \begin{equation}
+    \label{eq:sigm_bifurcation_theta}
     \theta = \alpha / 4\mu.
 \end{equation}
 
 \IncludeFigure{analysis_sigm_bifurcations}{Бифуркационные диаграммы: а) бифуркация типа суперкритическая \inquotes{вилка} (закрашенные круги соответствуют точкам устойчивого равновесия, проколотые -- неустойчивого); б) бифуркация типа \inquotes{складка} (би-стабильная область заштрихована, уни-стабильная -- нет).}
 
-Далее можно заметить, что при наличии $s$-образной складки в форме функции $F(\scalar{y})$ система~\eqref{eq:simple_microensemble_model} может иметь одно или два устойчивых состояния в зависимости от значения параметра $i$, что хорошо видно \onfigure~\ref{fig:analysis_sigm_equilibriums}б. С учётом выражения~\eqref{eq:graphic_solution} и того, что корни~\eqref{eq:sigm_stability_bounds_y} соответстуют точкам перегиба функции $F(\scalar{y})$, очевидным образом вытекает условие существования двух устойчивых решений: $i \in \left(i^{-}; i^{+}\right)$ при $\theta > \alpha / 4\mu$, где
+Далее можно заметить, что при наличии $s$-образной складки в графике функции $F(\scalar{y})$ система~\eqref{eq:simple_microensemble_model} в зависимости от значения параметра $i$ может иметь одно или два устойчивых состояния, что хорошо видно \onfigure~\ref{fig:analysis_sigm_equilibriums}б. С учётом выражения~\eqref{eq:graphic_solution} и того, что корни~\eqref{eq:sigm_stability_bounds_y} соответстуют точкам перегиба функции $F(\scalar{y})$, очевидным образом вытекает условие существования двух устойчивых решений: $i \in \left(i^{-}; i^{+}\right)$ при $\theta > \alpha / 4\mu$, где
 \begin{equation}
     \label{eq:sigm_stability_bounds_i}
     \begin{alignedat}{2}
-        i^{\mp} = -\alpha \scalar{y}^{\mp} + \mu \theta g_{\sigma}^{-1}(\scalar{y}^{\mp}) = & -\alpha \left(0,5 \mp \sqrt{0,25 - \mu \theta / \alpha}\right) + 3 \mu \theta + \\
-                                                                                            & + \mu \theta \ln\dfrac{0,5 \mp \sqrt{0,25 - \mu \theta / \alpha}}{0,5 \mp \sqrt{0,25 - \mu \theta / \alpha}}.
+        i^{\mp} &= -\alpha \scalar{y}^{\mp} + \mu \theta g_{\sigma}^{-1}(\scalar{y}^{\mp}) = \\
+                &= -\alpha \left(0,5 \pm \sqrt{0,25 - \mu \theta / \alpha}\right) + \mu \theta \left(3 + \ln\dfrac{0,5 \pm \sqrt{0,25 - \mu \theta / \alpha}}{0,5 \mp \sqrt{0,25 - \mu \theta / \alpha}}\right).
     \end{alignedat}
 \end{equation}
-Данная ситуация соответствует бифуркации типа \inquotes{складка}, когда...
 
-% TODO: Стоит отметить, что "бифуркации" позволяют не только определить изменения в функционировании, но и подобрать константы, в частности $\alpha$, для "нормальных" условий. когда $\theta = 1$.
+Таким образом, при монотонном возрастании параметра $i$ в точке $i^{-}$ возникает дополнительная пара из точек неустойчивого и устойчивого равновесия в дополнение к уже существующей устойчивой (\onfigure~\ref{fig:analysis_sigm_equilibriums}в точки $\scalar{y}^{*}_{2}$, $\scalar{y}^{*}_{3}$ и $\scalar{y}^{*}_{1}$ соответственно), а в точке $i^{+}$ изначально существовавшая точка аннигилируется вместе с точкой неустойчивого равновесия, в результате чего в системе вновь будет существовать единственное и устойчивое решение -- аналогично и в обратную сторону.
 
-\IncludeFigure{analysis_sigm_solution_surface}{Вид бифуркационной \inquotes{складки} в пространстве $\left\{\scalar{y}^{*}, \theta, i\right\}$.}
+Данная ситуация соответствует бифуркации типа \inquotes{складка}, которая изображена \onfigure~\ref{fig:analysis_sigm_solution_surface} в виде зависящей от параметров $\scalar{i}$ и $\theta$ поверхности решений системы~\eqref{eq:simple_microensemble_model}. Для наглядности \onfigure~\ref{fig:analysis_sigm_bifurcations}б продемонстрирована проекция этой поверхности на плоскость параметров, которая показывает зависимость точек бифуркации параметра $i$ (значения $i^{-}$ и $i^{+}$) от значения параметра $\theta$. При этом \socalled точка сборки, определяющая точку возникновения $s$-образной складки в плоскости параметров, определяется равенством~\eqref{eq:sigm_bifurcation_theta} и с учётом выражения~\eqref{eq:sigm_stability_bounds_i} равна:
+\begin{equation}
+    \nonumber
+    \begin{cases}
+            \theta &= \alpha / 4\mu, \\
+        \scalar{i} &= \alpha / 4.
+    \end{cases}
+\end{equation}
 
-\IncludeFigure{model_sigm_configurations}{Конфигурации решения в различных точках плоскости параметров.}
+Стоит отметить, что несмотря на отсутствие точного аналитического решения системы~\eqref{eq:simple_microensemble_model}, найденные бифуркационные точки позволяют не только подобрать фиксированные параметры модели $\mu$ и $\alpha$ (в нормализованных условиях, когда значение управляющего параметра $\theta = 1$), но и оценить вносимые при вариации значений параметра $\theta$ изменения в модели с точки зрения нейросетевой обработки информации.
+
+\begin{figure}[p]
+    \begin{minipage}{\textwidth}
+        \makebox[\textwidth][c]{\includegraphics[width=0.9\textwidth]{analysis_sigm_solution_surface}}
+        \caption{Поверхность решений системы~\eqref{eq:simple_microensemble_model} по параметрам $\scalar{i}$ и $\theta$.}
+        \label{fig:analysis_sigm_solution_surface}
+    \end{minipage}
+    \begin{minipage}{\textwidth}
+        \makebox[\textwidth][c]{\includegraphics[width=0.85\textwidth]{model_sigm_configurations}}
+        \caption{Конфигурации решения системы~\eqref{eq:simple_microensemble_model} по параметрам $\scalar{i}$ и $\theta$.} 
+        \label{fig:model_sigm_configurations}
+    \end{minipage}
+\end{figure}
 
 
 %==============================================================================
-\newpage
 \subsection{Анализ модели с оригинальной функцией активации}
 
+Бу
 
 %==============================================================================
 %                       Характерные параметры модели

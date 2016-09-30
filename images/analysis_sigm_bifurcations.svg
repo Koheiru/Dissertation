@@ -41,8 +41,8 @@
      id="namedview1122"
      showgrid="false"
      inkscape:zoom="1"
-     inkscape:cx="134.99766"
-     inkscape:cy="143.409"
+     inkscape:cx="142.54747"
+     inkscape:cy="241.01928"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -3753,5 +3753,63 @@
          y="133.59399"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'CMU Sans Serif';-inkscape-font-specification:'CMU Sans Serif Medium'"
          dx="0 0 0">α/4μ</tspan></text>
+    <g
+       id="g9060"
+       transform="matrix(0.99811454,0,0,0.9981123,57.665408,-77.868968)">
+      <text
+         transform="scale(0.99999889,1.0000011)"
+         sodipodi:linespacing="125%"
+         id="text9017-9-0-6"
+         y="144.04193"
+         x="379.08911"
+         style="font-style:italic;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14.02646065px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="144.04193"
+           x="379.08911"
+           id="tspan9019-5-9-7"
+           sodipodi:role="line">i</tspan></text>
+      <text
+         transform="scale(0.9999989,1.0000011)"
+         sodipodi:linespacing="125%"
+         id="text9056"
+         y="140.42126"
+         x="385.3269"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.02646065px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-size:12.02268124px"
+           y="140.42126"
+           x="385.3269"
+           id="tspan9058"
+           sodipodi:role="line">+</tspan></text>
+    </g>
+    <g
+       id="g9060-4"
+       transform="matrix(0.99811454,0,0,0.9981123,-21.118763,-68.255176)">
+      <text
+         transform="scale(0.99999889,1.0000011)"
+         sodipodi:linespacing="125%"
+         id="text9017-9-0-6-5"
+         y="144.04193"
+         x="379.08911"
+         style="font-style:italic;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14.02646065px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium Italic';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           y="144.04193"
+           x="379.08911"
+           id="tspan9019-5-9-7-6"
+           sodipodi:role="line">i</tspan></text>
+      <text
+         transform="scale(0.9999989,1.0000011)"
+         sodipodi:linespacing="125%"
+         id="text9056-8"
+         y="140.42126"
+         x="385.3269"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.02646065px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+         xml:space="preserve"><tspan
+           style="font-size:14.02646065px"
+           y="140.42126"
+           x="385.3269"
+           id="tspan9058-5"
+           sodipodi:role="line">-</tspan></text>
+    </g>
   </g>
 </svg>
