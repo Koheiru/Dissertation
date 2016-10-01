@@ -83,6 +83,7 @@ plot(-i1, alpha, '-k');
 plot(-i2, alpha, '-k');
 plot([-pre_i, -post_i], [pre_alpha post_alpha], ':k');
 
+
 %% [sigmoidal model] bifurcation: F surface
 fh = figure();
 figure_adjust(fh, [17.5 10.5]);
@@ -110,86 +111,40 @@ zlabel('i');
 view([-141, 36]);
 
 
-%% [sigmoidal model] solution curves: alpha variations
-figure();
-hold on;
-grid on;
-xlabel('\nu');
-ylabel('i');
 
+%% [sigmoidal model] bifurcation: i vs alpha diagram
+fh = figure();
+figure_adjust(fh, [17.5 6.5]);
 
-alpha = 2.5;
+mu = 0.75;
 threshold = 1.0;
 theta = 1.0;
-for mu = 0.1 : 0.1 : 0.9
-  f = 0.01 : 0.01 : 0.99;
-  i = alpha .* f - threshold - mu .* theta .* (log(f) - log(1.0 - f) + 3.0);
-  plot(f, -i, 'Color', 'black');
-end
-
-% mu = 0.75;
-% threshold = 1.0;
-% theta = 1.0;
-% for alpha = [0 1 2.5 5 10 15]
-%   f = 0.01 : 0.01 : 0.99;
-%   i = alpha .* f - threshold - mu .* theta .* (log(f) - log(1.0 - f) + 3.0);
-%   plot(f, -i, 'Color', 'black');
-% end
-
-
-%% [original model]: replace s- and f-function derivative!
-% %% [original model] bifurcation: equlibrium intervals
-% figure();
-% hold on;
-% grid on;
-% 
-% x_bound = 1.0 / 3.5;
-% x = 0.01 : 0.01 : x_bound;
-% k = 1.0 ./ (1.0 + exp((1.0 ./ x - 5.2) ./ 0.23));
-% y = 2.6 .* k .* (1.0 - k) ./ (0.23 .* x.^2);
-% 
-% plot(x, y);
-% 
-% x = x_bound : 0.01 : 0.95;
-% y = 0.35 ./ (x - 1.0).^2;
-% 
-% plot(x, y);
-% 
-% mu = 0.75;
-% threshold = 1.0;
-% theta = 1.0;
-% alpha = 6.5;
-% 
-% plot([0.0 1.0], [alpha./(mu.*theta) alpha./(mu.*theta)]);
-% 
-% 
-% %% [original model] bifurcation: i vs alpha diagram
-% figure();
-% hold on;
-% grid on;
-% xlabel('i');
-% ylabel('\alpha');
-% 
-% mu = 0.75;
-% threshold = 1.0;
-% theta = 1.0;
-% 
-% %alpha = 1.4 * mu * theta / 3.0 : 0.1 : 25;
-% alpha = 1.4 * mu * theta / 3.0  .* [1 2 3];
-% f1 = (1.0 + sqrt(-1.4 .* mu .* theta ./ alpha + 3.0)) ./ 2.0;
-% i1 = alpha .* f1 - threshold - mu .* theta .* (2.11 + 0.35 ./ (1.0 - f1));
-% f2 = (1.0 - sqrt(-1.4 .* mu .* theta ./ alpha + 3.0)) ./ 2.0;
-% i2 = alpha .* f2 - threshold - mu .* theta .* (2.11 + 0.35 ./ (1.0 - f2));
-% 
-% plot(i1, alpha, 'Color', 'green');
-% plot(i2, alpha, 'Color', 'blue');
+alpha = 4.0 * mu * theta : 0.1 : 20;
 
 
 
 
+%% [original model] bifurcation: F surface
+fh = figure();
+figure_adjust(fh, [17.5 10.5]);
 
+mu = 0.75;
+threshold = 1.0;
+theta = 1.0;
+alpha = 0.0 : 0.5 : 50;
+y = [0.01 : 0.01 : 0.98];
+i = -(alpha' * y - threshold - repmat(mu .* theta .* s_origin(y), length(alpha), 1));
 
+% alpha_s = 4.0 * mu * theta : 0.5 : 15;
+% f1 = (1.0 + sqrt(1.0 - 4.0 .* mu .* theta ./ alpha_s)) ./ 2.0;
+% f2 = (1.0 - sqrt(1.0 - 4.0 .* mu .* theta ./ alpha_s)) ./ 2.0;
+% i1 = alpha_s .* f1 - threshold - mu .* theta .* (log(f1) - log(1.0 - f1) + 3.0);
+% i2 = alpha_s .* f2 - threshold - mu .* theta .* (log(f2) - log(1.0 - f2) + 3.0);
 
-
-
-
+surf(y, alpha, i, 'FaceColor', 'white'); hold on; grid on;
+% plot3(f1, alpha_s, -i1, '-k', 'LineWidth', 2);
+% plot3(f2, alpha_s, -i2, '-k', 'LineWidth', 2);
+xlabel('y');
+ylabel('\alpha');
+zlabel('i');
+view([-141, 36]);

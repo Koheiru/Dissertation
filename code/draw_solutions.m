@@ -165,7 +165,7 @@ models_{1} = generate_model();
 models_{2} = generate_model_sigm();
 %models_{3} = generate_model_lin();
 
-figure_handle_ = 786;
+figure_handle_ = 500 + randi(5000);
 prepareFigure(figure_handle_, models_);
 drawProperties(figure_handle_);
 

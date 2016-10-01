@@ -16,7 +16,10 @@ function handle = figure_subplot(h, w, p)
     axisl = 0.1 + 0.5 * (col - 1);
   end
   
-  if (nrows == 2)
+  if (nrows == 4)
+    axish = (1 / nrows) * 0.70;
+    axisb = 0.025 + (axish+0.065) * (row - 1);
+  elseif (nrows == 2)
     axish = (1 / nrows) * 0.70;
     axisb = 0.05 + (axish+0.125) * (row - 1);
   elseif (nrows == 1)
