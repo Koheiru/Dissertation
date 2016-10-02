@@ -21,42 +21,6 @@ s_sigm = @(y) 3.0 + log(y ./ (1 - y));
 
 %% [sigmoidal model] bifurcation: i vs alpha diagram
 fh = figure();
-figure_adjust(fh, [17.5 10.0]);
-
-% alpha / theta > 4.0 * mu
-
-mu = 0.75;
-threshold = 1.0;
-theta = 0.1 : 0.1 : 3.5;
-alpha = 0.1 : 0.5 : 10;
-
-f1 = (1.0 + sqrt(1.0 - 4.0 .* mu .* theta' * (1.0 ./ alpha))) ./ 2.0;
-f2 = (1.0 - sqrt(1.0 - 4.0 .* mu .* theta' * (1.0 ./ alpha))) ./ 2.0;
-f1(find((1.0 ./ theta') * alpha < 4.0 .* mu)) = NaN; f1 = real(f1);
-f2(find((1.0 ./ theta') * alpha < 4.0 .* mu)) = NaN; f2 = real(f2);
-i1 = repmat(alpha, length(theta), 1) .* f1 - threshold - mu .* repmat(theta', 1, length(alpha)) .* (log(f1) - log(1.0 - f1) + 3.0);
-i2 = repmat(alpha, length(theta), 1) .* f2 - threshold - mu .* repmat(theta', 1, length(alpha)) .* (log(f2) - log(1.0 - f2) + 3.0);
-
-% figure_subplot(2, 1, 1);
-surf(alpha, theta, -i1, 'FaceColor', 'w'); hold on;
-surf(alpha, theta, -i2, 'FaceColor', 'w'); hold on;
-grid on; box off;
-xlabel('\alpha');
-ylabel('\theta');
-zlabel('i');
-view([117 43]);
-
-% figure_subplot(2, 1, 2);
-% surf(alpha, theta, f1, 'FaceColor', 'w'); hold on;
-% surf(alpha, theta, f2, 'FaceColor', 'w'); hold on;
-% grid on; box off;
-% xlabel('\alpha');
-% ylabel('\theta');
-% zlabel('y^{*}');
-
-
-%% [sigmoidal model] bifurcation: i vs alpha diagram
-fh = figure();
 figure_adjust(fh, [17.5 6.5]);
 
 mu = 0.75;
@@ -100,15 +64,64 @@ plot(post_alpha, y2_star, '.k');
 ylim([-0.05 1.05]);
 
 figure_subplot(1, 2, 2);
-hold on; grid off; box on;
-xlabel('i');
-ylabel('\alpha');
-plot(-i1, alpha, '-k');
-plot(-i2, alpha, '-k');
-plot([-pre_i, -post_i], [pre_alpha post_alpha], ':k');
+plot(alpha, -i1, '-k'); hold on;
+plot(alpha, -i2, '-k'); hold on;
+plot([pre_alpha post_alpha], [-pre_i, -post_i], ':k'); hold on;
+grid off; box on;
+xlabel('\alpha');
+ylabel('i');
 
+%% [sigmoidal model] bifurcation: i vs theta diagram
+fh = figure();
+figure_adjust(fh, [17.5 6.5]);
 
-%% [sigmoidal model] bifurcation: F surface
+mu = 0.75;
+threshold = 1.0;
+alpha = 4.5;
+theta = [0.01 : 0.05 : alpha / (4.0 * mu) - eps, alpha / (4.0 * mu)];
+
+f1 = (1.0 + sqrt(1.0 - 4.0 .* mu .* theta ./ alpha)) ./ 2.0;
+f2 = (1.0 - sqrt(1.0 - 4.0 .* mu .* theta ./ alpha)) ./ 2.0;
+i1 = alpha .* f1 - threshold - mu .* theta .* (log(f1) - log(1.0 - f1) + 3.0);
+i2 = alpha .* f2 - threshold - mu .* theta .* (log(f2) - log(1.0 - f2) + 3.0);
+
+i_mid = (i1 + i2) ./ 2.0;
+k = (i_mid(end) - i_mid(end-1)) / (theta(end) - theta(end-1));
+post_theta = alpha / (4.0 * mu) : 0.1 : 3.0;
+post_i = post_theta .* k + (i_mid(end) - post_theta(1) .* k);
+pre_theta = theta(1 : end - 1);
+pre_i = i_mid(1 : end - 1);
+
+y_star = zeros(1, length(post_theta));
+for n = 1 : length(post_theta)
+  y0 = 0.5; y_star(n) = find_solution_dyn(alpha, -post_i(n), threshold, mu, post_theta(n), f_sigm, y0, post_theta(n) * s_sigm(y0));
+end
+
+y1_star = zeros(1, length(pre_theta));
+y2_star = zeros(1, length(pre_theta));
+for n = 1 : length(pre_theta)
+  y0 = 0.1; y1_star(n) = find_solution_dyn(alpha, -pre_i(n), threshold, mu, pre_theta(n), f_sigm, y0, pre_theta(n) * s_sigm(y0));
+  y0 = 0.9; y2_star(n) = find_solution_dyn(alpha, -pre_i(n), threshold, mu, pre_theta(n), f_sigm, y0, pre_theta(n) * s_sigm(y0));
+end
+
+figure_subplot(1, 2, 1);
+plot(post_theta, y_star, '.k'); hold on;
+plot(pre_theta, y1_star, '.k'); hold on;
+plot(pre_theta, y2_star, '.k'); hold on;
+grid off; box on;
+xlabel('\theta');
+ylabel('y^{*}');
+ylim([-0.05 1.05]);
+
+figure_subplot(1, 2, 2);
+plot(theta, -i1, '-k'); hold on;
+plot(theta, -i2, '-k'); hold on;
+plot([pre_theta, post_theta], [-pre_i, -post_i], ':k'); hold on;
+grid off; box on;
+xlabel('\theta');
+ylabel('i');
+
+%% [sigmoidal model] bifurcation: F-surface defined by alpha
 fh = figure();
 figure_adjust(fh, [17.5 10.5]);
 
@@ -134,18 +147,56 @@ ylabel('\alpha');
 zlabel('i');
 view([-141, 36]);
 
-
-
-%% [sigmoidal model] bifurcation: i vs alpha diagram
+%% [sigmoidal model] bifurcation: F-surface defined by theta
 fh = figure();
-figure_adjust(fh, [17.5 6.5]);
+figure_adjust(fh, [17.5 10.5]);
 
 mu = 0.75;
 threshold = 1.0;
-theta = 1.0;
-alpha = 4.0 * mu * theta : 0.1 : 20;
+alpha = 4.5;
+theta = 0.5 : 0.1 : 2.0;
+y = [0.00001, 0.0001, 0.001, 0.01:0.01:0.1, 0.1 : 0.1 : 0.9, 0.9:0.01:0.99, 0.999, 0.9999, 0.99999];
+i = -(repmat(alpha .* y, length(theta), 1) - threshold - mu .* theta' * s_sigm(y));
 
+theta_s = [theta(1) : (theta(end) - theta(1)) / length(theta) : alpha / (4.0 * mu), alpha / (4.0 * mu)];
+f1 = (1.0 + sqrt(1.0 - 4.0 .* mu .* theta_s ./ alpha)) ./ 2.0;
+f2 = (1.0 - sqrt(1.0 - 4.0 .* mu .* theta_s ./ alpha)) ./ 2.0;
+i1 = alpha .* f1 - threshold - mu .* theta_s .* (log(f1) - log(1.0 - f1) + 3.0);
+i2 = alpha .* f2 - threshold - mu .* theta_s .* (log(f2) - log(1.0 - f2) + 3.0);
 
+surf(y, theta, i, 'FaceColor', 'white');
+grid on; hold on;
+plot3(f1, theta_s, -i1, '-k', 'LineWidth', 2);
+plot3(f2, theta_s, -i2, '-k', 'LineWidth', 2);
+xlabel('y');
+ylabel('\theta');
+zlabel('i');
+view([-154, 28]);
+
+%% [sigmoidal model] bifurcation: i-surfaces defined by alpha and theta
+fh = figure();
+figure_adjust(fh, [17.5 8.5]);
+
+mu = 0.75;
+threshold = 1.0;
+theta = 0.1 : 0.1 : 3.5;
+alpha = 0.1 : 0.5 : 10;
+
+f1 = (1.0 + sqrt(1.0 - 4.0 .* mu .* theta' * (1.0 ./ alpha))) ./ 2.0;
+f2 = (1.0 - sqrt(1.0 - 4.0 .* mu .* theta' * (1.0 ./ alpha))) ./ 2.0;
+f1((1.0 ./ theta') * alpha < 4.0 .* mu) = NaN; f1 = real(f1);
+f2((1.0 ./ theta') * alpha < 4.0 .* mu) = NaN; f2 = real(f2);
+i1 = repmat(alpha, length(theta), 1) .* f1 - threshold - mu .* repmat(theta', 1, length(alpha)) .* (log(f1) - log(1.0 - f1) + 3.0);
+i2 = repmat(alpha, length(theta), 1) .* f2 - threshold - mu .* repmat(theta', 1, length(alpha)) .* (log(f2) - log(1.0 - f2) + 3.0);
+
+surf(alpha, theta, -i1, 'FaceColor', 'w'); hold on;
+surf(alpha, theta, -i2, 'FaceColor', 'w'); hold on;
+plot3(alpha, alpha ./ (4.0 * mu), -(alpha .* 0.5 - threshold - mu .* (alpha ./ (4.0 * mu)) .* 3.0), '-k', 'LineWidth', 2); hold on;
+grid on; box off;
+xlabel('\alpha');
+ylabel('\theta');
+zlabel('i');
+view([117 33]);
 
 
 %% [original model] bifurcation: F surface
@@ -156,7 +207,7 @@ mu = 0.75;
 threshold = 1.0;
 theta = 1.0;
 alpha = 0.0 : 0.5 : 50;
-y = [0.01 : 0.01 : 0.98];
+y = 0.01 : 0.01 : 0.98;
 i = -(alpha' * y - threshold - repmat(mu .* theta .* s_origin(y), length(alpha), 1));
 
 % alpha_s = 4.0 * mu * theta : 0.5 : 15;
