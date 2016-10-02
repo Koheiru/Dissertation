@@ -14,6 +14,9 @@ function handle = figure_subplot(h, w, p)
   elseif (ncols == 2)
     axisw = 0.35;
     axisl = 0.1 + 0.5 * (col - 1);
+	elseif (ncols == 1)
+    axisw = 0.85;
+    axisl = 0.1;
   end
   
   if (nrows == 4)

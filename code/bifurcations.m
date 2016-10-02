@@ -21,6 +21,42 @@ s_sigm = @(y) 3.0 + log(y ./ (1 - y));
 
 %% [sigmoidal model] bifurcation: i vs alpha diagram
 fh = figure();
+figure_adjust(fh, [17.5 10.0]);
+
+% alpha / theta > 4.0 * mu
+
+mu = 0.75;
+threshold = 1.0;
+theta = 0.1 : 0.1 : 3.5;
+alpha = 0.1 : 0.5 : 10;
+
+f1 = (1.0 + sqrt(1.0 - 4.0 .* mu .* theta' * (1.0 ./ alpha))) ./ 2.0;
+f2 = (1.0 - sqrt(1.0 - 4.0 .* mu .* theta' * (1.0 ./ alpha))) ./ 2.0;
+f1(find((1.0 ./ theta') * alpha < 4.0 .* mu)) = NaN; f1 = real(f1);
+f2(find((1.0 ./ theta') * alpha < 4.0 .* mu)) = NaN; f2 = real(f2);
+i1 = repmat(alpha, length(theta), 1) .* f1 - threshold - mu .* repmat(theta', 1, length(alpha)) .* (log(f1) - log(1.0 - f1) + 3.0);
+i2 = repmat(alpha, length(theta), 1) .* f2 - threshold - mu .* repmat(theta', 1, length(alpha)) .* (log(f2) - log(1.0 - f2) + 3.0);
+
+% figure_subplot(2, 1, 1);
+surf(alpha, theta, -i1, 'FaceColor', 'w'); hold on;
+surf(alpha, theta, -i2, 'FaceColor', 'w'); hold on;
+grid on; box off;
+xlabel('\alpha');
+ylabel('\theta');
+zlabel('i');
+view([117 43]);
+
+% figure_subplot(2, 1, 2);
+% surf(alpha, theta, f1, 'FaceColor', 'w'); hold on;
+% surf(alpha, theta, f2, 'FaceColor', 'w'); hold on;
+% grid on; box off;
+% xlabel('\alpha');
+% ylabel('\theta');
+% zlabel('y^{*}');
+
+
+%% [sigmoidal model] bifurcation: i vs alpha diagram
+fh = figure();
 figure_adjust(fh, [17.5 6.5]);
 
 mu = 0.75;
@@ -53,18 +89,6 @@ for n = 1 : length(post_alpha)
   y0 = 0.1; y1_star(n) = find_solution_dyn(post_alpha(n), -post_i(n), threshold, mu, theta, f_sigm, y0, theta * s_sigm(y0));
   y0 = 0.9; y2_star(n) = find_solution_dyn(post_alpha(n), -post_i(n), threshold, mu, theta, f_sigm, y0, theta * s_sigm(y0));
 end
-
-% y_star = zeros(1, length(pre_alpha));
-% for n = 1 : length(pre_alpha)
-%   y_star(n) = fsolve(@(y) pre_alpha(n) * y - pre_i(n) - threshold - mu * theta * s_sigm(y), 0.5);
-% end
-% 
-% y1_star = zeros(1, length(post_alpha));
-% y2_star = zeros(1, length(post_alpha));
-% for n = 1 : length(post_alpha)
-%   y1_star(n) = fsolve(@(y) post_alpha(n) * y - post_i(n) - threshold - mu * theta * s_sigm(y), 0.1);
-%   y2_star(n) = fsolve(@(y) post_alpha(n) * y - post_i(n) - threshold - mu * theta * s_sigm(y), 0.9);
-% end
 
 figure_subplot(1, 2, 1);
 hold on; grid off; box on;
