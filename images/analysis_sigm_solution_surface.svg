@@ -36,16 +36,16 @@
      guidetolerance="10"
      inkscape:pageopacity="0"
      inkscape:pageshadow="2"
-     inkscape:window-width="1280"
-     inkscape:window-height="1002"
+     inkscape:window-width="1920"
+     inkscape:window-height="1018"
      id="namedview11054"
      showgrid="false"
      borderlayer="true"
      units="cm"
      inkscape:zoom="1.4142136"
-     inkscape:cx="184.52448"
-     inkscape:cy="281.34312"
-     inkscape:window-x="1912"
+     inkscape:cx="212.37699"
+     inkscape:cy="252.90225"
+     inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="surface329" />
@@ -27886,5 +27886,16 @@
          id="tspan6156-5"
          x="409.28494"
          y="241.14406">4μθ</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="7.5009522"
+       y="38.005867"
+       id="text9723"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan9725"
+         x="7.5009522"
+         y="38.005867">а)</tspan></text>
   </g>
 </svg>
