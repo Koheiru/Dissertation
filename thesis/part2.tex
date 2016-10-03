@@ -177,7 +177,7 @@
     = \alpha + \dfrac{\mu \theta}{\scalar{y}(\scalar{y} - 1)}
     = 0.
 \end{equation}
-Заметим, что для сигмоидальной функции активации переменная $\scalar{y}$ в системе~\eqref{eq:simple_microensemble_model} достигает значений $0$ и $1$ лишь в пределе, т.к. $\lim_{\scalar{u} \to -\infty} f(\scalar{u}, \theta) \to 0$ и $\lim_{\scalar{u} \to \infty} f(\scalar{u}, \theta) \to 1$, а при $\alpha = 0$ равенство не имеет решений. Поэтому без каких-либо дополнительных предположений можно домножить последнее выражение на $\scalar{y}(\scalar{y} - 1)$ и поделить $\alpha$, тогда после раскрытия скобок мы получим квадратное уравнение:
+Заметим, что для сигмоидальной функции активации переменная $\scalar{y}$ в системе~\eqref{eq:simple_microensemble_model} достигает значений $0$ и $1$ лишь в пределе, т.к. $\lim_{\scalar{u} \to -\infty} f(\scalar{u}, \theta) = 0$ и $\lim_{\scalar{u} \to \infty} f(\scalar{u}, \theta) = 1$, а при $\alpha = 0$ равенство не имеет решений. Поэтому без каких-либо дополнительных предположений можно домножить последнее выражение на $\scalar{y}(\scalar{y} - 1)$ и поделить $\alpha$, тогда после раскрытия скобок мы получим квадратное уравнение:
 \begin{equation}
     \nonumber
     \scalar{y}^{2} - \scalar{y} + \mu \theta / \alpha = 0,
@@ -261,8 +261,20 @@
     \left(\theta = \alpha / 4 \mu; \scalar{i} = \alpha / 4\right).
 \end{equation}
 
-\newpage
-\IncludeFigure{analysis_sigm_params_dependency}{Зависящие от параметров $\alpha$ и $\theta$ поверхности точек бифуркации $i^{-}$ и $i^{+}$, проекции которых на плоскости $\left(\alpha,\scalar{i}\right)$ и $\left(\theta,\scalar{i}\right)$ изображены \onfigure~\ref{fig:analysis_sigm_bifurcations}в,г.}
+Несмотря на то, что параметры $\alpha$ и $\theta$ вносят пропорциональный вклад в корни $y^{+}$ и $y^{-}$, которые зависят исключительно от величины $\mu \theta / \alpha$, их влияние на значения бифуркационных точек $i^{+}$ и $i^{-}$ имеет более сложный характер, что графически изображено \onfigure~\ref{fig:analysis_sigm_params_dependency}, а так же можно наблюдать \onfigure~\ref{fig:analysis_sigm_bifurcations}в-г. Имея в виду наше прежнее предположение о модулирующей роли параметра $\theta$, отметим следующее:
+\begin{equation}
+    \nonumber
+    %\lim\limits_{\theta \to +0} i^{+} \to 0, \lim\limits_{\theta \to \sfrac{\alpha}{4 \mu} - 0} i^{+} \to 0
+    \begin{alignedat}{4}
+        &\lim_{\theta \to +0} i^{+} &= 0,       \;\;\;\;&\lim_{\theta \to \sfrac{\alpha}{4\mu} - 0} i^{+} &= \alpha / 4,\\
+        &\lim_{\theta \to +0} i^{-} &= -\alpha, \;\;\;\;&\lim_{\theta \to \sfrac{\alpha}{4\mu} - 0} i^{-} &= \alpha / 4.
+    \end{alignedat}
+\end{equation}
+Таким образом, можно говорить о том, что при фиксированном значении $\alpha$ значение параметра $\theta$ позволяет задать ширину и положение промежутка $\left(i^{-};i^{+}\right)$
+%%при вариации параметра $\theta$ в интервале значений $\left(0; \sfrac{\alpha}{4\mu}\right]$ ширина и положение промежутка $\left(i^{-};i^{+}\right)$ меняется в предел
+%%вариация параметра $\theta$ в интервале значений $\left(0; \sfrac{\alpha}{4 \mu}\right]$
+
+\IncludeFigure{analysis_sigm_params_dependency}{Зависящие от параметров $\alpha$ и $\theta$ поверхности точек бифуркации $i^{-}$ и $i^{+}$, проекции которых на плоскости $\left(\alpha,\scalar{i}\right)$ и $\left(\theta,\scalar{i}\right)$ изображены \onfigure~\ref{fig:analysis_sigm_bifurcations}в-г.}
 
 %\begin{Statement}
 %    \todo{про мягкий режим и условия его существования.}
