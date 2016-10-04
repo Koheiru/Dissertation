@@ -158,6 +158,29 @@ ylabel('\Delta u');
 plot(x, abs(y1 - y2), 'Color', 'black', 'LineWidth', 1);
 
 
+%%
+figure();
+
+mu = 0.75;
+alpha = 60.0;
+theta = 0.0 : 0.1 : alpha/(4*mu);
+
+z = sqrt(0.25 - mu .* theta ./ alpha);
+
+K = @(n,x) (2 ^ (2 * n + 3)) .* (x .^ (2 * n + 3)) ./ (4 * n^2 + 8 * n + 3);
+i_tail = K(0,z) + K(1,z) + K(2,z) + K(3,z) + K(4,z) + K(5,z);
+i1 = alpha .* (0.25 - 3.0 .* z .^ 2 - i_tail);
+i2 = alpha .* (0.25 - 3.0 .* z .^ 2 - i_tail);
+
+subplot(2, 1, 1);
+plot(z, i1); hold on;
+plot(z, i2); hold on;
+grid on;
+
+subplot(2, 1, 2);
+plot(theta, i1); hold on;
+plot(theta, i2); hold on;
+grid on;
 
 
 
