@@ -165,26 +165,56 @@ mu = 0.75;
 alpha = 60.0;
 theta = 0.0 : 0.1 : alpha/(4*mu);
 
-z = sqrt(0.25 - mu .* theta ./ alpha);
+f1 = 0.5 - sqrt(0.25 - mu .* theta ./ alpha);
+f2 = 0.5 + sqrt(0.25 - mu .* theta ./ alpha);
+i1 = -alpha .* f1 + mu .* theta .* (3.0 + log(f1 ./ (1.0 - f1)));
+i2 = -alpha .* f2 + mu .* theta .* (3.0 + log(f2 ./ (1.0 - f2)));
 
+z1 = sqrt(0.25 - mu .* theta ./ alpha);
 K = @(n,x) (2 ^ (2 * n + 3)) .* (x .^ (2 * n + 3)) ./ (4 * n^2 + 8 * n + 3);
-i_tail = K(0,z) + K(1,z) + K(2,z) + K(3,z) + K(4,z) + K(5,z);
-i1 = alpha .* (0.25 - 3.0 .* z .^ 2 - i_tail);
-i2 = alpha .* (0.25 - 3.0 .* z .^ 2 - i_tail);
+ii_tail = K(0,z1) + K(1,z1) + K(2,z1) + K(3,z1) + K(4,z1) + K(5,z1);
+ii1 = alpha .* (0.25 - ii_tail);
+ii2 = alpha .* (0.25 + ii_tail);
+
+z2 = 2.0 .* sqrt(0.25 - mu .* theta ./ alpha);
+K = @(n,x) (x .^ (2 * n + 3)) ./ (4 * n^2 + 8 * n + 3);
+iii_tail = K(0,z2) + K(1,z2) + K(2,z2) + K(3,z2) + K(4,z2) + K(5,z2);
+iii1 = 0.25 .* alpha .* (1.0 - 4.* iii_tail);
+iii2 = 0.25 .* alpha .* (1.0 + 4.* iii_tail);
 
 subplot(2, 1, 1);
-plot(z, i1); hold on;
-plot(z, i2); hold on;
+plot(z1, ii1, '-b'); hold on;
+plot(z1, ii2, '-b'); hold on;
 grid on;
 
 subplot(2, 1, 2);
-plot(theta, i1); hold on;
-plot(theta, i2); hold on;
+plot(theta, i1, '-r', 'LineWidth', 4); hold on;
+plot(theta, i2, '-r', 'LineWidth', 4); hold on;
+plot(theta, ii1, '-b', 'LineWidth', 4); hold on;
+plot(theta, ii2, '-b', 'LineWidth', 4); hold on;
+plot(theta, iii1, '-g'); hold on;
+plot(theta, iii2, '-g'); hold on;
 grid on;
 
 
+%%
+figure();
 
+A = 0.1;
+K = @(n,x) (log(A / (1.0 - A)) / (A * (1.0 - A)^n)) .* (x - A).^n;
+x = 0.0 : 0.01 : 1.0;
 
+y0 = log(x ./ (1.0 - x));
+plot(x, y0, '-r'); hold on;
+
+for n = 2000
+  y = K(0,x);
+  for k = 1 : n
+    y = y + K(k,x);
+  end
+  %plot(x, abs(y - y0), '-b'); hold on;
+  plot(x, -y, '-b'); hold on;
+end
 
 
 
