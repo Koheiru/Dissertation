@@ -187,86 +187,153 @@ ylim([-0.1 0.3]);
 
 %% [original model] equilibrium points for soft and hard states + special uninteresting state
 fh = figure();
-figure_adjust(fh, [17.5 17.5]);
+figure_adjust(fh, [17.5 20.5]);
 
 mu = 0.75;
 threshold = 1.0;
 theta = 1.0;
-i     = [2.0 0.95 2.0 0.5];
-alpha = [0.0 0.5  2.5 5.5];
+i     = [2.0 0.95 2.0 0.5 -20.0];
+alpha = [0.0 0.5  2.5 5.5  60.0];
 
-y = 0.01 : 0.01 : 0.99;
+y = [0.00 : 0.01 : 0.99, 0.991 : 0.001 : 0.999];
 F = bsxfun(@plus, i', alpha' * y - threshold - repmat(mu .* theta .* s_origin(y), length(alpha), 1));
 I = -(alpha' * y - threshold - repmat(mu .* theta .* s_origin(y), length(alpha), 1));
 
-figure_subplot(4, 2, 1);
+%----------------------
+figure_subplot(5, 2, 1);
 hold on; grid off; box on;
-plot(I(1,:), y(:), '-k');
+plot(I(1,:), y(:), '-k'); 
+plot([-100 threshold], [0 0], '-k');
 plot([i(1) i(1)], [0 1], '--k');
 xlabel('i');
 ylabel('y');
-xlim([0 5]);
+xlim([-0.5 3.5]);
 ylim([-0.02 1.02]);
 
-figure_subplot(4, 2, 2);
+figure_subplot(5, 2, 2);
 hold on; grid off; box on;
 plot(y(:), F(1,:), '-k');
+plot([0 0 ], [F(1,1) 100], '-k');
 plot([0 1], [0 0], '--k');
 xlabel('y');
 ylabel('F(y)');
-ylim([-3.0 2.0])
+xlim([-0.02 1.02]);
+ylim([-3.0 3.0])
 
-figure_subplot(4, 2, 3);
+%----------------------
+rect_I = [0.6 -0.02; 1.4 0.22];
+rect_F = [-0.02 -0.25; 0.22 0.25];
+
+figure_subplot(5, 2, 3);
 hold on; grid off; box on;
 plot(I(2,:), y(:), '-k');
+plot([-100 threshold], [0 0], '-k');
 plot([i(2) i(2)], [0 1], '--k');
+rectangle('Position', [rect_I(1,:), rect_I(2,:) - rect_I(1,:)]);
 xlabel('i');
 ylabel('y');
-xlim([0.75 1.25]);
-ylim([-0.02 0.22]);
+xlim([-0.5 3.5]);
+ylim([-0.02 1.02]);
 
-figure_subplot(4, 2, 4);
+figure_subplot(5, 2, 4);
 hold on; grid off; box on;
 plot(y(:), F(2,:), '-k');
+plot([0 0 ], [F(2,1) 100], '-k');
 plot([0 1], [0 0], '--k');
+rectangle('Position', [rect_F(1,:), rect_F(2,:) - rect_F(1,:)]);
 xlabel('y');
 ylabel('F(y)');
-xlim([-0.02 0.22]);
-ylim([-0.25 0.25])
+xlim([-0.02 1.02]);
+ylim([-3.0 3.0])
 
-figure_subplot(4, 2, 5);
+%----------------------
+figure_subplot(5, 2, 5);
 hold on; grid off; box on;
 plot(I(3,:), y(:), '-k');
+plot([-100 threshold], [0 0], '-k');
 plot([i(3) i(3)], [0 1], '--k');
 xlabel('i');
 ylabel('y');
-xlim([0 5]);
+xlim([-0.5 3.5]);
 ylim([-0.02 1.02]);
 
-figure_subplot(4, 2, 6);
+figure_subplot(5, 2, 6);
 hold on; grid off; box on;
 plot(y(:), F(3,:), '-k');
+plot([0 0 ], [F(3,1) 100], '-k');
 plot([0 1], [0 0], '--k');
 xlabel('y');
 ylabel('F(y)');
+xlim([-0.02 1.02]);
 ylim([-2.0 2.0])
 
-figure_subplot(4, 2, 7);
+%----------------------
+figure_subplot(5, 2, 7);
 hold on; grid off; box on;
 plot(I(4,:), y(:), '-k');
+plot([-100 threshold], [0 0], '-k');
 plot([i(4) i(4)], [0 1], '--k');
 xlabel('i');
 ylabel('y');
-xlim([-0.5 2.5]);
+xlim([-0.5 3.5]);
 ylim([-0.02 1.02]);
 
-figure_subplot(4, 2, 8);
+figure_subplot(5, 2, 8);
 hold on; grid off; box on;
 plot(y(:), F(4,:), '-k');
+plot([0 0 ], [F(4,1) 100], '-k');
 plot([0 1], [0 0], '--k');
 xlabel('y');
 ylabel('F(y)');
-%ylim([-2.0 2.0])
+xlim([-0.02 1.02]);
+ylim([-2.0 2.0])
+
+%----------------------
+figure_subplot(5, 2, 9);
+hold on; grid off; box on;
+plot(I(5,:), y(:), '-k');
+plot([-100 threshold], [0 0], '-k');
+plot([i(5) i(5)], [0 1], '--k');
+xlabel('i');
+ylabel('y');
+xlim([-50   3.5]);
+ylim([-0.02 1.02]);
+
+figure_subplot(5, 2, 10);
+hold on; grid off; box on;
+plot(y(:), F(5,:), '-k');
+plot([0 0 ], [F(5,1) 100], '-k');
+plot([0 1], [0 0], '--k');
+xlabel('y');
+ylabel('F(y)');
+xlim([-0.02 1.02]);
+ylim([-30.0 30.0])
+
+%% scaling some subplots
+fh = figure();
+figure_adjust(fh, [5.5 3.0]);
+
+plot(I(2,:), y(:), '-k'); hold on; 
+plot([-100 threshold], [0 0], '-k'); hold on; 
+plot([i(2) i(2)], [0 1], '--k'); hold on; 
+grid off; box on;
+xlabel('i');
+ylabel('y');
+xlim(rect_I(:,1)');
+ylim(rect_I(:,2)');
+
+%----------------------
+fh = figure();
+figure_adjust(fh, [5.5 3.0]);
+
+plot(y(:), F(2,:), '-k'); hold on;
+plot([0 0], [F(2,1), 100], '-k'); hold on;
+plot([0 1], [0 0], '--k'); hold on;
+grid off; box on;
+xlabel('y');
+ylabel('F(y)');
+xlim(rect_F(:,1)');
+ylim(rect_F(:,2)');
 
 
 %% [original model] equilibrium conditions
