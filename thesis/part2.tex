@@ -333,19 +333,35 @@
 
 \subsubsection{Анализ устойчивости точек равновесия}
 
-Как и в~\autoref{subsection:analysis_sigm}, для определения интервалов устойчивости-неустойчивости точек равновесия $\scalar{y}^{*}$ необходимо решить равенство $F^{\prime}(\scalar{y}) = 0$, которое с учётом определения функции $g^{-1}_{s}$~\eqref{eq:unactivation_function_original} примет вид:
+Как и в~\autoref{subsection:analysis_sigm}, для определения интервалов устойчивости-неустойчивости точек равновесия $\scalar{y}^{*}$ необходимо решить равенство $F^{\prime}(\scalar{y}) = 0$, которое в соответствии с определением функции $g^{-1}_{s}$~\eqref{eq:unactivation_function_original} примет вид:
 \begin{equation}
 \nonumber
     F^{\prime}(\scalar{y}) = \dfrac{d}{d\scalar{y}}\left( \alpha \scalar{y} + \scalar{i} - \mu \theta g^{-1}(\scalar{y}) \right) = 
     \begin{cases}
-        \alpha - \dfrac{312 \mu \theta \scalar{x}}{(\scalar{x} + 1)^{2}} = 0,   & y \in \left(0; y_{12}\right] \\
-        \alpha - \dfrac{z_{12} \mu \theta}{(\scalar{y} - 1)^{2}} = 0,           & y \in \left(y_{12}; 1\right] \\
+        \alpha - \dfrac{312 \mu \theta \scalar{x}}{(\scalar{x} + 1)^{2}} = 0,   & \scalar{y} \in \left(0; y_{12}\right] \\
+        \alpha - \dfrac{z_{12} \mu \theta}{(\scalar{y} - 1)^{2}} = 0,           & \scalar{y} \in \left(y_{12}; 1\right] \\
     \end{cases}
 \end{equation}
-где $\scalar{x} = e^{\displaystyle -120 \cdot (\scalar{y} - 0,1935)}$ и $\scalar{x} \in \left[e^{-6,18}; e^{23,22}\right) \approx \left[2,1 \cdot 10^{-3}; 1,2 \cdot 10^{10}\right)$. Так же сразу отметим, что в соответствии с определением~\eqref{eq:unactivation_function_original} $F^{\prime}(0) = -\infty$ и точка равновесия $\scalar{y}^{*} = 0$ будет всегда устойчива и существовать при $\scalar{i} < \mu \theta u_{01}$.
+где $\scalar{x} = e^{\displaystyle -120 \cdot (\scalar{y} - 0,1935)}$, причём $\scalar{x} \in \left[e^{-6,18}; e^{23,22}\right) \approx \left[2,1 \cdot 10^{-3}; 1,2 \cdot 10^{10}\right)$. Так же, исходя из определения функции $g^{-1}_{s}$ в точке $\scalar{y} = 0$, сразу отметим, что $F^{\prime}(0) = -\infty$ и точка равновесия $\scalar{y}^{*} = 0$ будет всегда устойчива и существовать при условии, что $\scalar{i} < \mu \theta u_{01}$.
 
-Как и ранее, для решения равенств приведём их к виду квадратных уравнений, учитывая, что, во-первых, переменная $\scalar{y}$ в системе~\eqref{eq:simple_microensemble_model} c \textit{оригинальной} функцией активации достигает значения 1 лишь в пределе, \ie $\scalar{y} = \lim_{\scalar{u} \to \infty} f(\scalar{u}, \theta) = 1$, а во-вторых, при $\alpha = 0$ решений не существует и $F^{\prime}(\scalar{y}) < 0\ \forall \scalar{y}$ --- однако это условие войдёт в более общее условие устойчивости, что будет показано далее. Таким образом, ...
+Как и ранее, для решения равенств приведём их к виду квадратных уравнений. Для этого, во-первых, примем во внимание, что переменная $\scalar{y}$ в системе~\eqref{eq:simple_microensemble_model} достигает значения 1 лишь в пределе, что обусловлено свойством \textit{оригинальной} функции активации: $\scalar{y} = \lim_{\scalar{u} \to \infty} f(\scalar{u}, \theta) = 1$. Во-вторых, отметим, что при $\alpha = 0$ решений не существует и $F^{\prime}(\scalar{y}) < 0\ \forall \scalar{y}$ --- однако это условие в дальнейшем войдёт в более общее условие устойчивости, поэтому отдельно оно рассматриваться не будет. Таким образом, после деления равенств на $\alpha$ и домножения соответственно на $(\scalar{x} + 1)^{2}$ и $(\scalar{y} - 1)^{2}$ мы получим следующие квадратные уравнения:
+\begin{equation}
+    \nonumber
+    \begin{cases}
+        \scalar{x}^{2} + \left( 2 - 312 \mu \theta / \alpha \right) \scalar{x} + 1 = 0, \\ % & \scalar{x} \in \left[e^{-6,18}; e^{23,22}\right) \\
+        \scalar{y}^{2} - 2 \scalar{y} + \left( 1 - z_{12} \mu \theta / \alpha \right) = 0, \\ % & \scalar{y} \in \left(y_{12}; 1\right] \\
+    \end{cases}
+\end{equation}
+решением которых будут корни:
+\begin{equation}
+    \begin{cases}
+        \scalar{x}_{1,2} &= \left( 156 \mu \theta / \alpha - 1\right) \pm \sqrt{\left( 156 \mu \theta / \alpha - 1\right)^{2} - 1}, \\
+        \scalar{y}_{3}   &= 1 - \sqrt{z_{12} \mu \theta / \alpha},
+    \end{cases}
+\end{equation}
+где корень $\scalar{y}_{4} = 1 + \sqrt{z_{12} \mu \theta / \alpha}$ не рассматривается, т.к. при любых допустимых значениях параметров величина $\scalar{y}_{4} > 1$, \ie не принадлежит области определения переменной $\scalar{y}$.
 
+\newpage
 \begin{figure}[ht]
     \begin{minipage}{\textwidth}
         \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_origin_stability}}
