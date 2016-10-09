@@ -113,9 +113,10 @@ ylabel('F');
 ylim([-3 3]);
 
 y = 0.1 : 0.01 : 0.9;
-dF_zero = alpha_zero - mu .* theta .* (1 ./ y + 1.0 ./ (1.0 - y));
-dF_soft = alpha_soft - mu .* theta .* (1 ./ y + 1.0 ./ (1.0 - y));
-dF_hard = alpha_hard - mu .* theta .* (1 ./ y + 1.0 ./ (1.0 - y));
+dS_sigm = @(y) (1 ./ y + 1.0 ./ (1.0 - y));
+dF_zero = alpha_zero - mu .* theta .* dS_sigm(y);
+dF_soft = alpha_soft - mu .* theta .* dS_sigm(y);
+dF_hard = alpha_hard - mu .* theta .* dS_sigm(y);
 
 figure_subplot(2, 3, 4);
 hold on; grid off; box on;
@@ -338,89 +339,83 @@ ylim(rect_F(:,2)');
 
 %% [original model] equilibrium conditions
 fh = figure();
-figure_adjust(fh, [17.5 12]);
+figure_adjust(fh, [17.5 10.5]);
 
-mu = 0.75;
+mu        = 0.75;
 threshold = 1.0;
 theta     = 1.0;
 alpha     = 75.0;
+i         = 2.0;
+alpha_soft  = 0.1;
+alpha_hard  = 10.0;
+alpha_hyper = 59.0;
 
-y = 0.01 : 0.001 : y12;
-x = exp(-120 .* (y - 0.1935));
-dF = alpha - mu .* theta .* 312 .* x ./ ((1.0 + x) .^ 2);
+y = 0.001 : 0.001 : 0.999;
+F_soft  = i + alpha_soft  .* y - threshold - mu .* theta .* s_origin(y);
+F_hard  = i + alpha_hard  .* y - threshold - mu .* theta .* s_origin(y);
+F_hyper = i + alpha_hyper .* y - threshold - mu .* theta .* s_origin(y);
 
-plot(y, dF); hold on;
-plot([0 0], [min(dF) max(dF)]);
-plot([y12 y12], [min(dF) max(dF)]);
-grid off; box on;
+figure_subplot(2, 3, 1);
+hold on; grid off; box on;
+plot(y, F_soft, '-k');
+plot([0 1], [0 0], '--k');
 xlabel('y');
-ylabel('F^{''}(y)');
+ylabel('F');
+xlim([-0.02 1.02]);
+ylim([-7 7]);
 
-% mu = 0.75;
-% threshold = 1.0;
-% theta     = 1.0;
-% i         = 1.0;
-% alpha_zero = 4.0 * mu * theta;
-% alpha_soft = alpha_zero / 1.5;
-% alpha_hard = alpha_zero * 1.5;
-%
-% y = 0.001 : 0.001 : 0.999;
-% F_zero = i + alpha_zero .* y - threshold - mu .* theta .* s_sigm(y);
-% F_soft = i + alpha_soft .* y - threshold - mu .* theta .* s_sigm(y);
-% F_hard = i + alpha_hard .* y - threshold - mu .* theta .* s_sigm(y);
-% 
-% figure_subplot(2, 3, 1);
-% hold on; grid off; box on;
-% plot(y, F_soft, '-k');
-% plot([0 1], [0 0], '--k');
-% xlabel('y');
-% ylabel('F');
-% ylim([-3 3]);
-% 
-% figure_subplot(2, 3, 2);
-% hold on; grid off; box on;
-% plot(y, F_zero, '-k');
-% plot([0 1], [0 0], '--k');
-% xlabel('y');
-% ylabel('F');
-% ylim([-3 3]);
-% 
-% figure_subplot(2, 3, 3);
-% hold on; grid off; box on;
-% plot(y, F_hard, '-k');
-% plot([0 1], [0 0], '--k');
-% xlabel('y');
-% ylabel('F');
-% ylim([-3 3]);
-% 
-% y = 0.1 : 0.01 : 0.9;
-% dF_zero = alpha_zero - mu .* theta .* (1 ./ y + 1.0 ./ (1.0 - y));
-% dF_soft = alpha_soft - mu .* theta .* (1 ./ y + 1.0 ./ (1.0 - y));
-% dF_hard = alpha_hard - mu .* theta .* (1 ./ y + 1.0 ./ (1.0 - y));
-% 
-% figure_subplot(2, 3, 4);
-% hold on; grid off; box on;
-% plot(y, dF_soft, '-k');
-% plot([0 1], [0 0], '--k');
-% xlabel('y');
-% ylabel('F''');
-% ylim([-3 3]);
-% 
-% figure_subplot(2, 3, 5);
-% hold on; grid off; box on;
-% plot(y, dF_zero, '-k');
-% plot([0 1], [0 0], '--k');
-% xlabel('y');
-% ylabel('F''');
-% ylim([-3 3]);
-% 
-% figure_subplot(2, 3, 6);
-% hold on; grid off; box on;
-% plot(y, dF_hard, '-k');
-% plot([0 1], [0 0], '--k');
-% xlabel('y');
-% ylabel('F''');
-% ylim([-3 3]);
+figure_subplot(2, 3, 2);
+hold on; grid off; box on;
+plot(y, F_hard, '-k');
+plot([0 1], [0 0], '--k');
+xlabel('y');
+ylabel('F');
+xlim([-0.02 1.02]);
+ylim([-7 7]);
+
+figure_subplot(2, 3, 3);
+hold on; grid off; box on;
+plot(y, F_hyper, '-k');
+plot([0 1], [0 0], '--k');
+xlabel('y');
+ylabel('F');
+xlim([-0.02 1.02]);
+ylim([-5 55]);
+
+y = 0.01 : 0.001 : 0.95;
+dS_origin = @(y) (heaviside_restricted(y - y12)) .* (z12 ./ (1.0 - y + eps) .^ 2) + ...
+                 (heaviside_restricted(y) - heaviside_restricted(y - y12)) .* (120.0 * 2.6 .* logsig(120.0 .* (y - 0.1935)) .* (1.0 - logsig(120.0 .* (y - 0.1935))));
+
+dF_soft  = alpha_soft  - mu .* theta .* dS_origin(y);
+dF_hard  = alpha_hard  - mu .* theta .* dS_origin(y);
+dF_hyper = alpha_hyper - mu .* theta .* dS_origin(y);
+
+figure_subplot(2, 3, 4);
+hold on; grid off; box on;
+plot(y, dF_soft, '-k');
+plot([0 1], [0 0], '--k');
+xlabel('y');
+ylabel('F''');
+xlim([-0.02 1.02]);
+ylim([-65.0 15.0]);
+
+figure_subplot(2, 3, 5);
+hold on; grid off; box on;
+plot(y, dF_hard, '-k');
+plot([0 1], [0 0], '--k');
+xlabel('y');
+ylabel('F''');
+xlim([-0.02 1.02]);
+ylim([-65.0 15.0]);
+
+figure_subplot(2, 3, 6);
+hold on; grid off; box on;
+plot(y, dF_hyper, '-k');
+plot([0 1], [0 0], '--k');
+xlabel('y');
+ylabel('F''');
+xlim([-0.02 1.02]);
+ylim([-15.0 65.0]);
 
 
 

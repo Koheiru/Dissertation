@@ -176,7 +176,7 @@
     \nonumber
     F^{\prime}(\scalar{y}) 
     = \dfrac{d}{d\scalar{y}}\left( \alpha \scalar{y} + \scalar{i} - \mu \theta g^{-1}(\scalar{y}) \right) 
-    = \alpha + \dfrac{\mu \theta}{\scalar{y}(\scalar{y} - 1)}
+    = \alpha - \dfrac{\mu \theta}{\scalar{y}(1 - \scalar{y})}
     = 0.
 \end{equation}
 Заметим, что для сигмоидальной функции активации переменная $\scalar{y}$ в системе~\eqref{eq:simple_microensemble_model} достигает значений $0$ и $1$ лишь в пределе, т.к. $\lim_{\scalar{u} \to -\infty} f(\scalar{u}, \theta) = 0$ и $\lim_{\scalar{u} \to \infty} f(\scalar{u}, \theta) = 1$. Кроме того, при $\alpha = 0$ равенство не имеет решений и $F^{\prime}(\scalar{y}) < 0\ \forall y$ --- однако, как будет видно дальше, это условие входит в более общее условие устойчивости. Теперь мы можем домножить рассматриваемое равенство на $\scalar{y}(\scalar{y} - 1)$ и поделить $\alpha$, тогда после раскрытия скобок получится квадратное уравнение вида:
@@ -200,7 +200,8 @@
 \begin{figure}[ht]
     \begin{minipage}{\textwidth}
         \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_sigm_stability}}
-        \caption{Интервалы устойчивости решений системы~\eqref{eq:simple_microensemble_model} (сплошная линия соответствует интервалам устойчивости, пунктирная -- неустойчивости), определяемые знаком функции $F^{\prime}(\scalar{y})$ при условии, что: а)~$0,25 < \mu \theta / \alpha$; б)~$0,25 = \mu \theta / \alpha$; в)~$0,25 > \mu \theta / \alpha$.}
+        %\caption{Интервалы устойчивости решений системы~\eqref{eq:simple_microensemble_model} (сплошная линия соответствует интервалам устойчивых решений, пунктирная -- неустойчивых), определяемые знаком функции $F^{\prime}(\scalar{y})$ при условии, что: а)~$0,25 < \mu \theta / \alpha$; б)~$0,25 = \mu \theta / \alpha$; в)~$0,25 > \mu \theta / \alpha$.}
+        \caption{Интервалы устойчивости решений системы~\eqref{eq:simple_microensemble_model}, определяемые знаком функции $F^{\prime}(\scalar{y})$, в случае: а)~$0,25 < \mu \theta / \alpha$; б)~$0,25 = \mu \theta / \alpha$; в)~$0,25 > \mu \theta / \alpha$ (участки графика с устойчивыми и неустойчивыми решениями обозначены соответственно сплошной и пунктирной линиями).}
         \label{fig:analysis_sigm_stability}
     \end{minipage}
 \end{figure}
@@ -331,6 +332,26 @@
 \end{itemize}
 
 \subsubsection{Анализ устойчивости точек равновесия}
+
+Как и в~\autoref{subsection:analysis_sigm}, для определения интервалов устойчивости-неустойчивости точек равновесия $\scalar{y}^{*}$ необходимо решить равенство $F^{\prime}(\scalar{y}) = 0$, которое с учётом определения функции $g^{-1}_{s}$~\eqref{eq:unactivation_function_original} примет вид:
+\begin{equation}
+\nonumber
+    F^{\prime}(\scalar{y}) = \dfrac{d}{d\scalar{y}}\left( \alpha \scalar{y} + \scalar{i} - \mu \theta g^{-1}(\scalar{y}) \right) = 
+    \begin{cases}
+        \alpha - \dfrac{312 \mu \theta \scalar{x}}{(\scalar{x} + 1)^{2}} = 0,   & y \in \left(0; y_{12}\right] \\
+        \alpha - \dfrac{z_{12} \mu \theta}{(\scalar{y} - 1)^{2}} = 0,           & y \in \left(y_{12}; 1\right] \\
+    \end{cases}
+\end{equation}
+где $\scalar{x} = e^{\displaystyle -120 \cdot (\scalar{y} - 0,1935)}$.
+
+\begin{figure}[ht]
+    \begin{minipage}{\textwidth}
+        \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_origin_stability}}
+        \caption{Интервалы устойчивости решений системы~\eqref{eq:simple_microensemble_model}, определяемые знаком функции $F^{\prime}(\scalar{y})$, в случае: а)~...; б)~...; в)~... (участки графика с устойчивыми и неустойчивыми решениями обозначены соответственно сплошной и пунктирной линиями).}
+        \label{fig:analysis_origin_stability}
+    \end{minipage}
+\end{figure}
+
 
 %==============================================================================
 %                       Характерные свойства и динамика
