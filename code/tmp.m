@@ -217,6 +217,60 @@ for n = 2000
 end
 
 
+%%
+y12 = 0.245;
+z12 = 2.6 * 120 * (1 - y12)^2 * logsig((y12 - 0.1935) .* 120.0) * (1.0 - logsig((y12 - 0.1935) .* 120.0));
+k12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0) - z12 ./ (1.0 - y12);
+u01 = 2.6 * logsig(0.1935 * -120);
+u12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0);
+f_origin = @(u) (heaviside_restricted(u - u12)) .* (1.0 - z12 ./ (u - k12 + eps)) + ...
+                (heaviside_restricted(u - u01) - heaviside_restricted(u - u12)) .* (0.1935 + log(u ./ (2.6 - u) + eps) ./ 120.0);
+s_origin = @(y) (heaviside_restricted(y - y12)) .* (k12 + z12 ./ (1.0 - y + eps)) + ...
+                (heaviside_restricted(y) - heaviside_restricted(y - y12)) .* (2.6 .* logsig(120.0 .* (y - 0.1935)));
+dS_origin = @(y) (heaviside_restricted(y - y12)) .* (z12 ./ (1.0 - y + eps) .^ 2) + ...
+                 (heaviside_restricted(y) - heaviside_restricted(y - y12)) .* (120.0 * 2.6 .* logsig(120.0 .* (y - 0.1935)) .* (1.0 - logsig(120.0 .* (y - 0.1935))));
+
+mu        = 0.75;
+threshold = 1.0;
+theta     = 1.0;
+i         = 2.0;
+alpha = 0.01;
+
+y = 0.01 : 0.001 : y12 + 0.1;
+dF = alpha  - mu .* theta .* dS_origin(y);
+
+figure();
+plot(y, dF); hold on;
+grid on;
+xlabel('y');
+ylabel('dF');
+
+
+%%
+y12 = 0.245;
+x_l = exp(-120 * (y12 - 0.1935));
+x_r = exp(-120 * (0.0 - 0.1935));
+k_l = (x_l + 1)^2 / (156.0 * 2.0 * x_l);
+k_r = (x_r + 1)^2 / (156.0 * 2.0 * x_r);
+
+k = 1.0/78.0 : 0.01 : 5.0;
+d = (156.0 .* k - 1.0);
+x1 = d - sqrt(d.^2 - 1);
+x2 = d + sqrt(d.^2 - 1);
+y1 = 0.1935 - log(x1) ./ 120.0;
+y2 = 0.1935 - log(x2) ./ 120.0;
+
+figure();
+plot(k, y1); hold on;
+plot(k, y2); hold on;
+plot([k_l k_l], [0.0 y12]); hold on;
+%plot([k_r k_r], [0.0 y12]); hold on;
+plot([min(k) max(k)], [y12 y12]); hold on;
+grid on;
+xlabel('\mu\theta/\alpha');
+ylabel('y');
+
+
 
 
 

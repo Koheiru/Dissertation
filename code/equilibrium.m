@@ -14,9 +14,13 @@ f_origin = @(u) (heaviside_restricted(u - u12)) .* (1.0 - z12 ./ (u - k12 + eps)
                 (heaviside_restricted(u - u01) - heaviside_restricted(u - u12)) .* (0.1935 + log(u ./ (2.6 - u) + eps) ./ 120.0);
 s_origin = @(y) (heaviside_restricted(y - y12)) .* (k12 + z12 ./ (1.0 - y + eps)) + ...
                 (heaviside_restricted(y) - heaviside_restricted(y - y12)) .* (2.6 .* logsig(120.0 .* (y - 0.1935)));
+dS_origin = @(y) (heaviside_restricted(y - y12)) .* (z12 ./ (1.0 - y + eps) .^ 2) + ...
+                 (heaviside_restricted(y) - heaviside_restricted(y - y12)) .* (120.0 * 2.6 .* logsig(120.0 .* (y - 0.1935)) .* (1.0 - logsig(120.0 .* (y - 0.1935))));
 
 f_sigm = @(u) logsig(u - 3.0);
 s_sigm = @(y) 3.0 + log(y ./ (1 - y));
+dS_sigm = @(y) (1 ./ y + 1.0 ./ (1.0 - y));
+
 
 %% [sigmoidal model] equilibrium points for soft and hard states
 fh = figure();
@@ -113,7 +117,6 @@ ylabel('F');
 ylim([-3 3]);
 
 y = 0.1 : 0.01 : 0.9;
-dS_sigm = @(y) (1 ./ y + 1.0 ./ (1.0 - y));
 dF_zero = alpha_zero - mu .* theta .* dS_sigm(y);
 dF_soft = alpha_soft - mu .* theta .* dS_sigm(y);
 dF_hard = alpha_hard - mu .* theta .* dS_sigm(y);
@@ -383,9 +386,6 @@ xlim([-0.02 1.02]);
 ylim([-5 55]);
 
 y = 0.01 : 0.001 : 0.95;
-dS_origin = @(y) (heaviside_restricted(y - y12)) .* (z12 ./ (1.0 - y + eps) .^ 2) + ...
-                 (heaviside_restricted(y) - heaviside_restricted(y - y12)) .* (120.0 * 2.6 .* logsig(120.0 .* (y - 0.1935)) .* (1.0 - logsig(120.0 .* (y - 0.1935))));
-
 dF_soft  = alpha_soft  - mu .* theta .* dS_origin(y);
 dF_hard  = alpha_hard  - mu .* theta .* dS_origin(y);
 dF_hyper = alpha_hyper - mu .* theta .* dS_origin(y);
