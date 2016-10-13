@@ -355,8 +355,8 @@ figure_adjust(fh, [17.5 10.5]);
 mu = 0.75;
 threshold = 1.0;
 alpha = 3.5;
-theta = 0.0 : 0.1 : 8.0;
-%y = [0.00 : 0.01 : 0.95];
+theta = 0.01 : 0.5 : 8.0;
+y = [0.0 : 0.04 : 0.12, 0.12 : 0.01 : 0.25, 0.25 : 0.05 : 0.85, 0.85 : 0.01 : 0.98];
 i = -(repmat(alpha .* y, length(theta), 1) - threshold - mu .* theta' * s_origin(y));
 
 theta_s = [min(theta) : 0.01 : max(theta)];
@@ -389,7 +389,7 @@ x2_high = real(x2_high);
 f2_high = 0.1935 - log(x2_high) / 120.0;
 i2_high = alpha .* f2_high - threshold - mu .* theta_s .* (2.6 .* logsig(120.0 .* (f2_high - 0.1935)));
 
-up = 0.00;
+up = 0.02;
 
 surf(y, theta, i, 'FaceColor', 'white');
 grid on; hold on;
@@ -400,5 +400,6 @@ plot3(f2_high, theta_s, -i2_high+up, '-k', 'LineWidth', 2);
 xlabel('y');
 ylabel('\theta');
 zlabel('i');
-view([-154, 28]);
+zlim([-10 50]);
+view([-148, 42]);
 
