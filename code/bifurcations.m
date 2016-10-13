@@ -255,8 +255,8 @@ figure_adjust(fh, [17.5 6.5]);
 
 mu = 0.75;
 threshold = 1.0;
-theta = [0.0 : 0.001 : 5.0];
-alpha = 5.0;
+theta = [0.0 : 0.001 : 8.0];
+alpha = 3.5;
 
 x_l = exp(-120 * (y12 - 0.1935));
 x_r = exp(-120 * (0.0 - 0.1935));
@@ -302,48 +302,51 @@ figure_adjust(fh, [17.5 10.5]);
 mu = 0.75;
 threshold = 1.0;
 theta = 1.0;
-alpha = [0.0 : 0.1 : 1.0, 1.0 : 0.5 : 30];
-y = 0.01 : 0.01 : 0.98;
+alpha = [0.0 : 1.0 : 30];
+y = [0.0 : 0.02 : 0.16, 0.16 : 0.01 : 0.23, 0.23 : 0.02 : 0.85, 0.85 : 0.01 : 0.98];
 i = -(alpha' * y - threshold - repmat(mu .* theta .* s_origin(y), length(alpha), 1));
 
+alpha_s = [min(alpha) : 0.1 : 1.0, 1.0 : 1.0 : max(alpha)];
 % copy-paste from above: i vs alpha diagram
 x_l = exp(-120 * (y12 - 0.1935));
 x_r = exp(-120 * (0.0 - 0.1935));
 k_l = (x_l + 1)^2 / (156.0 * 2.0 * x_l);
 k_r = (x_r + 1)^2 / (156.0 * 2.0 * x_r);
-d = (156.0 .* mu .* theta ./ alpha - 1);
+d = (156.0 .* mu .* theta ./ alpha_s - 1);
 
-f2_low = 0.0 + + zeros(size(alpha));
-i2_low = mu * theta * u01 - threshold + zeros(size(alpha));
+f2_low = 0.0 + + zeros(size(alpha_s));
+i2_low = mu * theta * u01 - threshold + zeros(size(alpha_s));
 
 x1_low = d + sqrt(d.^2 - 1);
-x1_low(78.0 .* mu .* theta ./ alpha < 1.0) = NaN;
-x1_low(mu .* theta ./ alpha > (x_r + 1.0)^2/(312.0*x_r)) = NaN; 
+x1_low(78.0 .* mu .* theta ./ alpha_s < 1.0) = NaN;
+x1_low(mu .* theta ./ alpha_s > (x_r + 1.0)^2/(312.0*x_r)) = NaN; 
 x1_low = real(x1_low);
 f1_low = 0.1935 - log(x1_low) / 120.0;
-i1_low = alpha .* f1_low - threshold - mu .* theta .* (2.6 .* logsig(120.0 .* (f1_low - 0.1935)));
+i1_low = alpha_s .* f1_low - threshold - mu .* theta .* (2.6 .* logsig(120.0 .* (f1_low - 0.1935)));
 
-f1_high = 1.0 - sqrt(z12 .* mu .* theta ./ alpha);
-f1_high(z12 .* mu .* theta ./ alpha > (1.0 - y12)^2) = NaN; 
+f1_high = 1.0 - sqrt(z12 .* mu .* theta ./ alpha_s);
+f1_high(z12 .* mu .* theta ./ alpha_s > (1.0 - y12)^2) = NaN; 
 f1_high = real(f1_high);
-i1_high = alpha .* f1_high - threshold - mu .* theta .* (k12 + z12 ./ (1.0 - f1_high));
+i1_high = alpha_s .* f1_high - threshold - mu .* theta .* (k12 + z12 ./ (1.0 - f1_high));
 
 x2_high = d - sqrt(d.^2 - 1);
-x2_high(78.0 .* mu .* theta ./ alpha < 1.0) = NaN; 
-x2_high(mu .* theta ./ alpha > (x_l + 1.0)^2/(312.0*x_l)) = NaN; 
+x2_high(78.0 .* mu .* theta ./ alpha_s < 1.0) = NaN; 
+x2_high(mu .* theta ./ alpha_s > (x_l + 1.0)^2/(312.0*x_l)) = NaN; 
 x2_high = real(x2_high);
 f2_high = 0.1935 - log(x2_high) / 120.0;
-i2_high = alpha .* f2_high - threshold - mu .* theta .* (2.6 .* logsig(120.0 .* (f2_high - 0.1935)));
+i2_high = alpha_s .* f2_high - threshold - mu .* theta .* (2.6 .* logsig(120.0 .* (f2_high - 0.1935)));
+
+up = 0.02;
 
 surf(y, alpha, i, 'FaceColor', 'white'); hold on; grid on;
-plot3(f1_low, alpha, -i1_low, '-g', 'LineWidth', 2);
-plot3(f2_low, alpha, -i2_low, '-g', 'LineWidth', 2);
-plot3(f1_high, alpha, -i1_high, '-r', 'LineWidth', 2);
-plot3(f2_high, alpha, -i2_high, '-r', 'LineWidth', 2);
+plot3(f1_low, alpha_s, -i1_low+up, '-k', 'LineWidth', 2);
+plot3(f2_low, alpha_s, -i2_low+up, '-k', 'LineWidth', 2);
+plot3(f1_high, alpha_s, -i1_high+up, '-k', 'LineWidth', 2);
+plot3(f2_high, alpha_s, -i2_high+up, '-k', 'LineWidth', 2);
 xlabel('y');
 ylabel('\alpha');
 zlabel('i');
-view([-141, 36]);
+view([-156, 30]);
 
 %% [original model] bifurcation: F surface defined by theta
 fh = figure();
@@ -351,46 +354,49 @@ figure_adjust(fh, [17.5 10.5]);
 
 mu = 0.75;
 threshold = 1.0;
-alpha = 2.5;
-theta = 0.0 : 0.1 : 6.0;
-y = 0.01 : 0.01 : 0.98;
+alpha = 3.5;
+theta = 0.0 : 0.1 : 8.0;
+%y = [0.00 : 0.01 : 0.95];
 i = -(repmat(alpha .* y, length(theta), 1) - threshold - mu .* theta' * s_origin(y));
 
+theta_s = [min(theta) : 0.01 : max(theta)];
 % copy-paste from above: i vs theta diagram
 x_l = exp(-120 * (y12 - 0.1935));
 x_r = exp(-120 * (0.0 - 0.1935));
 k_l = (x_l + 1)^2 / (156.0 * 2.0 * x_l);
 k_r = (x_r + 1)^2 / (156.0 * 2.0 * x_r);
-d = (156.0 .* mu .* theta ./ alpha - 1);
+d = (156.0 .* mu .* theta_s ./ alpha - 1);
 
-f2_low = 0.0 + zeros(size(theta));
-i2_low = mu * theta * u01 - threshold + zeros(size(theta));
+f2_low = 0.0 + zeros(size(theta_s));
+i2_low = mu * theta_s * u01 - threshold + zeros(size(theta_s));
 
 x1_low = d + sqrt(d.^2 - 1);
-x1_low(78.0 .* mu .* theta ./ alpha < 1.0) = NaN;
-x1_low(mu .* theta ./ alpha > (x_r + 1.0)^2/(312.0*x_r)) = NaN; 
+x1_low(78.0 .* mu .* theta_s ./ alpha < 1.0) = NaN;
+x1_low(mu .* theta_s ./ alpha > (x_r + 1.0)^2/(312.0*x_r)) = NaN; 
 x1_low = real(x1_low);
 f1_low = 0.1935 - log(x1_low) / 120.0;
-i1_low = alpha .* f1_low - threshold - mu .* theta .* (2.6 .* logsig(120.0 .* (f1_low - 0.1935)));
+i1_low = alpha .* f1_low - threshold - mu .* theta_s .* (2.6 .* logsig(120.0 .* (f1_low - 0.1935)));
 
-f1_high = 1.0 - sqrt(z12 .* mu .* theta ./ alpha);
-f1_high(z12 .* mu .* theta ./ alpha > (1.0 - y12)^2) = NaN; 
+f1_high = 1.0 - sqrt(z12 .* mu .* theta_s ./ alpha);
+f1_high(z12 .* mu .* theta_s ./ alpha > (1.0 - y12)^2) = NaN; 
 f1_high = real(f1_high);
-i1_high = alpha .* f1_high - threshold - mu .* theta .* (k12 + z12 ./ (1.0 - f1_high));
+i1_high = alpha .* f1_high - threshold - mu .* theta_s .* (k12 + z12 ./ (1.0 - f1_high));
 
 x2_high = d - sqrt(d.^2 - 1);
-x2_high(78.0 .* mu .* theta ./ alpha < 1.0) = NaN; 
-x2_high(mu .* theta ./ alpha > (x_l + 1.0)^2/(312.0*x_l)) = NaN; 
+x2_high(78.0 .* mu .* theta_s ./ alpha < 1.0) = NaN; 
+x2_high(mu .* theta_s ./ alpha > (x_l + 1.0)^2/(312.0*x_l)) = NaN; 
 x2_high = real(x2_high);
 f2_high = 0.1935 - log(x2_high) / 120.0;
-i2_high = alpha .* f2_high - threshold - mu .* theta .* (2.6 .* logsig(120.0 .* (f2_high - 0.1935)));
+i2_high = alpha .* f2_high - threshold - mu .* theta_s .* (2.6 .* logsig(120.0 .* (f2_high - 0.1935)));
+
+up = 0.00;
 
 surf(y, theta, i, 'FaceColor', 'white');
 grid on; hold on;
-plot3(f1_low, theta, -i1_low, '-g', 'LineWidth', 2);
-plot3(f2_low, theta, -i2_low, '-g', 'LineWidth', 2);
-plot3(f1_high, theta, -i1_high, '-r', 'LineWidth', 2);
-plot3(f2_high, theta, -i2_high, '-r', 'LineWidth', 2);
+plot3(f1_low, theta_s, -i1_low+up, '-k', 'LineWidth', 2);
+plot3(f2_low, theta_s, -i2_low+up, '-k', 'LineWidth', 2);
+plot3(f1_high, theta_s, -i1_high+up, '-k', 'LineWidth', 2);
+plot3(f2_high, theta_s, -i2_high+up, '-k', 'LineWidth', 2);
 xlabel('y');
 ylabel('\theta');
 zlabel('i');
