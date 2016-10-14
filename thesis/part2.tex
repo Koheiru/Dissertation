@@ -206,20 +206,23 @@
 \end{figure}
 
 Отметим, что включение точки $\scalar{y}^{\sim}$ в область устойчивых решений при $d = 0$, так же как и выключение точек $\left\{\scalar{y}^{+}, \scalar{y}^{-}\right\}$ при $d > 0$, можно определить, рассмотрев их на графиках решения. В первом случае (\seefigure~\ref{fig:analysis_sigm_bound_points}а) устойчивость точки равновесия $\scalar{y}^{*} = \scalar{y}^{\sim}$ является результатом того, что в её окрестности градиент $\nabla\scalar{y}$, пропорциональный по величине и знаку $F(\scalar{y})$, будет направлять траекторию системы к ней, хотя скорость сходимости при этом будет крайне медленной в виду пологости функции $F(\scalar{y})$ в окрестности точки $\scalar{y}^{\sim}$. Во втором случае (\seefigure~\ref{fig:analysis_sigm_bound_points}б) в правой полуокрестности точки равновесия $\scalar{y}^{*} = \scalar{y}^{+}$ градиент $\nabla\scalar{y}$ уводит траекторию системы от неё, а в левой полуокрестности --- направляет к ней, но при условии, что величина градиента не позволит значению переменной $\scalar{y}$ оказаться в области $\left(\scalar{y}^{+}; 1\right]$, иначе градиент снова будет уводить траекторию от данной точки равновесия. Для точки $\scalar{y}^{*} = \scalar{y}^{-}$ ситуация симметрична, поэтому в дальнейшем без потери общности в рассуждениях мы будем подразумевать неустойчивость решений $\scalar{y}^{*} = \left\{\scalar{y}^{+}, \scalar{y}^{-}\right\}$.
+\IncludeFigure[ht]{analysis_sigm_bound_points}{Определение устойчивости пограничных точек $\scalar{y}^{\sim}$ и $\scalar{y}^{+}$, для которых $F^{\prime}(\scalar{y}) = 0$, по градиенту $\nabla\scalar{y}$ в точках их окрестности.} 
+%\begin{figure}[ht]
+%    \begin{minipage}{\textwidth}
+%        \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_sigm_bound_points}}
+%        \caption{Определение устойчивости пограничных точек $\scalar{y}^{\sim}$ и $\scalar{y}^{+}$, для которых $F^{\prime}(\scalar{y}) = 0$, по градиенту $\nabla\scalar{y}$ в точках их окрестности.} 
+%        \label{fig:analysis_sigm_bound_points}
+%    \end{minipage}
+%\end{figure}
 
-\begin{figure}[ht]
-    \begin{minipage}{\textwidth}
-        \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_sigm_bound_points}}
-        \caption{Определение устойчивости пограничных точек $\scalar{y}^{\sim}$ и $\scalar{y}^{+}$, для которых $F^{\prime}(\scalar{y}) = 0$, по градиенту $\nabla\scalar{y}$ в точках их окрестности.} 
-        \label{fig:analysis_sigm_bound_points}
-    \end{minipage}
-\end{figure}
+\todo{Область устойчивочти \onfigure~\ref{fig:analysis_sigm_equilibrium_areas}}
+\IncludeFigure[ht]{analysis_sigm_equilibrium_areas}{\todo{Область устойчивочти...}} 
 
 \subsubsection{Бифуркационный анализ}
 
 Основываясь на решении~\eqref{eq:sigm_stability_bounds_y}, можно определить важные свойства модели с точки зрения бифуркационного анализа. Однако прежде отметим вхождение в это решение отношения $\theta/\alpha$ --- параметр $\theta$ будем рассматривать как модулирующий коэффициент, поскольку значение параметра $\alpha$ задаёт изначальную (фиксированную) бифуркационную конфигурацию модели, которая затем в процессе функционирования будет меняться в соответствии с текущим значением параметра $\theta$. Поэтому в первую очередь мы рассмотрим влияние на модель параметра $\alpha$, а уже затем параметра $\theta$.
 
-Как показано \onfigure~\ref{fig:analysis_sigm_bifurcations}а, в модели наблюдается бифуркация типа суперкритическая \inquotes{вилка}: при монотонном возрастании значения параметра $\alpha$ точка устойчивого равновесия преобразуется в точку неустойчивого равновесия, порождая при этом две новых устойчивых точки (\onfigure~\ref{fig:analysis_sigm_bifurcations}в пунктиром обозначены соответствующие при этом значения параметра $i$, обеспечивающие симметрию \inquotes{вилки}). Это происходит благодаря тому, что кривая решений $F(\scalar{y})$ теряет монотонность и приобретает $s$-образную складку (\seefigure~\ref{fig:analysis_sigm_stability}в) --- в этом случае точка бифуркации соответствует условию возникновения двух вещественных корней в~\eqref{eq:sigm_stability_bounds_y}, которое определяется равенством $0,25 - \mu \theta / \alpha = 0$. Таким образом, точкой бифуркации будет:
+Как показано \onfigure~\ref{fig:analysis_sigm_bifurcations}а, в модели наблюдается бифуркация типа суперкритическая \inquotes{вилка}: при монотонном возрастании значения параметра $\alpha$ точка устойчивого равновесия преобразуется в точку неустойчивого равновесия, порождая при этом две новых устойчивых точки (\onfigure~\ref{fig:analysis_sigm_bifurcations}б пунктиром обозначены соответствующие при этом значения параметра $i$, обеспечивающие симметрию \inquotes{вилки}). Это происходит благодаря тому, что кривая решений $F(\scalar{y})$ теряет монотонность и приобретает $s$-образную складку (\seefigure~\ref{fig:analysis_sigm_stability}в) --- в этом случае точка бифуркации соответствует условию возникновения двух вещественных корней в~\eqref{eq:sigm_stability_bounds_y}, которое определяется равенством $0,25 - \mu \theta / \alpha = 0$. Таким образом, точкой бифуркации будет:
 \begin{equation}
     \label{eq:sigm_bifurcation_alpha}
     \alpha =  4 \mu \theta.
@@ -228,7 +231,7 @@
 \begin{figure}[ht]
     \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_sigm_bifurcations}}
     \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_sigm_bifurcations_p2}}
-    \caption{Бифуркационные диаграммы: а-б) бифуркация типа суперкритическая \inquotes{вилка} (закрашенные круги соответствуют точкам устойчивого равновесия, проколотые -- неустойчивого); в-г) бифуркация типа \inquotes{сборка} (би-стабильная область заштрихована, уни-стабильная -- нет).}
+    \caption{Бифуркационные диаграммы: а,в) бифуркация типа суперкритическая \inquotes{вилка} (закрашенные круги соответствуют точкам устойчивого равновесия, проколотые -- неустойчивого); б,г) бифуркация типа \inquotes{сборка} (би-стабильная область заштрихована, уни-стабильная -- нет).}
     \label{fig:analysis_sigm_bifurcations}
 \end{figure}
 
@@ -243,7 +246,7 @@
 
 Таким образом, при монотонном возрастании значения параметра $i$ в точке $i^{-}$ возникает дополнительная пара из точек неустойчивого и устойчивого равновесия в дополнение к уже существующей устойчивой (\onfigure~\ref{fig:analysis_sigm_equilibriums}в точки $\scalar{y}^{*}_{2}$, $\scalar{y}^{*}_{3}$ и $\scalar{y}^{*}_{1}$ соответственно), а в точке $i^{+}$ изначально существовавшая точка аннигилируется вместе с точкой неустойчивого равновесия, в результате чего в системе вновь будет существовать единственное и устойчивое решение -- аналогично и в обратную сторону.
 
-Данная ситуация соответствует бифуркации типа \inquotes{сборка}, которая изображена \onfigure~\ref{fig:analysis_sigm_solution_surface}а в виде зависящей от параметров $\scalar{i}$ и $\alpha$ поверхности решений системы~\eqref{eq:simple_microensemble_model} согласно выражению~\eqref{eq:graphic_solution}. Для наглядности \onfigure~\ref{fig:model_sigm_configurations} показаны различные срезы этой поверхности, привязанные к плоскости параметров. Сама же плоскость параметров более детально изображена на \onfigure~\ref{fig:analysis_sigm_bifurcations}в, где демонстрируется зависимость точек бифуркации $i^{-}$ и $i^{+}$ от значений параметра $\alpha$. 
+Данная ситуация соответствует бифуркации типа \inquotes{сборка}, которая изображена \onfigure~\ref{fig:analysis_sigm_solution_surface}а в виде зависящей от параметров $\scalar{i}$ и $\alpha$ поверхности решений системы~\eqref{eq:simple_microensemble_model} согласно выражению~\eqref{eq:graphic_solution}. Для наглядности \onfigure~\ref{fig:model_sigm_configurations} показаны различные срезы этой поверхности, привязанные к плоскости параметров. Сама же плоскость параметров более детально изображена на \onfigure~\ref{fig:analysis_sigm_bifurcations}б, где демонстрируется зависимость точек бифуркации $i^{-}$ и $i^{+}$ от значений параметра $\alpha$. 
 \begin{figure}[ht]
     \makebox[\textwidth][c]{\includegraphics[width=0.95\textwidth]{analysis_sigm_solution_surface}}
     \makebox[\textwidth][c]{\includegraphics[width=0.95\textwidth]{analysis_sigm_solution_surface_p2}}
@@ -256,7 +259,7 @@
     \left(\alpha = 4 \mu \theta; \scalar{i} = \mu \theta\right).
 \end{equation}
 
-Как отмечалось выше, параметр $\theta$ входит в решение~\eqref{eq:sigm_stability_bounds_y} обратно пропорционально параметру $\alpha$, поэтому для него справедливы аналогичные результаты. Бифуркация типа суперкритическая \inquotes{вилка} продемонстрирована \onfigure~\ref{fig:analysis_sigm_bifurcations}б: при монотонном возрастании значения параметра $\theta$ две точки устойчивого равновесия сливаются вместе с точкой неустойчивого равновесия, образуя при этом одну устойчивую точку (\onfigure~\ref{fig:analysis_sigm_bifurcations}г пунктиром обозначены соответствующие при этом значения параметра $i$, обеспечивающие симметрию \inquotes{вилки}). Точка бифуркации находится из тех же соображений, что и~\eqref{eq:sigm_bifurcation_alpha}:
+Как отмечалось выше, параметр $\theta$ входит в решение~\eqref{eq:sigm_stability_bounds_y} обратно пропорционально параметру $\alpha$, поэтому для него справедливы аналогичные результаты. Бифуркация типа суперкритическая \inquotes{вилка} продемонстрирована \onfigure~\ref{fig:analysis_sigm_bifurcations}в: при монотонном возрастании значения параметра $\theta$ две точки устойчивого равновесия сливаются вместе с точкой неустойчивого равновесия, образуя при этом одну устойчивую точку (\onfigure~\ref{fig:analysis_sigm_bifurcations}г пунктиром обозначены соответствующие при этом значения параметра $i$, обеспечивающие симметрию \inquotes{вилки}). Точка бифуркации находится из тех же соображений, что и~\eqref{eq:sigm_bifurcation_alpha}:
 \begin{equation}
     \label{eq:sigm_bifurcation_theta}
     \theta =  \alpha / 4 \mu.
@@ -270,7 +273,7 @@
 
 \subsubsection{Дополнительные замечания}
 
-Несмотря на то, что параметры $\alpha$ и $\theta$ вносят пропорциональный вклад в корни $y^{+}$ и $y^{-}$, которые зависят исключительно от величины $\mu \theta / \alpha$, их влияние на значения бифуркационных точек $i^{+}$ и $i^{-}$ имеет более сложный характер, что графически изображено \onfigure~\ref{fig:analysis_sigm_params_dependency}, а так же можно наблюдать \onfigure~\ref{fig:analysis_sigm_bifurcations}в-г. Имея в виду, что $\theta > 0$ по определению~\eqref{eq:full_single_neuron_model}, и учитывая точку бифуркации~\ref{eq:sigm_bifurcation_theta_and_i}, отметим следующее:
+Несмотря на то, что параметры $\alpha$ и $\theta$ вносят пропорциональный вклад в корни $y^{+}$ и $y^{-}$, которые зависят исключительно от величины $\mu \theta / \alpha$, их влияние на значения бифуркационных точек $i^{+}$ и $i^{-}$ имеет более сложный характер, что графически изображено \onfigure~\ref{fig:analysis_sigm_params_dependency}, а так же можно наблюдать \onfigure~\ref{fig:analysis_sigm_bifurcations}б,г. Имея в виду, что $\theta > 0$ по определению~\eqref{eq:full_single_neuron_model}, и учитывая точку бифуркации~\ref{eq:sigm_bifurcation_theta_and_i}, отметим следующее:
 \begin{equation}
     \nonumber
     \begin{cases}
@@ -286,7 +289,7 @@
     \end{cases}.
 \end{equation}
 
-\IncludeFigure[t]{analysis_sigm_params_dependency}{Зависящие от параметров $\alpha$ и $\theta$ поверхности точек бифуркации $i^{-}$ и $i^{+}$, проекции которых на плоскости $\left(\alpha,\scalar{i}\right)$ и $\left(\theta,\scalar{i}\right)$ изображены \onfigure~\ref{fig:analysis_sigm_bifurcations}в-г.}
+\IncludeFigure[t]{analysis_sigm_params_dependency}{Зависящие от параметров $\alpha$ и $\theta$ поверхности точек бифуркации $i^{-}$ и $i^{+}$, проекции которых на плоскости $\left(\alpha,\scalar{i}\right)$ и $\left(\theta,\scalar{i}\right)$ изображены \onfigure~\ref{fig:analysis_sigm_bifurcations}б,г.}
 
 Таким образом, если представить, что точки $i^{-}$ и $i^{+}$ задаются параметрическими функциями $i^{-}(z)$ и $i^{+}(z)$ с параметром $z \in \left[z_{0}; z_{1}\right]$, то $\theta$ будет определять значение параметра $z$, а $\alpha$ --- значения функций на концах интервала области определения, \ie значения $i^{-}(z_{0})$ и $i^{+}(z_{1})$. Более того, мы можем приблизить эти параметрические функции полиномом, представив выражение~\eqref{eq:sigm_stability_bounds_i} следующим образом:
 \begin{equation}

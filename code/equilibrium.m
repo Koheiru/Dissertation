@@ -189,6 +189,47 @@ ylim([-0.1 0.3]);
 %set(gca, 'YTickLabel',num2str(get(gca,'YTick')'));
 
 
+%% [sigmoidal model] equilibrium areas
+fh = figure();
+figure_adjust(fh, [17.5 5.5]);
+
+%-------------------------
+mu = 0.75;
+theta = 1.0;
+alpha = 0.0 : 0.01 : 15;
+
+f1 = (1.0 + sqrt(1.0 - 4.0 .* mu .* theta ./ alpha)) ./ 2.0;
+f2 = (1.0 - sqrt(1.0 - 4.0 .* mu .* theta ./ alpha)) ./ 2.0;
+f1((1.0 ./ theta) * alpha < 4.0 .* mu) = NaN; f1 = real(f1);
+f2((1.0 ./ theta) * alpha < 4.0 .* mu) = NaN; f2 = real(f2);
+
+figure_subplot(1, 2, 1);
+plot(alpha, f1, '-k'); hold on;
+plot(alpha, f2, '-k'); hold on;
+scatter(4.0 .* mu .* theta, 0.5, 'ok');
+grid off; box on;
+xlabel('\alpha');
+ylabel('y');
+
+%-------------------------
+mu = 0.75;
+theta = 0.0 : 0.01 : 2.5;
+alpha = 4.5;
+
+f1 = (1.0 + sqrt(1.0 - 4.0 .* mu .* theta ./ alpha)) ./ 2.0;
+f2 = (1.0 - sqrt(1.0 - 4.0 .* mu .* theta ./ alpha)) ./ 2.0;
+f1((1.0 ./ theta) * alpha < 4.0 .* mu) = NaN; f1 = real(f1);
+f2((1.0 ./ theta) * alpha < 4.0 .* mu) = NaN; f2 = real(f2);
+
+figure_subplot(1, 2, 2);
+plot(theta, f1, '-k'); hold on;
+plot(theta, f2, '-k'); hold on;
+scatter(alpha ./ (4.0 .* mu), 0.5, 'ok');
+grid off; box on;
+xlabel('\theta');
+ylabel('y');
+
+
 %% [original model] equilibrium points for soft and hard states + special uninteresting state
 fh = figure();
 figure_adjust(fh, [17.5 20.5]);
