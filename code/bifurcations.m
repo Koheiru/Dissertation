@@ -314,7 +314,7 @@ k_l = (x_l + 1)^2 / (156.0 * 2.0 * x_l);
 k_r = (x_r + 1)^2 / (156.0 * 2.0 * x_r);
 d = (156.0 .* mu .* theta ./ alpha_s - 1);
 
-f2_low = 0.0 + + zeros(size(alpha_s));
+f2_low = 0.0 + zeros(size(alpha_s));
 i2_low = mu * theta * u01 - threshold + zeros(size(alpha_s));
 
 x1_low = d + sqrt(d.^2 - 1);

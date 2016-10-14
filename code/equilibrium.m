@@ -459,5 +459,89 @@ xlim([-0.02 1.02]);
 ylim([-15.0 65.0]);
 
 
+%% [original model] equilibrium areas
+fh = figure();
+figure_adjust(fh, [17.5 6.0]);
+
+% ---------------------
+mu = 0.75;
+theta = 1.0;
+alpha = 0.0 : 0.1 : 15.0;
+
+% copy-paste from bifurcations.m: i vs alpha diagram
+x_l = exp(-120 * (y12 - 0.1935));
+x_r = exp(-120 * (0.0 - 0.1935));
+k_l = (x_l + 1)^2 / (156.0 * 2.0 * x_l);
+k_r = (x_r + 1)^2 / (156.0 * 2.0 * x_r);
+d = (156.0 .* mu .* theta ./ alpha - 1);
+
+f2_low = 0.0 + zeros(size(alpha));
+
+x1_low = d + sqrt(d.^2 - 1);
+x1_low(78.0 .* mu .* theta ./ alpha < 1.0) = NaN;
+x1_low(mu .* theta ./ alpha > (x_r + 1.0)^2/(312.0*x_r)) = NaN; 
+x1_low = real(x1_low);
+f1_low = 0.1935 - log(x1_low) / 120.0;
+
+f1_high = 1.0 - sqrt(z12 .* mu .* theta ./ alpha);
+f1_high(z12 .* mu .* theta ./ alpha > (1.0 - y12)^2) = NaN; 
+f1_high = real(f1_high);
+
+x2_high = d - sqrt(d.^2 - 1);
+x2_high(78.0 .* mu .* theta ./ alpha < 1.0) = NaN; 
+x2_high(mu .* theta ./ alpha > (x_l + 1.0)^2/(312.0*x_l)) = NaN; 
+x2_high = real(x2_high);
+f2_high = 0.1935 - log(x2_high) / 120.0;
+
+figure_subplot(1, 2, 1);
+plot(alpha, f1_low, '-k'); hold on;
+plot(alpha, f2_low, '-k'); hold on;
+plot(alpha, f1_high, '-k'); hold on;
+plot(alpha, f2_high, '-k'); hold on;
+grid off; box on;
+xlabel('\alpha');
+ylabel('y');
+ylim([-0.01 1.0]);
+
+% ---------------------
+mu = 0.75;
+threshold = 1.0;
+alpha = 3.5;
+theta = 0.01 : 0.01 : 10.0;
+
+% copy-paste from bifurcations.m: i vs theta diagram
+x_l = exp(-120 * (y12 - 0.1935));
+x_r = exp(-120 * (0.0 - 0.1935));
+k_l = (x_l + 1)^2 / (156.0 * 2.0 * x_l);
+k_r = (x_r + 1)^2 / (156.0 * 2.0 * x_r);
+d = (156.0 .* mu .* theta ./ alpha - 1);
+
+f2_low = 0.0 + zeros(size(theta));
+
+x1_low = d + sqrt(d.^2 - 1);
+x1_low(78.0 .* mu .* theta ./ alpha < 1.0) = NaN;
+x1_low(mu .* theta ./ alpha > (x_r + 1.0)^2/(312.0*x_r)) = NaN; 
+x1_low = real(x1_low);
+f1_low = 0.1935 - log(x1_low) / 120.0;
+
+f1_high = 1.0 - sqrt(z12 .* mu .* theta ./ alpha);
+f1_high(z12 .* mu .* theta ./ alpha > (1.0 - y12)^2) = NaN; 
+f1_high = real(f1_high);
+
+x2_high = d - sqrt(d.^2 - 1);
+x2_high(78.0 .* mu .* theta ./ alpha < 1.0) = NaN; 
+x2_high(mu .* theta ./ alpha > (x_l + 1.0)^2/(312.0*x_l)) = NaN; 
+x2_high = real(x2_high);
+f2_high = 0.1935 - log(x2_high) / 120.0;
+
+figure_subplot(1, 2, 2);
+plot(theta, f1_low, '-k'); hold on;
+plot(theta, f2_low, '-k'); hold on;
+plot(theta, f1_high, '-k'); hold on;
+plot(theta, f2_high, '-k'); hold on;
+grid off; box on;
+xlabel('\theta');
+ylabel('y');
+ylim([-0.01 1.0]);
 
 
