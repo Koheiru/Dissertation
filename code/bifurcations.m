@@ -209,9 +209,10 @@ figure_adjust(fh, [17.5 6.5]);
 
 mu = 0.75;
 threshold = 1.0;
-theta = 1.0;
-alpha = [0.0 : 0.5 : 65];
+theta = 1.5;
+alpha = [0.0 : 0.1 : 80];
 
+% ----------------
 x_l = exp(-120 * (y12 - 0.1935));
 x_r = exp(-120 * (0.0 - 0.1935));
 k_l = (x_l + 1)^2 / (156.0 * 2.0 * x_l);
@@ -240,13 +241,56 @@ x2_high = real(x2_high);
 f2_high = 0.1935 - log(x2_high) / 120.0;
 i2_high = alpha .* f2_high - threshold - mu .* theta .* (2.6 .* logsig(120.0 .* (f2_high - 0.1935)));
 
-plot(alpha, -i2_low, '-g'); hold on;
-plot(alpha, -i1_low, '-g'); hold on;
-plot(alpha, -i2_high, '-r'); hold on;
-plot(alpha, -i1_high, '-r'); hold on;
+% ----------------
+% post_i = (i1_high + i2_high) ./ 2.0;
+% post_alpha = alpha(isnan(post_i) < 1);
+% post_i = post_i(isnan(post_i) < 1);
+% i_mid = post_i;
+% i_mid = i_mid(isnan(i_mid) < 1);
+% k = (i_mid(2) - i_mid(1)) / (alpha(2) - alpha(1));
+% pre_alpha = 0 : 0.1 : (z12 * mu * theta / (1 - y12)^2);
+% pre_i = pre_alpha .* k + (i_mid(1) - pre_alpha(end) .* k);
+% pre_alpha = pre_alpha(1 : end - 1);
+% pre_i = pre_i(1 : end - 1);
+% 
+% y_star = zeros(1, length(pre_alpha));
+% for n = 1 : length(pre_alpha)
+%   y0 = 0.1; y_star(n) = find_solution_dyn(pre_alpha(n), -pre_i(n), threshold, mu, theta, f_sigm, y0, theta * s_sigm(y0));
+% end
+% 
+% y1_star = zeros(1, length(post_alpha));
+% y2_star = zeros(1, length(post_alpha));
+% y3_star = zeros(1, length(post_alpha));
+% for n = 1 : length(post_alpha)
+%   y0 = 0.001; y1_star(n) = find_solution_dyn(post_alpha(n), -post_i(n), threshold, mu, theta, f_sigm, y0, theta * s_sigm(y0));
+%   y0 = 0.2; y2_star(n) = find_solution_dyn(post_alpha(n), -post_i(n), threshold, mu, theta, f_sigm, y0, theta * s_sigm(y0));
+%   y0 = 0.9; y3_star(n) = find_solution_dyn(post_alpha(n), -post_i(n), threshold, mu, theta, f_sigm, y0, theta * s_sigm(y0));
+% end
+
+figure_subplot(1, 2, 1);
+hold on; grid off; box on;
+xlabel('\alpha');
+ylabel('y^{*}');
+% plot(pre_alpha, y_star, '.k');
+% plot(post_alpha, y1_star, '.k');
+% plot(post_alpha, y2_star, '.k');
+% plot(post_alpha, y3_star, '.k');
+ylim([-0.05 1.05]);
+xlim([min(alpha) max(alpha)]);
+
+
+figure_subplot(1, 2, 2);
+plot(alpha, -i2_low, '-k'); hold on;
+plot(alpha, -i1_low, '-k'); hold on;
+plot(alpha, -i2_high, '-k'); hold on;
+plot(alpha, -i1_high, '-k'); hold on;
+plot([pre_alpha, post_alpha], -[pre_i, post_i], '--k'); hold on;
 grid off; box on;
 xlabel('\alpha');
 ylabel('i');
+xlim([-5 80]);
+ylim([-65 10]);
+
 set(fh, 'Name', ['theta = ', num2str(theta)]);
 
 %% [original model] bifurcation: i vs theta diagram
@@ -256,7 +300,7 @@ figure_adjust(fh, [17.5 6.5]);
 mu = 0.75;
 threshold = 1.0;
 theta = [0.0 : 0.001 : 8.0];
-alpha = 3.5;
+alpha = 3.0;
 
 x_l = exp(-120 * (y12 - 0.1935));
 x_r = exp(-120 * (0.0 - 0.1935));
@@ -286,13 +330,24 @@ x2_high = real(x2_high);
 f2_high = 0.1935 - log(x2_high) / 120.0;
 i2_high = alpha .* f2_high - threshold - mu .* theta .* (2.6 .* logsig(120.0 .* (f2_high - 0.1935)));
 
-plot(theta, -i2_low, '-g'); hold on;
-plot(theta, -i1_low, '-g'); hold on;
-plot(theta, -i2_high, '-r'); hold on;
-plot(theta, -i1_high, '-r'); hold on;
+figure_subplot(1, 2, 1);
+hold on; grid off; box on;
+xlabel('\theta');
+ylabel('y^{*}');
+ylim([-0.05 1.05]);
+xlim([min(theta) max(theta)]);
+
+figure_subplot(1, 2, 2);
+plot(theta, -i2_low, '-k'); hold on;
+plot(theta, -i1_low, '-k'); hold on;
+plot(theta, -i2_high, '-k'); hold on;
+plot(theta, -i1_high, '-k'); hold on;
 grid off; box on;
 xlabel('\theta');
 ylabel('i');
+xlim([0 7]);
+ylim([-2 14]);
+
 set(fh, 'Name', ['alpha = ', num2str(alpha)]);
 
 %% [original model] bifurcation: F surface defined by alpha
