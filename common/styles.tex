@@ -133,9 +133,14 @@
 \newtheorem*{Definition*}{Определение}  % определения без нумерации
 
 \theoremstyle{normal}
-\newtheorem{Statement}{Утверждение}    % утверждение с нумерацией
-\newtheorem*{Statement*}{Утверждение}  % утверждение без нумерации
+\newtheorem{Statement}{Утверждение}     % утверждение с нумерацией
+\newtheorem*{Statement*}{Утверждение}   % утверждение без нумерации
 
+\newenvironment{Proof}                  % доказательство
+    {\par\noindent\textbf{Доказательство.}}
+    {\hfill$\scriptstyle\blacksquare$}
+
+%%% Системы уравнений %%%
 \makeatletter
 \newenvironment{sqcases}{%
     \matrix@check\sqcases\env@sqcases
