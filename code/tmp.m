@@ -271,7 +271,52 @@ xlabel('\mu\theta/\alpha');
 ylabel('y');
 
 
+%%
+figure();
 
+y12 = 0.245;
+z12 = 2.6 * 120 * (1 - y12)^2 * logsig((y12 - 0.1935) .* 120.0) * (1.0 - logsig((y12 - 0.1935) .* 120.0));
+k12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0) - z12 ./ (1.0 - y12);
+u01 = 2.6 * logsig(0.1935 * -120);
+u12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0);
+
+mu = 0.75;
+theta = 1.0;
+alpha = 1.0 : 0.01 : 5.0;
+y2_high = 1 - sqrt(z12 .* mu .* theta ./ alpha);
+i2_high = -alpha .* y2_high + mu .* theta .* (k12 + z12 ./ (1.0 - y2_high));
+i1_low = mu .* theta .* u01 .* ones(size(alpha));
+
+subplot(2, 1, 1);
+o = mu .* theta ./ alpha;
+plot(o, i2_high, '-k'); hold on;
+plot(o, i1_low, '-k'); hold on;
+grid on;
+xlabel('\mu\theta/\alpha');
+
+x = 0.1 : 0.001 : (1 - y12);
+o = (x.^2 ./ z12);
+y = (k12 - u01) .* x .^2 + 2.0 .* z12 .* x .^ 1 - z12;
+
+k = z12 / (k12 - u01);
+o_star = (sqrt(k^2 + k) - k)^2 / z12;
+
+subplot(2, 1, 2);
+plot(o, y, '-k'); hold on;
+plot([0 0] + o_star, [min(y) max(y)], '--r'); hold on;
+grid on;
+xlabel('\mu\theta/\alpha');
+
+
+% x = 0.0 : 0.001 : (1 - y12);
+% o = (x.^2 ./ z12);
+% y = (u01 - k12) .* x.^2 + 2 * z12;
+% 
+% subplot(2, 1, 2);
+% plot(o, y, '-k'); hold on;
+% plot([0 0] + (2 / (k12 - u01)), [min(y) max(y)], '--r'); hold on;
+% grid on;
+% xlabel('\mu\theta/\alpha');
 
 
 
