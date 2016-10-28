@@ -249,7 +249,8 @@
 При этом \socalled точка сборки, определяющая точку возникновения $s$-образной складки, определяется равенством~\eqref{eq:sigm_bifurcation_alpha} и с учётом выражения~\eqref{eq:sigm_stability_bounds_i} равна:
 \begin{equation}
     \nonumber
-    \left(\alpha = 4 \mu \theta; \scalar{i} = \mu \theta\right).
+    (\alpha, \scalar{i}) = (4 \mu \theta, \mu \theta).
+    % \left(\alpha = 4 \mu \theta; \scalar{i} = \mu \theta\right).
 \end{equation}
 
 Как отмечалось выше, параметр $\theta$ входит в решение~\eqref{eq:sigm_stability_bounds_y} обратно пропорционально параметру $\alpha$, поэтому для него справедливы аналогичные результаты. Бифуркация типа суперкритическая \inquotes{вилка} продемонстрирована \onfigure~\ref{fig:analysis_sigm_bifurcations}в: при монотонном возрастании значения параметра $\theta$ две точки устойчивого равновесия сливаются вместе с точкой неустойчивого равновесия, образуя при этом одну устойчивую точку (\onfigure~\ref{fig:analysis_sigm_bifurcations}г пунктиром обозначены соответствующие при этом значения параметра $i$, обеспечивающие симметрию \inquotes{вилки}). Точка бифуркации находится из тех же соображений, что и~\eqref{eq:sigm_bifurcation_alpha}:
@@ -261,7 +262,8 @@
 Бифуркация типа \inquotes{сборка}, так же как и случае с параметром $\alpha$, изображена в виде поверхности решений системы~\eqref{eq:simple_microensemble_model}  \onfigure~\ref{fig:analysis_sigm_solution_surface}б, которая зависит от параметров $\scalar{i}$ и $\theta$: пара из точек устойчивого и неустойчивого равновесия возникает при пересечении линий складки, которые соответствуют значениям $i^{-}$ и $i^{+}$, в сторону области складки, а в при обратном направлении --- аннигилируется. Зависимость точек бифуркаций $i^{-}$ и $i^{+}$ от значений параметра $\theta$ продемонстрирована \onfigure~\ref{fig:analysis_sigm_bifurcations}г, а точка сборки, исходя из равенства~\eqref{eq:sigm_bifurcation_theta} и выражения~\eqref{eq:sigm_stability_bounds_i}, равна:
 \begin{equation}
     \label{eq:sigm_bifurcation_theta_and_i}
-    \left(\theta = \alpha / 4 \mu; \scalar{i} = \alpha / 4\right).
+    (\theta, \scalar{i}) = (\alpha / 4 \mu, \alpha / 4).
+    % \left(\theta = \alpha / 4 \mu; \scalar{i} = \alpha / 4\right).
 \end{equation}
 
 \subsubsection{Дополнительные замечания}
@@ -339,52 +341,62 @@
 \end{equation}
 решением которых будут корни:
 \begin{equation}
+    \nonumber
     \begin{cases}
-        \label{eq:origin_stability_bounds_y}
+        % \label{eq:origin_stability_bounds_y}
         \scalar{x}_{1,2} = \left( 156 \mu \theta / \alpha - 1\right) \pm \sqrt{\left( 156 \mu \theta / \alpha - 1\right)^{2} - 1}, \\ % & \scalar{x} \in \left(x_{01}; x_{12}\right] \\
         \scalar{y}_{3\phantom{,4}}   = 1 - \sqrt{z_{12} \mu \theta / \alpha},                                                      \\ % & \scalar{y} \in \left(y_{12}; 1\right] \\
     \end{cases}
 \end{equation}
 где корень $\scalar{y}_{4} = 1 + \sqrt{z_{12} \mu \theta / \alpha}$ не рассматривается, т.к. при любых допустимых значениях параметров величина $\scalar{y}_{4} > 1$, \ie не принадлежит области определения переменной $\scalar{y}$. При этом для корня $\scalar{y}_{3}$ область допустимых значений определена как интервал $\left(y_{12}; 1\right]$, а для корней $\scalar{x}_{1,2}$ -- как интервал $\left(x_{01}; x_{12}\right]$.
 
-Для дальнейшего удобства введём следующие обозначения: $y_{high}^{-} = \scalar{y}_{3}$, а $y_{low}^{-} = \scalar{y}_{1} = 0,1935 - \ln(\scalar{x}_{1})/120$ и $y_{high}^{+} = \scalar{y}_{2} = 0,1935 - \ln(\scalar{x}_{2})/120$ в предположении, что корни $\scalar{x}_{1,2}$ являются различными вещественными значениями и $\scalar{x}_{1} > \scalar{x}_{2}$. В этом случае, как следует из Приложения~\ref{appendix:origin_roots_existance} (\nameref{appendix:origin_roots_existance}), области определения относительно параметров модели будут определяться следующим образом:
+Для дальнейшего удобства обозначим корни следующим образом:
 \begin{equation}
     \begin{cases}
-        \label{eq:origin_stability_bounds_params}
-        1 / 78 < \mu \theta / \alpha < (x_{01} + 1)^{2} / (312 x_{01}) & \text{ для } \scalar{y}^{-}_{low}, \\
-        1 / 78 < \mu \theta / \alpha < (x_{12} + 1)^{2} / (312 x_{12}) & \text{ для } \scalar{y}^{+}_{high}, \\
-        \mu \theta / \alpha < \left(1 - y_{12}\right)^{2} / z_{12}     & \text{ для } \scalar{y}^{-}_{high}. \\
+        \label{eq:origin_stability_bounds_y}
+        \scalar{y}_{low}^{-}    &= 0,1935 - \ln\left( \scalar{x}_{1} \right) / 120, \\
+        \scalar{y}_{high}^{+}   &= 0,1935 - \ln\left( \scalar{x}_{2} \right) / 120, \\
+        \scalar{y}_{high}^{-}   &= \scalar{y}_{3}, \\
     \end{cases}
 \end{equation}
+предполагая, что корни $\scalar{x}_{1,2}$ являются различными вещественными значениями и $\scalar{x}_{1} > \scalar{x}_{2}$. В этом случае, как следует из Приложения~\ref{appendix:origin_roots_existance} (\nameref{appendix:origin_roots_existance}), области допустимых значений корней относительно параметров модели будут определяться следующим образом:
+\begin{equation}
+    \begin{aligned}
+        \label{eq:origin_stability_bounds_params}
+        \scalar{y}^{-}_{low}    &\in \{ \scalar{y}^{-}_{low}(\mu, \theta, \alpha)\ |\ 1 / 78 < \mu \theta / \alpha < (x_{01} + 1)^{2} / (312 x_{01}) \}, \\
+        \scalar{y}^{+}_{high}   &\in \{ \scalar{y}^{+}_{high}(\mu, \theta, \alpha)\ |\ 1 / 78 < \mu \theta / \alpha < (x_{12} + 1)^{2} / (312 x_{12})  \}, \\
+        \scalar{y}^{-}_{high}   &\in \{ \scalar{y}^{-}_{high}(\mu, \theta, \alpha)\ |\ \mu \theta / \alpha < \left(1 - y_{12}\right)^{2} / z_{12}  \}. \\
+    \end{aligned}
+\end{equation}
 
-Так же отметим, что доказательство включения или выключения в интервалы устойчивости граничных точек, где $F^{\prime}(\scalar{y}) = 0$, основывается на том же принципе, что и в аналогичном подразделе~\autoref{subsection:analysis_sigm} --- в виду очевидности данного принципа явно рассматривать мы его не будет.
+Так же отметим, что доказательство включения или выключения в интервалы устойчивости граничных точек, где $F^{\prime}(\scalar{y}) = 0$, основывается на том же принципе, что и в аналогичном подразделе~\autoref{subsection:analysis_sigm}, а именно на анализе значений производной в окрестности этих точек. В виду очевидности данного принципа мы будем сразу учитывать его в результатах без его явного применения к каждой из интересующих нас точек.
 
 Таким образом, обозначив через $D = \left( 156 \mu \theta / \alpha - 1\right)^{2} - 1$, мы получим следующее:
 \begin{enumerate}[wide]
     \item Если $D < 0$, то корни $\scalar{x}_{1,2}$ представляют собой пару комплексно-сопряжённых чисел и $\forall\scalar{y} \in \left(0; y_{12}\right]\ F^{\prime}(\scalar{y}) > 0$. Кроме того, в этом случае $\mu \theta / \alpha < 1 / 78$ и, как следствие, $y_{high}^{-} \in (1 - \sqrt{z_{12} / 78}; 1] \subset (y_{12}; 1]$, \ie лежит в области допустимых значений. Поэтому область устойчивых решений определяется множеством точек $\{0\} \cup (y_{high}^{-}; 1]$, на котором $F^{\prime}(\scalar{y}) < 0$, как показано \onfigure~\ref{fig:analysis_origin_stability}в.
-    \item Если $D = 0$, то корни $\scalar{x}_{1,2}$ обратятся в константу $\scalar{y} = 0,1935$, которая соответствует точке неустойчивого равновесия. Поэтому область устойчивых решений та же, что и в случае, когда $D < 0$, \ie $\{0\} \cup (y_{high}^{-}; 1]$.
+    \item Если $D = 0$, то корни $\scalar{x}_{1,2}$ примут значение 1 и, как результат, мы получим решение $\scalar{y}^{*} = 0,1935$, что соответствует точке неустойчивого равновесия. Поэтому область устойчивых решений та же, что и в случае, когда $D < 0$, \ie $\{0\} \cup (y_{high}^{-}; 1]$.
     \item Если $D > 0$, то все три корня будут различными вещественными числами. При этом правая граница области определения корней $\scalar{y}^{\pm}_{high}$ совпадает (по значению) и попадает в область определения корня $\scalar{y}^{-}_{low}$, поэтому область устойчивых решений будет определяться одним из трёх множеств точек, на которых $F^{\prime}(\scalar{y}) < 0$: интервалом $[0; 1]$ (\seefigure~\ref{fig:analysis_origin_stability}а), множеством $\{0\} \cup (y_{low}^{-}; 1]$ или множеством $\{0\} \cup (y_{low}^{-}; y_{high}^{+}) \cup (y_{high}^{-}; 1]$ (\seefigure~\ref{fig:analysis_origin_stability}б).
     % $\scalar{x}_{1,2} \sim O(2d)$
 \end{enumerate}
-\IncludeFigure[ht]{analysis_origin_stability}{Определяемые знаком функции $F^{\prime}(\scalar{y})$ интервалы устойчивых решений системы~\eqref{eq:simple_microensemble_model} в режимах: а)~моностабильности; б)~три-стабильности; в)~би-стабильности (участки графика функции $F$ с устойчивыми и неустойчивыми решениями обозначены соответственно сплошной и пунктирной линиями).}
+\IncludeFigure[p]{analysis_origin_stability}{Определяемые знаком функции $F^{\prime}(\scalar{y})$ интервалы устойчивых решений системы~\eqref{eq:simple_microensemble_model} в режимах: а)~моностабильности; б)~три-стабильности; в)~би-стабильности (участки графика функции $F$ с устойчивыми и неустойчивыми решениями обозначены соответственно сплошной и пунктирной линиями).}
 
 Как видно, области существования устойчивых решений системы~\eqref{eq:simple_microensemble_model} в пространстве параметров модели определяются как знаком величины $D$, так и граничными условиями, связанными с кусочно-заданным видом \textit{оригинальной} функции активации. Получить представление об этих областях можно \onfigure~\ref{fig:analysis_origin_equilibrium_areas}, где изображены их проекции на плоскости, характеризующие зависимость границ устойчивости $\scalar{y}_{low}^{\pm}$ и $\scalar{y}_{high}^{\pm}$ от значений: а)~параметра $\alpha$ при $\theta = 1$ и $\mu = 0,75$; б)~параметра $\theta$ при $\alpha = 3,5$ и $\mu = 0,75$. Видно наличие более сложной структуры этих областей по сравнению с \acr{SAF}-моделью (\seefigure~\ref{fig:analysis_sigm_equilibrium_areas}).
 
-\IncludeFigure[ht]{analysis_origin_equilibrium_areas}{Зависимость областей существования устойчивых (без штриховки) и неустойчивых (с диагональной штриховкой) решений системы~\eqref{eq:simple_microensemble_model} относительно значений: а)~параметра $\alpha$; б)~параметра $\theta$.} 
+\IncludeFigure[p]{analysis_origin_equilibrium_areas}{Зависимость областей существования устойчивых (без штриховки) и неустойчивых (с диагональной штриховкой) решений системы~\eqref{eq:simple_microensemble_model} относительно значений: а)~параметра $\alpha$; б)~параметра $\theta$.} 
 
 \subsubsection{Бифуркационный анализ}
 
-Аналогично~\autoref{subsection:analysis_sigm}, для определения критических значений параметров, при которых происходят качественные изменения в характере функционирования модели, необходимо проанализировать пространство параметров модели с точки зрения бифуркационного анализа. Как и ранее, в первую очередь рассмотрим параметр $\alpha$, а затем модулирующий параметр $\theta$.
+Аналогично~\autoref{subsection:analysis_sigm}, для определения критических значений параметров, при которых происходят качественные изменения в характере функционирования модели, необходимо проанализировать пространство параметров модели с точки зрения бифуркационного анализа. Как и ранее, в первую очередь рассмотрим параметр $\alpha$, а затем параметр $\theta$.
 
 Как показано \onfigure~\ref{fig:analysis_origin_bifurcations}а, по сравнению с \acr{SAF}-моделью (\seefigure~\ref{fig:analysis_sigm_bifurcations}а) здесь наблюдается целая серия бифуркаций типа суперкритическая \inquotes{вилка} (\onfigure~\ref{fig:analysis_origin_bifurcations}б пунктиром обозначены соответствующие значения параметра $\scalar{i}$, обеспечивающие форму изображённой \inquotes{вилки}): при монотонном возрастании значения параметра $\alpha$ сначала дважды наблюдается эффект возникновения дополнительной пары точек устойчивого и неустойчивого равновесия, а затем происходит аннигиляция одной из пар и, как результат, остаётся только две устойчивые точки, такие что: $\scalar{y}^{*}_{1} = 0$ и $\lim_{\alpha \to \inf} \scalar{y}^{*}_{2} = 1$. Как отмечалось в~\autoref{subsection:analysis_sigm}, в основе данной бифуркации лежит явление возникновения (или исчезновения) $s$-образных складок в кривой решений $F(\scalar{y})$, поэтому точкам бифуркации соответствуют границы областей существования точек перегиба кривой $F(\scalar{y})$. В свою очередь, точки перегиба определяются корням~\eqref{eq:origin_stability_bounds_y}, поэтому, исходя из условий их существования~\eqref{eq:origin_stability_bounds_params}, мы можем определить три точки бифуркации:
 \begin{equation}
-    \nonumber
-    \begin{cases}
+    \label{eq:origin_bifurcation_alpha}
+    \begin{aligned}
         % переобозвать  альфы как high/low^+/-
         \alpha_{1} &= \mu \theta \cdot 312 x_{01} / (x_{01} + 1)^2 \approx \mu \theta \cdot 2,6 \cdot 10^{-8}, \\
         \alpha_{2} &= \mu \theta \cdot z_{12} / (1 - y_{12})^2 \approx \mu \theta \cdot 6,4 \cdot 10^{-1}, \\
         \alpha_{3} &= \mu \theta \cdot 78,\\
-    \end{cases}
+    \end{aligned}
 \end{equation}
 где значениям $\alpha_{1,2}$ соответствуют бифуркации возникновения дополнительных пар точек равновесия, а значению $\alpha_{3}$ --- бифуркация исчезновения одной из них.
 
@@ -395,34 +407,35 @@
     \label{fig:analysis_origin_bifurcations}
 \end{figure}
 
-При рассмотрении параметра $\alpha$ в паре с параметром $\scalar{i}$ можно наблюдать бифуркации типа \inquotes{сборка}, что показано \onfigure~\ref{fig:analysis_origin_bifurcations}б, на котором области мульти-стабильности закрашены штриховкой. Как отмечалось в~\autoref{subsection:analysis_sigm}, в основе данной бифуркации лежит явление перехода между моно- и мульти-стабильными областями (области без и со складками соответственно) на поверхности решений системы, построенной относительно параметров $\alpha$ и $\scalar{i}$ (\seefigure~\ref{fig:analysis_origin_solution_surface}а).
-
-% При рассмотрении плоскости параметров $\alpha$ и $\scalar{i}$ будут наблюдаться бифуркации типа \inquotes{сборка}. Как отмечалось в~\autoref{subsection:analysis_sigm}, в основе данной бифуркации лежит явление перехода между моно- и мульти-стабильными областями (области без и со складками соответственно) на поверхности решений системы~\eqref{eq:simple_microensemble_model} (\seefigure~\ref{fig:analysis_origin_solution_surface}).
-
-%,  показано \onfigure~\ref{fig:analysis_origin_bifurcations}б, где изображена зависимость значений бифуркационных точек $\scalar{i}_{low}^{\pm}$ и $\scalar{i}_{high}^{\pm}$ от значений $\alpha$. Как отмечалось в~\autoref{subsection:analysis_sigm}, в основе данной бифуркации лежит явление перехода между моно- и мульти-стабильными областями (области складок) на поверхности решений системы, зависящей от 
-
-%Как отмечалось в~\autoref{subsection:analysis_sigm}, в основе данной бифуркации лежит ..., поэтому согласно выражению~\eqref{eq:graphic_solution} бифуркационные точки по параметру $\scalar{i}$ будут определятся как:
+При рассмотрении плоскости параметров $\alpha$ и $\scalar{i}$ будут наблюдаться бифуркации типа \inquotes{сборка}, что показано \onfigure~\ref{fig:analysis_origin_bifurcations}б, на котором области мульти-стабильности закрашены штриховкой, а моно-стабильности --- без штриховки. Как отмечалось в~\autoref{subsection:analysis_sigm}, в основе данной бифуркации лежит явление перехода между моно- и мульти-стабильными областями (области без и со складками соответственно) на поверхности решений системы~\eqref{eq:simple_microensemble_model} (\seefigure~\ref{fig:analysis_origin_solution_surface}а), граница между которыми определяется точками перегиба, \ie корнями~\eqref{eq:origin_stability_bounds_y}. В этом случае согласно выражению~\eqref{eq:graphic_solution} бифуркационные точки параметра $\scalar{i}$ будут определятся как:
 \begin{equation}
-    f
+    \nonumber
+    \scalar{i}_{high/low}^{\pm} = -\alpha \scalar{y}_{high/low}^{\pm} + \mu \theta g_{s}^{-1}(\scalar{y}_{high/low}^{\pm}).
 \end{equation}
-а точками сборки будут соответственно:
-\begin{equation}
-    f
-\end{equation}
-
-%Соответственно при рассмотрении плоскости параметров $\alpha$ и $\scalar{i}$ будут наблюдаться бифуркации типа \inquotes{сборка}, проекции которых на поверхности решений системы~\eqref{eq:simple_microensemble_model} представлены \onfigure~\ref{fig:analysis_origin_solution_surface}а.
-
-%как показано \onfigure~\ref{fig:analysis_origin_bifurcations}б, где изображена зависимость значений бифуркационных точек $\scalar{i}_{low}^{\pm}$ и $\scalar{i}_{high}^{\pm}$ от значений $\alpha$. Поверхность решений системы~\eqref{eq:simple_microensemble_model}, получаемая согласно выражению~\eqref{eq:graphic_solution}, изображена \onfigure~\ref{fig:analysis_origin_solution_surface}а.
-
-\newpage
-
-\newpage
 \begin{figure}[ht]
     \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_origin_solution_surface}}
     \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_origin_solution_surface_p2}}
     \caption{Поверхность решений системы~\eqref{eq:simple_microensemble_model}, построенная вариацией параметров: а) $\alpha$ и $\scalar{i}$ при $\theta = 1, \mu = 0,75$; б) $\theta$ и $\scalar{i}$ при $\alpha = 3,5, \mu = 0,75$.}
     \label{fig:analysis_origin_solution_surface}
 \end{figure}
+
+При этом \socalled точки сборки, определяющие в плоскости параметров точки возникновения (или исчезновения) $s$-образных складок на поверхности решений системы~\eqref{eq:simple_microensemble_model}, определяются условиями~\eqref{eq:origin_bifurcation_alpha} и равны:
+\begin{equation}
+    \nonumber
+    \begin{aligned}
+        (\alpha_{1}; \scalar{i}_{1}) & = ( \mu \theta \cdot 312 x_{01} / (x_{01} + 1)^2 ; \mu \theta \cdot u_{01} ),\\
+        (\alpha_{2}; \scalar{i}_{2}) & = ( \mu \theta \cdot z_{12} / (1 - y_{12})^2     ; \mu \theta \cdot (k_{12} + z_{12} (1 - 2 y_{12}) / (1 - y_{12})^{2}) ),\\
+        (\alpha_{3}; \scalar{i}_{3}) & = ( \mu \theta \cdot 78                          ; \mu \theta \cdot -13,793 ),\\
+    \end{aligned}    
+\end{equation}
+где первая точка соответствует точке возникновения $low$-складки, вторая --- точке возникновения $high$-складки, а третья --- точке сливания складок.
+
+Однако, как отмечалось в начале подраздела, в отличие от \acr{SAF}-модели здесь наблюдается явление наложения складок, при котором возникает область существования трёх точек устойчивого равновесия системы~\eqref{eq:simple_microensemble_model}.
+
+%==============================================================================
+\newpage
+\subsection{Обобщение на семейство функций активации}  \label{subsection:analysis_custom}
+
 
 %==============================================================================
 %                       Характерные свойства и динамика
