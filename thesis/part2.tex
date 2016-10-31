@@ -228,7 +228,12 @@
     \label{fig:analysis_sigm_bifurcations}
 \end{figure}
 
-Как было отмечено ранее, при наличии $s$-образной складки в графике функции $F(\scalar{y})$ система~\eqref{eq:simple_microensemble_model} в зависимости от значения параметра $i$ может иметь одно или два устойчивых состояния, что хорошо видно \onfigure~\ref{fig:analysis_sigm_equilibriums}б. С учётом выражения~\eqref{eq:graphic_solution} и того, что корни~\eqref{eq:sigm_stability_bounds_y} соответстуют точкам перегиба функции $F(\scalar{y})$, очевидным образом вытекает условие существования режима с двумя устойчивыми состояниями: $i \in \left(i^{-}; i^{+}\right)$ при $\alpha > 4 \mu \theta$, где:
+Как было отмечено ранее, при наличии $s$-образной складки в графике функции $F(\scalar{y})$ система~\eqref{eq:simple_microensemble_model} в зависимости от значения параметра $i$ может иметь одно или два устойчивых состояния, что хорошо видно \onfigure~\ref{fig:analysis_sigm_equilibriums}б. С учётом выражения~\eqref{eq:graphic_solution} и того, что корни~\eqref{eq:sigm_stability_bounds_y} соответстуют точкам перегиба функции $F(\scalar{y})$, очевидным образом вытекает определение области существования режима с двумя устойчивыми состояниями:% $i \in \left(i^{-}; i^{+}\right)$ при $\alpha > 4 \mu \theta$, где:
+\begin{equation}
+    \nonumber
+    \left\{(\alpha, \scalar{i})\ |\ \alpha > 4 \mu \theta, i^{-} < \scalar{i} < i^{+}\right\},
+\end{equation}
+где:
 \begin{equation}
     \label{eq:sigm_stability_bounds_i}
     \begin{alignedat}{2}
@@ -256,15 +261,16 @@
 Как отмечалось выше, параметр $\theta$ входит в решение~\eqref{eq:sigm_stability_bounds_y} обратно пропорционально параметру $\alpha$, поэтому для него справедливы аналогичные результаты. Бифуркация типа суперкритическая \inquotes{вилка} продемонстрирована \onfigure~\ref{fig:analysis_sigm_bifurcations}в: при монотонном возрастании значения параметра $\theta$ две точки устойчивого равновесия сливаются вместе с точкой неустойчивого равновесия, образуя при этом одну устойчивую точку (\onfigure~\ref{fig:analysis_sigm_bifurcations}г пунктиром обозначены соответствующие при этом значения параметра $i$, обеспечивающие симметрию \inquotes{вилки}). Точка бифуркации находится из тех же соображений, что и~\eqref{eq:sigm_bifurcation_alpha}:
 \begin{equation}
     \label{eq:sigm_bifurcation_theta}
-    \theta =  \alpha / 4 \mu.
+    \theta =  \alpha / 4 \mu,
 \end{equation}
+а область существования двух устойчивых точек равновесия соответственно задаётся условием $\theta < \alpha / 4 \mu$.
 
 Бифуркация типа \inquotes{сборка}, так же как и случае с параметром $\alpha$, изображена в виде поверхности решений системы~\eqref{eq:simple_microensemble_model}  \onfigure~\ref{fig:analysis_sigm_solution_surface}б, которая зависит от параметров $\scalar{i}$ и $\theta$: пара из точек устойчивого и неустойчивого равновесия возникает при пересечении линий складки, которые соответствуют значениям $i^{-}$ и $i^{+}$, в сторону области складки, а в при обратном направлении --- аннигилируется. Зависимость точек бифуркаций $i^{-}$ и $i^{+}$ от значений параметра $\theta$ продемонстрирована \onfigure~\ref{fig:analysis_sigm_bifurcations}г, а точка сборки, исходя из равенства~\eqref{eq:sigm_bifurcation_theta} и выражения~\eqref{eq:sigm_stability_bounds_i}, равна:
 \begin{equation}
     \label{eq:sigm_bifurcation_theta_and_i}
-    (\theta, \scalar{i}) = (\alpha / 4 \mu, \alpha / 4).
-    % \left(\theta = \alpha / 4 \mu; \scalar{i} = \alpha / 4\right).
+    (\theta, \scalar{i}) = (\alpha / 4 \mu, \alpha / 4),
 \end{equation}
+а область существования двух устойчивых точек равновесия соответственно определяется как $\left\{(\theta, \scalar{i})\ |\ \theta < \alpha / 4 \mu, i^{-} < \scalar{i} < i^{+}\right\}$.
 
 \subsubsection{Дополнительные замечания}
 
@@ -407,7 +413,8 @@
     \label{fig:analysis_origin_bifurcations}
 \end{figure}
 
-При рассмотрении плоскости параметров $\alpha$ и $\scalar{i}$ будут наблюдаться бифуркации типа \inquotes{сборка}, что показано \onfigure~\ref{fig:analysis_origin_bifurcations}б, на котором области мульти-стабильности закрашены штриховкой, а моно-стабильности --- без штриховки. Как отмечалось в~\autoref{subsection:analysis_sigm}, в основе данной бифуркации лежит явление перехода между моно- и мульти-стабильными областями (области без и со складками соответственно) на поверхности решений системы~\eqref{eq:simple_microensemble_model} --- сама поверхность изображена \onfigure~\ref{fig:analysis_origin_solution_surface}. Граница между этими областями определяется точками перегиба, \ie корнями~\eqref{eq:origin_stability_bounds_y}. В этом случае согласно выражению~\eqref{eq:graphic_solution} бифуркационные точки параметра $\scalar{i}$ будут определятся как:
+При рассмотрении плоскости параметров $\alpha$ и $\scalar{i}$ будут наблюдаться бифуркации типа \inquotes{сборка}, что показано \onfigure~\ref{fig:analysis_origin_bifurcations}б, на котором области мульти-стабильности закрашены штриховкой, а моно-стабильности --- без штриховки. Как отмечалось в~\autoref{subsection:analysis_sigm}, в основе данной бифуркации лежит явление перехода между моно- и мульти-стабильными областями (области без и со складками соответственно) на поверхности решений системы~\eqref{eq:simple_microensemble_model} --- сама поверхность изображена \onfigure~\ref{fig:analysis_origin_solution_surface}. Т.к. граница между этими областями определяется точками перегиба, в соответствии с выражением~\eqref{eq:graphic_solution} область существования режима с более чем одной точкой устойчивого равновесия определена как $\scalar{i} \in (\scalar{i}; \scalar{i}) \cup (\scalar{i}; \scalar{i})$ при $\alpha \in (\alpha_{2}; \alpha_{3})$, где:
+%, \ie корнями~\eqref{eq:origin_stability_bounds_y}. В этом случае согласно выражению~\eqref{eq:graphic_solution} бифуркационные точки параметра $\scalar{i}$ будут определятся как:
 \begin{equation}
     \label{eq:origin_bifurcation_i}
     \scalar{i}_{high/low}^{\pm} = -\alpha \scalar{y}_{high/low}^{\pm} + \mu \theta g_{s}^{-1}(\scalar{y}_{high/low}^{\pm}).
