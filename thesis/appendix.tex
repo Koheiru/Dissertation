@@ -230,6 +230,38 @@ $$
 %==============================================================================
 \section{Численное сравнение конечно-разностных схем}  \label{appendix:differential_schemes_compare}
 
+
+%Для эмпирической оценки рассмотренных в работе конечно-разностных схем был проведён ряд численных экспериментов применительно к модели \textit{простого микроансамбля}. С этой целью система~\eqref{eq:simple_microensemble_model}, описывающая данную модель, была приведена к конечно-разностному виду с использованием соответствующих конечно-разностных схем ($F(\scalar{u}, \scalar{y}, \scalar{i}, \scalar{p}) = \alpha \scalar{y} + \scalar{i} - \scalar{p} - \mu \scalar{u}$):
+%\begin{itemize}
+%    \item Явный метод Эйлера с шагами дискретизации $h=0,1$ и $h=0,01$:
+%        \begin{equation}
+%            \nonumber
+%            \begin{cases}
+%                \scalar{u}^{t+1} &= \scalar{u}^{t} + h \cdot F(\scalar{u}^{t}, \scalar{y}^{t}, \scalar{i}^{t}, \scalar{p}^{t}), \\ 
+%                \scalar{y}^{t+1} &= f(\scalar{u}^{t+1}, \theta).
+%            \end{cases}
+%        \end{equation}
+%    \item Метод Эйлера с пересчётом с шагом дискретизации $h=0,1$:
+%        \begin{equation}
+%            \nonumber
+%            \begin{cases}
+%                \widetilde{\scalar{u}}^{t+1} &= \scalar{u}^{t} + h \cdot F(\scalar{u}^{t}, \scalar{y}^{t}, \scalar{i}^{t}, \scalar{p}^{t}), \\ 
+%                \widetilde{\scalar{y}}^{t+1} &= f(\widetilde{\scalar{u}}^{t+1}, \theta), \\
+%                \scalar{u}^{t+1} &= \scalar{u}^{t} + h \cdot \left( F(\scalar{u}^{t}, \scalar{y}^{t}, \scalar{i}^{t}, \scalar{p}^{t}) + F(\widetilde{\scalar{u}}^{t+1}, \widetilde{\scalar{y}}^{t+1}, \scalar{i}^{t}, \scalar{p}^{t}) \right) / 2, \\
+%                \scalar{y}^{t+1} &= f(\scalar{u}^{t+1}, \theta).
+%            \end{cases}
+%        \end{equation}
+%    \item Метод Рунге-Кутты 4-го порядка с шагом дискретизации $h=0,1$:
+%        \begin{equation}
+%            \nonumber
+%            \begin{cases}
+%                k_{1}^{t+1} &= F(\scalar{u}^{t}, \scalar{y}^{t}, \scalar{i}^{t}, \scalar{p}^{t}), \\ 
+%                k_{2}^{t+1} &= 
+%            \end{cases}
+%        \end{equation}
+%\end{itemize}
+
+
 Для эмпирической оценки рассмотренных в работе конечно-разностных схем были проведены численные эксперименты с моделью \textit{простого микроансамбля}. Для этого система~\eqref{eq:simple_microensemble_model} была приведена к конечно-разностному виду с использованием параметров $\mu = 0,75$, $\scalar{p} = 1$, $\alpha = 3,5$ и $\theta = 1$ следующими методами:
 \begin{itemize}
     \item явным методом Эйлера с шагами дискретизации $h=0,1$ и $h=0,01$;
