@@ -1,3 +1,27 @@
+%% common part
+
+% y12 = 1 / 3.5;
+% z12 = 0.35;
+% k12 = 2.6 * logsig((y12 - 0.1935) * 120.0) - 0.49;
+% u01 = 2.6 * logsig(0.1935 * -120);
+% u12 = 2.6 * logsig((y12 - 0.1935) * 120.0);
+y12 = 0.245;
+z12 = 2.6 * 120 * (1 - y12)^2 * logsig((y12 - 0.1935) .* 120.0) * (1.0 - logsig((y12 - 0.1935) .* 120.0));
+k12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0) - z12 ./ (1.0 - y12);
+u01 = 2.6 * logsig(0.1935 * -120);
+u12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0);
+f_origin = @(u) (heaviside_restricted(u - u12)) .* (1.0 - z12 ./ (u - k12 + eps)) + ...
+                (heaviside_restricted(u - u01) - heaviside_restricted(u - u12)) .* (0.1935 + log(u ./ (2.6 - u) + eps) ./ 120.0);
+s_origin = @(y) (heaviside_restricted(y - y12)) .* (k12 + z12 ./ (1.0 - y + eps)) + ...
+                (heaviside_restricted(y) - heaviside_restricted(y - y12)) .* (2.6 .* logsig(120.0 .* (y - 0.1935)));
+dS_origin = @(y) (heaviside_restricted(y - y12)) .* (z12 ./ (1.0 - y + eps) .^ 2) + ...
+                 (heaviside_restricted(y) - heaviside_restricted(y - y12)) .* (120.0 * 2.6 .* logsig(120.0 .* (y - 0.1935)) .* (1.0 - logsig(120.0 .* (y - 0.1935))));
+
+f_sigm = @(u) logsig(u - 3.0);
+s_sigm = @(y) 3.0 + log(y ./ (1 - y));
+dS_sigm = @(y) (1 ./ y + 1.0 ./ (1.0 - y));
+
+
 %%
 figure();
 hold on; grid on;
@@ -317,6 +341,23 @@ xlabel('\mu\theta/\alpha');
 % plot([0 0] + (2 / (k12 - u01)), [min(y) max(y)], '--r'); hold on;
 % grid on;
 % xlabel('\mu\theta/\alpha');
+
+
+%%
+figure();
+
+mu = 0.75;
+i = 0.0;
+p = 1.0;
+theta = 1.0;
+
+for alpha = 0.0 : 0.5 : 5.0
+  u = -15 : 0.1 : 15.0;
+  f = (i - p) + alpha .* f_sigm(u) - mu .* u;
+  plot(u, f); hold on;
+end
+grid on;
+
 
 
 
