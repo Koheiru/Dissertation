@@ -117,6 +117,19 @@
 \renewcommand{\chaptername}{Глава}
 \renewcommand{\appendixname}{Приложение} % (ГОСТ Р 7.0.11-2011, 5.7)
 
+%%% Формы слов по падежу %%%
+
+
+\newcommand{\ifequals}[3]{\ifthenelse{\equal{#1}{#2}}{#3}{}}
+\newcommand{\formbycase}[7]{%
+    \ifequals{#1}{ип}{#2}%
+    \ifequals{#1}{рп}{#3}%
+    \ifequals{#1}{дп}{#4}%
+    \ifequals{#1}{вп}{#5}%
+    \ifequals{#1}{тп}{#6}%
+    \ifequals{#1}{пп}{#7}%
+}
+
 %%% Определения, теоремы и т.п. %%%
 \newtheoremstyle{normal}
     {0pt} % space above

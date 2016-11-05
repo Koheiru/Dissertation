@@ -42,9 +42,9 @@
      showgrid="false"
      units="mm"
      borderlayer="true"
-     inkscape:zoom="1.22334"
-     inkscape:cx="243.32134"
-     inkscape:cy="158.50096"
+     inkscape:zoom="2.44668"
+     inkscape:cx="491.46192"
+     inkscape:cy="138.54436"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -1123,7 +1123,7 @@
            y="165.30217"
            x="251.80942"
            id="tspan8338"
-           sodipodi:role="line"> ˜</tspan></text>
+           sodipodi:role="line"> </tspan></text>
     </g>
     <g
        id="g8368"
@@ -1149,7 +1149,7 @@
            y="105.74966"
            x="472.47699"
            id="tspan8331"
-           sodipodi:role="line">g</tspan></text>
+           sodipodi:role="line">f</tspan></text>
     </g>
     <g
        id="g8374"
@@ -1179,7 +1179,7 @@
              sodipodi:role="line"
              id="tspan8331-6"
              x="472.47699"
-             y="105.74966">g</tspan></text>
+             y="105.74966">f</tspan></text>
       </g>
     </g>
     <text
