@@ -203,14 +203,6 @@
 \end{enumerate}
 \IncludeFigure[t]{analysis_sigm_stability}{Определяемые знаком функции $F^{\prime}(\scalar{y})$ интервалы устойчивых решений системы~\eqref{eq:simple_microensemble_model} в случае: а)~$0,25 < \mu \theta / \alpha$; б)~$0,25 = \mu \theta / \alpha$; в)~$0,25 > \mu \theta / \alpha$ (участки графика функции $F$ с устойчивыми и неустойчивыми решениями обозначены соответственно сплошной и пунктирной линиями).}
 
-%\begin{figure}[ht]
-%    \begin{minipage}{\textwidth}
-%        \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_sigm_stability}}
-%        \caption{Определяемые знаком функции $F^{\prime}(\scalar{y})$ интервалы устойчивых решений системы~\eqref{eq:simple_microensemble_model} в случае: а)~$0,25 < \mu \theta / \alpha$; б)~$0,25 = \mu \theta / \alpha$; в)~$0,25 > \mu \theta / \alpha$ (участки графика функции $F$ с устойчивыми и неустойчивыми решениями обозначены соответственно сплошной и пунктирной линиями).}
-%        \label{fig:analysis_sigm_stability}
-%    \end{minipage}
-%\end{figure}
-
 Включение точки $\scalar{y}^{\sim}$ в область устойчивых решений при $D = 0$, так же как и выключение точек $\left\{\scalar{y}^{+}, \scalar{y}^{-}\right\}$ при $D > 0$, можно определить, рассмотрев их подробнее на графиках решения $F(\scalar{y})$. В первом случае (\seefigure~\ref{fig:analysis_sigm_bound_points}а) устойчивость точки равновесия $\scalar{y}^{*} = \scalar{y}^{\sim}$ является результатом того, что в её окрестности градиент $\nabla\scalar{y}$, пропорциональный по величине и знаку $F(\scalar{y})$, будет направлять траекторию системы к ней, хотя скорость сходимости при этом будет крайне медленной в виду пологости функции $F(\scalar{y})$ в окрестности точки $\scalar{y}^{\sim}$. Во втором случае (\seefigure~\ref{fig:analysis_sigm_bound_points}б) в правой полуокрестности точки равновесия $\scalar{y}^{*} = \scalar{y}^{+}$ градиент $\nabla\scalar{y}$ уводит траекторию системы от неё, а в левой полуокрестности --- направляет к ней, но при условии, что величина градиента не позволит значению переменной $\scalar{y}$ оказаться в области $\left(\scalar{y}^{+}; 1\right]$, иначе градиент снова будет уводить траекторию от данной точки равновесия. Для точки $\scalar{y}^{*} = \scalar{y}^{-}$ ситуация симметрична, поэтому в дальнейшем без потери общности в рассуждениях мы будем подразумевать неустойчивость решений $\scalar{y}^{*} = \left\{\scalar{y}^{+}, \scalar{y}^{-}\right\}$.
 \IncludeFigure[t]{analysis_sigm_bound_points}{Определение устойчивости пограничных точек $\scalar{y}^{\sim}$ и $\scalar{y}^{+}$, для которых $F^{\prime}(\scalar{y}) = 0$, по градиенту $\nabla\scalar{y}$ в точках их окрестности.} 
 
@@ -252,39 +244,64 @@
 %    \end{alignedat}
 %\end{equation}
 
-Таким образом, при монотонном возрастании значения параметра $i$ в точке $i^{-}$ возникает дополнительная пара из точек неустойчивого и устойчивого равновесия в дополнение к уже существующей устойчивой (\onfigure~\ref{fig:analysis_sigm_equilibriums}в точки $\scalar{y}^{*}_{2}$, $\scalar{y}^{*}_{3}$ и $\scalar{y}^{*}_{1}$ соответственно), а в точке $i^{+}$ изначально существовавшая точка аннигилируется вместе с точкой неустойчивого равновесия, в результате чего в системе вновь будет существовать единственное и устойчивое решение -- аналогично и в обратную сторону.
+Данная ситуация соответствует бифуркации типа \inquotes{сборка}, что продемонстрировано \onfigure~\ref{fig:analysis_sigm_bifurcations}б: при фиксированном значении параметра $\alpha$, допускающем существование би-стабильного режима, монотонное возрастание значения параметра $i$ приводит к тому, что в точке $i^{-}$ единственная точка устойчивого равновесия дополняется парой из точек неустойчивого и устойчивого равновесия (\onfigure~\ref{fig:analysis_sigm_equilibriums}в точки $\scalar{y}^{*}_{2}$, $\scalar{y}^{*}_{3}$ и $\scalar{y}^{*}_{1}$ соответственно), а в точке $i^{+}$ изначально существовавшая точка устойчивого равновесия аннигилируется вместе с точкой неустойчивого равновесия, в результате чего в системе вновь останется единственное и при том устойчивое решение. 
 
-Данная ситуация соответствует бифуркации типа \inquotes{сборка}, которая изображена \onfigure~\ref{fig:analysis_sigm_solution_surface}а в виде зависящей от параметров $\scalar{i}$ и $\alpha$ поверхности решений системы~\eqref{eq:simple_microensemble_model} согласно выражению~\eqref{eq:graphic_solution}. Для наглядности \onfigure~\ref{fig:model_sigm_configurations} показаны различные срезы этой поверхности, привязанные к плоскости параметров. Сама же плоскость параметров более детально изображена на \onfigure~\ref{fig:analysis_sigm_bifurcations}б, где демонстрируется зависимость точек бифуркации $i^{-}$ и $i^{+}$ от значений параметра $\alpha$. 
-\begin{figure}[ht]
+Рассмотренное изображением является проекцией $s$-образной складки, возникающей на поверхности решений системы~\eqref{eq:simple_microensemble_model} --- сама поверхность изображена \onfigure~\ref{fig:analysis_sigm_solution_surface}а. Так же для наглядности \onfigure~\ref{fig:model_sigm_configurations_by_alpha} показаны различные срезы этой поверхности, привязанные к плоскости параметров. При этом бифуркационная точка, называемая точкой сборки, задаёт в плоскости параметров место возникновения складки и определяется равенством~\eqref{eq:sigm_bifurcation_alpha} и выражением~\eqref{eq:sigm_stability_bounds_i} как:
+\begin{equation}
+    \nonumber
+    (\alpha, \scalar{i}) = (4 \mu \theta, \mu \theta).
+\end{equation}
+
+\begin{figure}[t]
     \makebox[\textwidth][c]{\includegraphics[width=0.95\textwidth]{analysis_sigm_solution_surface}}
     \makebox[\textwidth][c]{\includegraphics[width=0.95\textwidth]{analysis_sigm_solution_surface_p2}}
     \caption{Поверхность решений системы~\eqref{eq:simple_microensemble_model}, построенная вариацией параметров: а) $\alpha$ и $\scalar{i}$ при $\theta = 1, \mu = 0,75$; б) $\theta$ и $\scalar{i}$ при $\alpha = 4,5, \mu = 0,75$.}
     \label{fig:analysis_sigm_solution_surface}
 \end{figure}
-При этом \socalled точка сборки, определяющая точку возникновения $s$-образной складки, определяется равенством~\eqref{eq:sigm_bifurcation_alpha} и с учётом выражения~\eqref{eq:sigm_stability_bounds_i} равна:
-\begin{equation}
-    \nonumber
-    (\alpha, \scalar{i}) = (4 \mu \theta, \mu \theta).
-    % \left(\alpha = 4 \mu \theta; \scalar{i} = \mu \theta\right).
-\end{equation}
 
-Как отмечалось выше, параметр $\theta$ входит в решение~\eqref{eq:sigm_stability_bounds_y} обратно пропорционально параметру $\alpha$, поэтому для него справедливы аналогичные результаты. Бифуркация типа суперкритическая \inquotes{вилка} продемонстрирована \onfigure~\ref{fig:analysis_sigm_bifurcations}в: при монотонном возрастании значения параметра $\theta$ две точки устойчивого равновесия сливаются вместе с точкой неустойчивого равновесия, образуя при этом одну устойчивую точку (\onfigure~\ref{fig:analysis_sigm_bifurcations}г пунктиром обозначены соответствующие при этом значения параметра $i$, обеспечивающие симметрию \inquotes{вилки}). Точка бифуркации находится из тех же соображений, что и~\eqref{eq:sigm_bifurcation_alpha}:
+Как отмечалось выше, параметр $\theta$ входит в определяющее экстремумы функции $F(\scalar{y})$ выражение~\eqref{eq:sigm_stability_bounds_y} обратно пропорционально параметру $\alpha$, поэтому для него справедливы аналогичные результаты. Бифуркация типа суперкритическая \inquotes{вилка} продемонстрирована \onfigure~\ref{fig:analysis_sigm_bifurcations}в: при монотонном возрастании значения параметра $\theta$ две точки устойчивого равновесия сливаются вместе с точкой неустойчивого равновесия, образуя при этом одну устойчивую точку (\onfigure~\ref{fig:analysis_sigm_bifurcations}г пунктиром обозначены соответствующие при этом значения параметра $i$, обеспечивающие симметрию \inquotes{вилки}). Точка бифуркации находится из тех же соображений, что и бифуркационная точка~\eqref{eq:sigm_bifurcation_alpha}:
 \begin{equation}
     \label{eq:sigm_bifurcation_theta}
-    \theta =  \alpha / 4 \mu,
+    \theta =  \alpha / 4 \mu.
 \end{equation}
-а область существования двух устойчивых точек равновесия соответственно задаётся условием $\theta < \alpha / 4 \mu$.
 
-Бифуркация типа \inquotes{сборка}, так же как и случае с параметром $\alpha$, изображена в виде поверхности решений системы~\eqref{eq:simple_microensemble_model}  \onfigure~\ref{fig:analysis_sigm_solution_surface}б, которая зависит от параметров $\scalar{i}$ и $\theta$: пара из точек устойчивого и неустойчивого равновесия возникает при пересечении линий складки, которые соответствуют значениям $i^{-}$ и $i^{+}$, в сторону области складки, а в при обратном направлении --- аннигилируется. Зависимость точек бифуркаций $i^{-}$ и $i^{+}$ от значений параметра $\theta$ продемонстрирована \onfigure~\ref{fig:analysis_sigm_bifurcations}г, а точка сборки, исходя из равенства~\eqref{eq:sigm_bifurcation_theta} и выражения~\eqref{eq:sigm_stability_bounds_i}, равна:
+Бифуркация типа \inquotes{сборка} изображена \onfigure~\ref{fig:analysis_sigm_bifurcations}г: когда значение параметра $\theta$ фиксированно и допускает существование би-стабильного режима, прохождение точек $i^{-}$ и $i^{+}$ при возрастании значения параметра $\scalar{i}$ приводит, соответственно, сначала к появлению дополнительной точки устойчивого равновесия, а затем к аннигиляции изначальной точки устойчивого равновесия. При этом область существования двух устойчивых состояний модели можно определить как: 
 \begin{equation}
-    \label{eq:sigm_bifurcation_theta_and_i}
-    (\theta, \scalar{i}) = (\alpha / 4 \mu, \alpha / 4),
+    \nonumber
+    \left\{(\theta, \scalar{i}) \mid \theta < \alpha / 4 \mu, i^{-} < \scalar{i} < i^{+}\right\}.
 \end{equation}
-а область существования двух устойчивых точек равновесия соответственно определяется как $\left\{(\theta, \scalar{i}) \mid \theta < \alpha / 4 \mu, i^{-} < \scalar{i} < i^{+}\right\}$.
+
+Поверхность решений системы~\eqref{eq:simple_microensemble_model} для данного случая продемонстрированна \onfigure~\ref{fig:analysis_sigm_solution_surface}б, где отмечено наличие $s$-образной складки, а срезы этой поверхности, привязанные к плоскости параметров, изображены \onfigure~\ref{fig:model_sigm_configurations_by_theta}. Точка сборки, исходя из равенства~\eqref{eq:sigm_bifurcation_theta} и выражения~\eqref{eq:sigm_stability_bounds_i}, будет определяться как:
+\begin{equation}
+    \nonumber
+    (\theta, \scalar{i}) = (\alpha / 4 \mu, \alpha / 4).
+\end{equation}
 
 \subsubsection{Дополнительные замечания}
 
-Несмотря на то, что параметры $\alpha$ и $\theta$ вносят пропорциональный вклад в корни $y^{+}$ и $y^{-}$, которые зависят исключительно от величины $\mu \theta / \alpha$, их влияние на значения бифуркационных точек $i^{+}$ и $i^{-}$ имеет более сложный характер, что графически изображено \onfigure~\ref{fig:analysis_sigm_params_dependency}, а так же можно наблюдать \onfigure~\ref{fig:analysis_sigm_bifurcations}б,г. Имея в виду, что $\theta > 0$ по определению~\eqref{eq:full_single_neuron_model}, и учитывая точку бифуркации~\ref{eq:sigm_bifurcation_theta_and_i}, отметим следующее:
+Согласно выражению~\eqref{eq:sigm_stability_bounds_y} параметры $\alpha$ и $\theta$ вносят пропорциональный вклад в значения точек экстремума $y^{-}$ и $y^{+}$, однако их влияние на значения бифуркационных величин $i^{+}$ и $i^{-}$ имеет более сложный характер, что графически изображено \onfigure~\ref{fig:analysis_sigm_params_dependency}, а так же можно наблюдать \onfigure~\ref{fig:analysis_sigm_bifurcations}б,г.
+
+\IncludeFigure[t]{analysis_sigm_params_dependency}{Зависящие от параметров $\alpha$ и $\theta$ поверхности точек бифуркации $i^{-}$ и $i^{+}$, проекции которых на плоскости $\left(\alpha,\scalar{i}\right)$ и $\left(\theta,\scalar{i}\right)$ изображены \onfigure~\ref{fig:analysis_sigm_bifurcations}б,г.}
+
+Для того, чтобы оценить это влияние, представим, что точки $i^{-}$ и $i^{+}$ определяются соответствующими параметрическими функциями $i^{-}(z)$ и $i^{+}(z)$ с параметром $z \in \left[z_{0}; z_{1}\right]$. Зададим эти функции, исходя из определения самих величин $i^{\mp}$~\eqref{eq:sigm_stability_bounds_i}, подставив в него выражение для корней $y^{\mp}$~\eqref{eq:sigm_stability_bounds_y} и определение обратной функции активации $g_{\sigma}$~\eqref{eq:unactivation_function_sigma}:
+\begin{equation}
+    \nonumber
+    i^{\mp}(z) = \alpha \left(-(0,5 \pm 0,5z) + \left(0,25 - 0,25z^2\right) \left(3 + \ln\left(\dfrac{1 \pm z}{1 \mp z}\right)\right)\right),
+\end{equation}
+где $z(\theta) = 2 \sqrt{0,25 - \mu\theta/\alpha}$, причём $z \in \left(0;1\right)$ при $\theta \in \left(\alpha/4\mu;0\right)$. Далее, применяя к функции логарифма разложение в ряд Тейлора в окрестности нуля, мы получим следующее выражение:
+\begin{equation}
+    \nonumber
+    \begin{aligned}
+        i^{\mp}(z) &= \alpha \left( -(0,5 \pm 0,5z) + \left(0,25 - 0,25z^2\right) \left(3 \pm 2\sum_{n=0}^{\infty}\dfrac{z^{2n+1}}{2n+1}\right) \right) = \\
+        &= 0,25 \alpha \left( 1 \mp 2z - 3z^2 \pm 2 \left(1 - z^2\right) \sum_{n=0}^{\infty}\dfrac{z^{2n+1}}{2n+1} \right) = \\
+        &= 0,25 \alpha \left( 1 \mp 2z - 3z^2 \pm 2\left(z + \sum_{n=1}^{\infty}\dfrac{z^{2n+1}}{2n+1} - \sum_{n=0}^{\infty}\dfrac{z^{2n+3}}{2n+1}\right)\ \right).
+    \end{aligned}
+\end{equation}
+После перенумерации первой суммы так, чтобы индекс начинался с нуля, и сложения коэффициентов при одинаковых степенях получим окончательное выражение в виде:
+\begin{equation}
+    i^{\mp}(z) = 0,25 \alpha \left( 1 - 3z^2 \mp 4 \sum_{n=0}^{\infty}\dfrac{z^{2n+3}}{(2n+3)(2n+1)} \right),
+\end{equation}
+откуда можно сделать вывод, что параметр $\alpha$ задаёт значения этих параметрических кривых на границах области определения, а параметр $\theta$ влияет исключительно на выбор конкретной точки на этих кривых, причём:
 \begin{equation}
     \nonumber
     \begin{cases}
@@ -300,24 +317,7 @@
     \end{cases}.
 \end{equation}
 
-\IncludeFigure[t]{analysis_sigm_params_dependency}{Зависящие от параметров $\alpha$ и $\theta$ поверхности точек бифуркации $i^{-}$ и $i^{+}$, проекции которых на плоскости $\left(\alpha,\scalar{i}\right)$ и $\left(\theta,\scalar{i}\right)$ изображены \onfigure~\ref{fig:analysis_sigm_bifurcations}б,г.}
-
-Таким образом, если представить, что точки $i^{-}$ и $i^{+}$ задаются параметрическими функциями $i^{-}(z)$ и $i^{+}(z)$ с параметром $z \in \left[z_{0}; z_{1}\right]$, то $\theta$ будет определять значение параметра $z$, а $\alpha$ --- значения функций на концах интервала области определения, \ie значения $i^{-}(z_{0})$ и $i^{+}(z_{1})$. Более того, мы можем приблизить эти параметрические функции полиномом, представив выражение~\eqref{eq:sigm_stability_bounds_i} следующим образом:
-\begin{equation}
-    \nonumber
-    i^{\mp}(z) = \alpha \left(-(0,5 \pm 0,5z) + \left(0,25 - 0,25z^2\right) \left(3 + \ln\left(\dfrac{1 \pm z}{1 \mp z}\right)\right)\right),
-\end{equation}
-где $z(\theta) = 2 \sqrt{0,25 - \mu\theta/\alpha}$, причём $z \in \left(0;1\right)$ при $\theta \in \left(\alpha/4\mu;0\right)$. Тогда применяя к функции логарифма разложение в ряд Тейлора в окрестности нуля, мы получим следующее:
-\begin{align*}
-    i^{\mp}(z) &= \alpha \left( -(0,5 \pm 0,5z) + \left(0,25 - 0,25z^2\right) \left(3 \pm 2\sum_{n=0}^{\infty}\dfrac{z^{2n+1}}{2n+1}\right) \right) = \\
-               &= 0,25 \alpha \left( 1 \mp 2z - 3z^2 \pm 2 \left(1 - z^2\right) \sum_{n=0}^{\infty}\dfrac{z^{2n+1}}{2n+1} \right) = \\
-               &= 0,25 \alpha \left( 1 \mp 2z - 3z^2 \pm 2\left(z + \sum_{n=1}^{\infty}\dfrac{z^{2n+1}}{2n+1} - \sum_{n=0}^{\infty}\dfrac{z^{2n+3}}{2n+1}\right)\ \right).
-\end{align*}
-После перенумерации первой суммы так, чтобы индекс начинался с нуля, и сложения коэффициентов при одинаковых степенях получим окончательное выражение в виде:
-\begin{equation}
-    i^{\mp}(z) = 0,25 \alpha \left( 1 - 3z^2 \mp 4 \sum_{n=0}^{\infty}\dfrac{z^{2n+3}}{(2n+3)(2n+1)} \right),
-\end{equation}
-которое позволяет оценить характер изменения величин $i^{-}$ и $i^{+}$, а так же позволяет определить монотонность убывания величины $\Delta i(z) = i^{+}(z) - i^{-}(z)$ при возрастании значении $\theta$.
+%которое позволяет оценить характер изменения величин $i^{-}$ и $i^{+}$, а так же позволяет определить монотонность убывания величины $\Delta i(z) = i^{+}(z) - i^{-}(z)$ при возрастании значении $\theta$.
 
 %==============================================================================
 \subsection{Модель с оригинальной функцией активации}  \label{subsection:analysis_origin}
