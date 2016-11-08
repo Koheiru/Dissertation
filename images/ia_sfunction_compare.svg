@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -42,9 +42,9 @@
      showgrid="false"
      borderlayer="true"
      units="mm"
-     inkscape:zoom="2.1273152"
-     inkscape:cx="249.44818"
-     inkscape:cy="91.198462"
+     inkscape:zoom="1.504239"
+     inkscape:cx="266.13738"
+     inkscape:cy="249.4892"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
@@ -1756,42 +1756,42 @@
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="17.657999"
+       x="19.257999"
        y="56.789104"
        id="text8864-31"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan8866-44"
-         x="17.657999"
+         x="19.257999"
          y="56.789104"
-         style="font-style:italic;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium Italic';text-align:start;writing-mode:lr-tb;text-anchor:start">g<tspan
+         style="font-style:italic;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium Italic';text-align:start;writing-mode:lr-tb;text-anchor:start">f<tspan
    style="font-size:10px;baseline-shift:sub"
    id="tspan8920">s</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="17.658001"
+       x="19.258001"
        y="141.97641"
        id="text8864-31-8"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan8866-44-0"
-         x="17.658001"
+         x="19.258001"
          y="141.97641"
-         style="font-style:italic;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium Italic';text-align:start;writing-mode:lr-tb;text-anchor:start">g<tspan
+         style="font-style:italic;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium Italic';text-align:start;writing-mode:lr-tb;text-anchor:start">f<tspan
    style="font-size:10px;baseline-shift:sub"
    id="tspan8920-5">s</tspan></tspan></text>
     <text
        xml:space="preserve"
        style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
-       x="17.543861"
-       y="140.84251"
+       x="19.143862"
+       y="137.6425"
        id="text9000"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
          id="tspan9002"
-         x="17.543861"
-         y="140.84251"
+         x="19.143862"
+         y="137.6425"
          style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:14px;line-height:125%;font-family:'CMU Serif';-inkscape-font-specification:'CMU Serif, Medium';text-align:start;writing-mode:lr-tb;text-anchor:start">^</tspan></text>
   </g>
 </svg>
