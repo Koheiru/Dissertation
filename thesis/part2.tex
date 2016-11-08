@@ -414,12 +414,12 @@
 
 При рассмотрении модели на плоскости параметров $\alpha$ и $\scalar{i}$ будет наблюдаться бифуркация типа \inquotes{сборка}, как показано \onfigure~\ref{fig:analysis_origin_bifurcations}б: при значениях параметра $\alpha$, которые допускают мульти-стабильность модели, будет ли система~\eqref{eq:simple_microensemble_model} иметь одно или несколько устойчивых решений зависит от значения параметра $\scalar{i}$. А с учётом найденных экстремумов $\scalar{y}^{\mp}_{low}$ и $\scalar{y}^{\mp}_{high}$~\eqref{eq:origin_stability_bounds_y}, бифуркационных точек параметра $\alpha$~\eqref{eq:origin_bifurcation_alpha}, а так же выражения~\eqref{eq:graphic_solution}, которое задаёт связь между переменными $\scalar{y}$ и $\scalar{i}$ для устойчивых решений, область существования не менее двух устойчивых состояний модели будет определяться объединением следующих множеств:
 \begin{equation}
-    \nonumber
-    \begin{sqcases}
-        \{ (\alpha, \scalar{i}) \mid \alpha_{1} < \alpha < \alpha_{3}, i^{-}_{low} < \scalar{i} < i^{+}_{low} \}, \\
-        \{ (\alpha, \scalar{i}) \mid \alpha_{2} < \alpha < \alpha_{3}, i^{-}_{high} < \scalar{i} < i^{+}_{high} \}, \\
-        \{ (\alpha, \scalar{i}) \mid \alpha \ge \alpha_{3}, i^{+}_{low} < \scalar{i} < i^{-}_{high} \}, \\
-    \end{sqcases}
+    \label{eq:origin_stability_area}
+    \begin{aligned}
+        &\{ (\alpha, \scalar{i}) \mid \alpha_{1} < \alpha < \alpha_{3}, i^{-}_{low} < \scalar{i} < i^{+}_{low} \}, \\
+        &\{ (\alpha, \scalar{i}) \mid \alpha_{2} < \alpha < \alpha_{3}, i^{-}_{high} < \scalar{i} < i^{+}_{high} \}, \\
+        &\{ (\alpha, \scalar{i}) \mid \alpha \ge \alpha_{3}, i^{+}_{low} < \scalar{i} < i^{-}_{high} \}, \\
+    \end{aligned}
 \end{equation}
 где:
 \begin{equation}
@@ -427,13 +427,13 @@
     i^{\mp}_{low/high} = -\alpha \scalar{y}^{\mp}_{low/high} + \mu \theta g_{s}(\scalar{y}^{\mp}_{low/high}).
 \end{equation}
 
-Эти множества являются проекциями соответственно $low$-, $high$- и $broad$-складок, которые возникают на поверхности решений системы~\eqref{eq:simple_microensemble_model} --- сама поверхность изображена \onfigure~\ref{fig:analysis_origin_solution_surface}а. Для наглядности \onfigure~\ref{fig:model_origin_configurations_by_alpha} так же показаны различные срезы этой поверхности, привязанные к плоскости параметров. При этом точки сборки, как следует из бифуркационных значений параметра $\alpha$~\eqref{eq:origin_bifurcation_alpha} и выражений~\eqref{eq:origin_stability_bounds_i}, определяются как:
+Эти множества являются проекциями соответственно $low$-, $high$- и $broad$-складок, которые возникают на поверхности решений системы~\eqref{eq:simple_microensemble_model} --- сама поверхность изображена \onfigure~\ref{fig:analysis_origin_solution_surface}а. Для наглядности \onfigure~\ref{fig:model_origin_configurations_by_alpha} так же показаны различные срезы этой поверхности, привязанные к плоскости параметров. При этом точки сборки, как следует из бифуркационных значений параметра $\alpha$~\eqref{eq:origin_bifurcation_alpha} и выражения~\eqref{eq:origin_stability_bounds_i}, определяются как:
 \begin{equation}
     \nonumber
     \begin{aligned}
-        (\alpha, \scalar{i}) &= , \\
-        (\alpha, \scalar{i}) &= , \\
-        (\alpha, \scalar{i}) &= .
+        &(\alpha, \scalar{i}) = ( \mu \theta \cdot 312 x_{01} / (x_{01} + 1)^2 ; \mu \theta \cdot u_{01} ), \\
+        &(\alpha, \scalar{i}) = ( \mu \theta \cdot z_{12} / (1 - y_{12})^2     ; \mu \theta \cdot (k_{12} + z_{12} (1 - 2 y_{12}) / (1 - y_{12})^{2}) ), \\
+        &(\alpha, \scalar{i}) = ( \mu \theta \cdot 78                          ; \mu \theta \cdot -13,793 ).
     \end{aligned}
 \end{equation}
 
@@ -444,63 +444,33 @@
     \label{fig:analysis_origin_solution_surface}
 \end{figure}
 
-
-
-
-\newpage
-Так же для наглядности \onfigure~\ref{fig:model_sigm_configurations_by_alpha} показаны различные срезы этой поверхности, привязанные к плоскости параметров. При этом бифуркационная точка, называемая точкой сборки, задаёт в плоскости параметров место возникновения складки и определяется равенством~\eqref{eq:sigm_bifurcation_alpha} и выражением~\eqref{eq:sigm_stability_bounds_i} как:
-
-на котором области мульти-стабильности закрашены штриховкой, а моно-стабильности --- без штриховки. Как отмечалось в~\autoref{subsection:analysis_sigm}, в основе данной бифуркации лежит явление перехода между моно- и мульти-стабильными областями (области без и со складками соответственно) на поверхности решений системы~\eqref{eq:simple_microensemble_model} --- сама поверхность изображена \onfigure~\ref{fig:analysis_origin_solution_surface}. Т.к. граница между этими областями определяется точками перегиба, в соответствии с выражением~\eqref{eq:graphic_solution} область существования режима с более чем одной точкой устойчивого равновесия определена как $\scalar{i} \in (\scalar{i}; \scalar{i}) \cup (\scalar{i}; \scalar{i})$ при $\alpha \in (\alpha_{2}; \alpha_{3})$, где:
-%, \ie корнями~\eqref{eq:origin_stability_bounds_y}. В этом случае согласно выражению~\eqref{eq:graphic_solution} бифуркационные точки параметра $\scalar{i}$ будут определятся как:
+Как было показано в~\autoref{subsection:analysis_sigm}, $s$-образная складка порождает в пространстве параметров модели область би-стабильности, поэтому на объединении множеств~\eqref{eq:origin_stability_area} гарантированно существует два устойчивых решения системы~\eqref{eq:simple_microensemble_model}. Однако, как было отмечено в начале данного подраздела (\seefigure~\ref{fig:analysis_origin_equilibriums}г), при наложении складок возникает область существования трёх устойчивых решений --- это соответствует ситуации, когда первые два множества из объединения~\eqref{eq:origin_stability_area} пересекаются, \ie когда $\alpha_{2} < \alpha < \alpha_{3}$ и $\scalar{i}_{high}^{-} < \scalar{i}_{low}^{+}$. Для определения точных границ данной области решим последнее неравенство, раскрыв переменную $\scalar{i}_{high}^{-}$ согласно~\eqref{eq:origin_stability_bounds_i} и отметив, что $\scalar{i}_{low}^{+} = \mu \theta \cdot u_{01}$:
 \begin{equation}
-    \label{eq:origin_bifurcation_i}
-    \scalar{i}_{high/low}^{\pm} = -\alpha \scalar{y}_{high/low}^{\pm} + \mu \theta g_{s}(\scalar{y}_{high/low}^{\pm}).
+    \nonumber
+    -\alpha \left(1 - \sqrt{z_{12}\mu\theta/\alpha}\right) + \mu \theta \left(k_{12} + \dfrac{z_{12}}{\sqrt{z_{12}\mu\theta/\alpha}}\right) < \mu \theta u_{01}.
 \end{equation}
-%\begin{figure}[ht]
-%    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_origin_solution_surface}}
-%    \makebox[\textwidth][c]{\includegraphics[width=1.0\textwidth]{analysis_origin_solution_surface_p2}}
-%    \caption{Поверхность решений системы~\eqref{eq:simple_microensemble_model}, построенная вариацией параметров: а) $\alpha$ и $\scalar{i}$ при $\theta = 1, \mu = 0,75$; б) $\theta$ и $\scalar{i}$ при $\alpha = 3,5, \mu = 0,75$.}
-%    \label{fig:analysis_origin_solution_surface}
-%\end{figure}
-
-При этом \socalled точки сборки, определяющие в плоскости параметров точки возникновения (или исчезновения) $s$-образных складок на поверхности решений системы~\eqref{eq:simple_microensemble_model}, определяются условиями~\eqref{eq:origin_bifurcation_alpha} и равны:
+Домножая неравенство на величину $z_{12} / \alpha$ и обозначая как $x = \sqrt{z_{12}\mu\theta/\alpha}$, перепишем его в следующем виде:
 \begin{equation}
     \nonumber
     \begin{aligned}
-        (\alpha_{1}; \scalar{i}_{1}) & = ( \mu \theta \cdot 312 x_{01} / (x_{01} + 1)^2 ; \mu \theta \cdot u_{01} ),\\
-        (\alpha_{2}; \scalar{i}_{2}) & = ( \mu \theta \cdot z_{12} / (1 - y_{12})^2     ; \mu \theta \cdot (k_{12} + z_{12} (1 - 2 y_{12}) / (1 - y_{12})^{2}) ),\\
-        (\alpha_{3}; \scalar{i}_{3}) & = ( \mu \theta \cdot 78                          ; \mu \theta \cdot -13,793 ),\\
-    \end{aligned}    
-\end{equation}
-где первая точка соответствует точке возникновения $low$-складки, вторая --- точке возникновения $high$-складки, а третья --- точке сливания складок.
-
-Однако, как отмечалось в начале подраздела, в отличие от \acr{SAF}-модели при определённых значениях параметров здесь наблюдается явление наложения складок, при котором возникает область существования трёх точек устойчивого равновесия системы~\eqref{eq:simple_microensemble_model}. Существование такой области определяется, во-первых, условием существования обеих складок, а во-вторых, условием их наложения: первое задаётся неравенством  $\mu \theta \cdot z_{12} / (1 - y_{12})^2 < \alpha < \mu \theta \cdot 78$, которое вытекает из определённых нами ранее бифуркационных точек~\eqref{eq:origin_bifurcation_alpha}, а второе --- неравенством $\scalar{i}_{high}^{-} < \scalar{i}_{low}^{+}$, как продемонстрировано \onfigure~\ref{fig:analysis_origin_equilibriums}. Для решения второго неравенства относительно параметра $\alpha$ перепишем его в виде $\scalar{i}_{high}^{-} / \scalar{i}_{low}^{+} < 1$, раскрывая переменные согласно~\eqref{eq:origin_bifurcation_i} (заметим, что $\scalar{i}_{low}^{+} = \mu \theta \cdot u_{01} > 0$):
-\begin{equation}
-    \nonumber
-    -\dfrac{\alpha}{u_{01}\mu\theta}\left(1 - \sqrt{z_{12}\mu\theta/\alpha}\right) + \dfrac{1}{u_{01}}\left(k_{12} + \dfrac{z_{12}}{\sqrt{z_{12}\mu\theta/\alpha}}\right) < 1.
-\end{equation}
-Обозначая как $x = \sqrt{z_{12}\mu\theta/\alpha}$ и принимая во внимание, что $u_{01} > 0$ и $x > 0$, мы можем переписать данное неравенство, домножив его на $u_{01} x^{2}$:
-\begin{equation}
-    \nonumber
-    \begin{aligned}
-        -z_{12} (1 - x)+ k_{12} x^{2} + z_{12} x        &< u_{01} x^{2}, \\
-        (k_{12} - u_{01}) x^{2} + 2 z_{12} x - z_{12}    &< 0, \\
+        -z_{12} (1 - x) + x^{2} (k_{12} + z_{12} / x)   &< u_{01} x^{2}, \\
+        (k_{12} - u_{01}) x^{2} + 2 z_{12} x - z_{12}   &< 0. \\
     \end{aligned}
 \end{equation}
-где решением соответствующего равенства будут корни:
+Решением соответствующего равенства будут корни:
 \begin{equation}
     \nonumber
-    x_{12} = -s_{12} \pm \sqrt{s_{12}^{2} + s_{12}},
+    x_{1,2} = -\left(z_{12} / (k_{12} - u_{01})\right) \pm \sqrt{\left(z_{12} / (k_{12} - u_{01})\right)^{2} + \left(z_{12} / (k_{12} - u_{01})\right)}.
 \end{equation}
-где константа $s_{12} = z_{12} / (k_{12} - u_{01})$. Тогда учитывая, что $x_{2} < 0$, \ie значение этого корня лежит в области недопустимых значений, мы получим окончательное решение в виде:
+Учитывая, что $x_{2} < 0$, \ie его значение лежит в области недопустимых значений, мы получим окончательное решение в виде:
 \begin{equation}
     \nonumber
     \alpha > z_{12} \mu \theta / (\sqrt{s_{12}^{2} + s_{12}} - s_{12}). % \approx  \mu \theta \cdot 1,32.
 \end{equation}
 
 В этом случае точкой бифуркации, при которой возникает область существования трёх устойчивых решений, будет: 
-$$\alpha_{4} = z_{12} \mu \theta / (\sqrt{s_{12}^{2} + s_{12}} - s_{12}) \approx  \mu \theta \cdot 1,32.$$
-
+$$\alpha_{4} = z_{12} \mu \theta / (\sqrt{s_{12}^{2} + s_{12}} - s_{12}) \approx  \mu \theta \cdot 1,32,$$
+а сама область...
 
 %==============================================================================
 \newpage
