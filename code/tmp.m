@@ -351,9 +351,11 @@ i = 0.0;
 p = 1.0;
 theta = 1.0;
 
-for alpha = 0.0 : 0.5 : 5.0
+f_rect = @(u) u .* heaviside_restricted(u);
+
+for alpha = 0.0 : 5.0 : 5.0
   u = -15 : 0.1 : 15.0;
-  f = (i - p) + alpha .* f_sigm(u) - mu .* u;
+  f = (i - p) + alpha .* f_rect(u) - mu .* u;
   plot(u, f); hold on;
 end
 grid on;

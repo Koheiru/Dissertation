@@ -230,6 +230,40 @@ $$
 %==============================================================================
 \section{Численное сравнение конечно-разностных схем}  \label{appendix:differential_schemes_compare}
 
+С моделью \textit{простого микроансамбля} был проведён ряд численных экспериментов в целях эмпирической оценки рассмотренных в работе конечно-разностных схем. Для этого правая часть дифференциального уравнения~\eqref{eq:simple_microensemble_model_plain}, описывающего данную модель, была обозначена как функция:
+\begin{equation}
+    \nonumber
+    F(\scalar{u}, \scalar{i}) = \alpha f(h(\scalar{u})) + \scalar{i} - \mu \scalar{u},
+\end{equation}
+где ... а $y$ ...
+
+В этом случае динамика модели может быть представлена в виде конечно-разностных уравнений в соответствии со следующими конечно-разностными схемами:
+\begin{itemize}
+    \item Явным методом Эйлера:
+        \begin{equation}
+            \nonumber
+            \scalar{u}^{t+1} = \scalar{u}^{t} + h \cdot F(\scalar{u}^{t}, \scalar{i}^{t}).
+        \end{equation}
+    \item Методом Эйлера с пересчётом:
+        \begin{equation}
+            \nonumber
+            \begin{cases}
+                \hat{\scalar{u}}^{t+1}  &= \scalar{u}^{t} + h \cdot F(\scalar{u}^{t}, \scalar{i}^{t}), \\ 
+                \scalar{u}^{t+1}        &= \scalar{u}^{t} + h \cdot \left( F(\scalar{u}^{t}, \scalar{i}^{t}) + F(\hat{\scalar{u}}^{t+1}, \scalar{i}^{t}) \right) / 2.
+            \end{cases}
+        \end{equation}
+    \item Методом Рунге-Кутты 4-го порядка:
+        \begin{equation}
+            \nonumber
+            \begin{cases}
+                k_{1}^{t+1} &= F(\scalar{u}^{t}, \scalar{i}^{t}), \\ 
+                k_{2}^{t+1} &= F(\scalar{u}^{t} + \sfrac{h}{2} \cdot k_{1}^{t+1}, \scalar{i}^{t}), \\
+                k_{3}^{t+1} &= F(\scalar{u}^{t} + \sfrac{h}{2} \cdot k_{2}^{t+1}, \scalar{i}^{t}), \\
+                k_{4}^{t+1} &= F(\scalar{u}^{t} + h \cdot k_{3}^{t+1}, \scalar{i}^{t}), \\
+                \scalar{u}^{t+1} &= \scalar{u}^{t} + \sfrac{h}{6} \cdot \left( k_{1}^{t+1} + 2 k_{2}^{t+1} + 2 k_{3}^{t+1} + k_{4}^{t+1} \right).
+            \end{cases}
+        \end{equation}
+\end{itemize}
 
 %Для эмпирической оценки рассмотренных в работе конечно-разностных схем был проведён ряд численных экспериментов применительно к модели \textit{простого микроансамбля}. С этой целью система~\eqref{eq:simple_microensemble_model}, описывающая данную модель, была приведена к конечно-разностному виду с использованием соответствующих конечно-разностных схем ($F(\scalar{u}, \scalar{y}, \scalar{i}, \scalar{p}) = \alpha \scalar{y} + \scalar{i} - \scalar{p} - \mu \scalar{u}$):
 %\begin{itemize}
@@ -261,6 +295,7 @@ $$
 %        \end{equation}
 %\end{itemize}
 
+\newpage
 
 Для эмпирической оценки рассмотренных в работе конечно-разностных схем были проведены численные эксперименты с моделью \textit{простого микроансамбля}. Для этого система~\eqref{eq:simple_microensemble_model} была приведена к конечно-разностному виду с использованием параметров $\mu = 0,75$, $\scalar{p} = 1$, $\alpha = 3,5$ и $\theta = 1$ следующими методами:
 \begin{itemize}
