@@ -103,7 +103,7 @@
 \end{equation}
 где параметр $\alpha = \omega \cdot \left( N - 1 \right)$ --- весовой коэффициент рекуррентной связи, который по смыслу отражает связность нейронов микроансамбля. Выражение~\eqref{eq:simple_microensemble_model} так же можно представить в более простой форме, близкой к той, что используется при описании рекуррентных моделей нейронов в нейродинамике~\cite{Haykin2008}:
 \begin{equation}
-    \nonumber
+    \label{eq:simple_microensemble_model_plain}
     d\scalar{u}/d\scalar{t} = \alpha f\left( h\left( \scalar{u}, \theta \right) \right) + \vector{w}^{\top} \vector{x} - \mu \scalar{u}.
 \end{equation}
 Однако запись в виде системы более удобна в том смысле, что явно содержит выходную переменную $y$.
@@ -512,6 +512,10 @@
 %==============================================================================
 \newpage
 \subsection{Обобщение на семейство функций активации}  \label{subsection:analysis_custom}
+
+\begin{Lemma}
+    Пусть функция $f(x)$ такая, что \ldots, тогда функция $F(x) = a f(x) - b x + c$, где коэффициенты $a \ge 0$, $b > 0$ и $c \in \specialset{R}$, при
+\end{Lemma}
 
 
 %==============================================================================
