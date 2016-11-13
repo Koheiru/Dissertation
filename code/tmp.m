@@ -332,34 +332,5 @@ grid on;
 xlabel('\mu\theta/\alpha');
 
 
-% x = 0.0 : 0.001 : (1 - y12);
-% o = (x.^2 ./ z12);
-% y = (u01 - k12) .* x.^2 + 2 * z12;
-% 
-% subplot(2, 1, 2);
-% plot(o, y, '-k'); hold on;
-% plot([0 0] + (2 / (k12 - u01)), [min(y) max(y)], '--r'); hold on;
-% grid on;
-% xlabel('\mu\theta/\alpha');
-
-
-%%
-figure();
-
-mu = 0.75;
-i = 0.0;
-p = 1.0;
-theta = 1.0;
-
-f_rect = @(u) u .* heaviside_restricted(u);
-
-for alpha = 0.0 : 5.0 : 5.0
-  u = -15 : 0.1 : 15.0;
-  f = (i - p) + alpha .* f_rect(u) - mu .* u;
-  plot(u, f); hold on;
-end
-grid on;
-
-
 
 
