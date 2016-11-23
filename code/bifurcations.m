@@ -124,6 +124,19 @@ grid off; box on;
 xlabel('\theta');
 ylabel('i');
 
+%% [sigmoidal model] bifurcation: alpha vs theta diagram
+fh = figure();
+figure_adjust(fh, [14.0 3.5]);
+
+mu = 0.75;
+alpha = 0.0 : 0.5 : 10.0;
+theta = alpha ./ (4.0 * mu);
+
+plot(alpha, theta, '-k'); hold on;
+grid off; box on;
+xlabel('\alpha');
+ylabel('\theta');
+
 %% [sigmoidal model] bifurcation: F-surface defined by alpha
 fh = figure();
 figure_adjust(fh, [17.5 10.5]);
@@ -349,6 +362,43 @@ xlim([0 7]);
 ylim([-2 14]);
 
 set(fh, 'Name', ['alpha = ', num2str(alpha)]);
+
+%% [original model] bifurcation: alpha vs theta diagram
+fh = figure();
+figure_adjust(fh, [17.5 6.0]);
+
+x_l = exp(-120 * (y12 - 0.1935));
+x_r = exp(-120 * (0.0 - 0.1935));
+k_l = (x_l + 1)^2 / (156.0 * 2.0 * x_l);
+k_r = (x_r + 1)^2 / (156.0 * 2.0 * x_r);
+
+mu = 0.75;
+alpha = 0.000 : 0.1 : 10.0;
+theta_1 = alpha .* k_l ./ mu;
+theta_2 = alpha .* k_r ./ mu;
+theta_3 = alpha ./ (78 * mu);
+theta_4 = alpha .* 0.21 ./ mu;
+
+figure_subplot(1, 2, 1);
+plot(alpha, theta_1, '-k'); hold on;
+plot(alpha, theta_2, '-k'); hold on;
+plot(alpha, theta_3, '-k'); hold on;
+plot(alpha, theta_4, '-k'); hold on;
+grid off; box on;
+xlabel('\alpha');
+ylabel('\theta');
+xlim([-0.5 5.0]);
+ylim([0 2]);
+
+figure_subplot(1, 2, 2);
+plot((alpha), log(theta_1), '-k'); hold on;
+plot((alpha), log(theta_2), '-k'); hold on;
+plot((alpha), log(theta_3), '-k'); hold on;
+plot((alpha), log(theta_4), '-k'); hold on;
+grid off; box on;
+xlabel('\alpha');
+ylabel('\theta');
+xlim([0.0 5.0]);
 
 %% [original model] bifurcation: F surface defined by alpha
 fh = figure();
