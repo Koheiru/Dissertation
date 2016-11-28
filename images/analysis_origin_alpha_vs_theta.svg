@@ -41,7 +41,7 @@
      id="namedview379"
      showgrid="false"
      inkscape:zoom="1.2233401"
-     inkscape:cx="212.14355"
+     inkscape:cx="80.945366"
      inkscape:cy="112.71495"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
@@ -1198,5 +1198,29 @@
        id="path5053"
        inkscape:connector-curvature="0"
        transform="matrix(0.80196469,0,0,0.79926212,0,0.07812019)" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.01071453px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="9.9085541"
+       y="19.177458"
+       id="text4339"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0016892,0.99831364)"><tspan
+         sodipodi:role="line"
+         id="tspan4341"
+         x="9.9085541"
+         y="19.177458">а)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:14.01071453px;line-height:125%;font-family:'Times New Roman';-inkscape-font-specification:'Times New Roman, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="246.05498"
+       y="19.177458"
+       id="text4343"
+       sodipodi:linespacing="125%"
+       transform="scale(1.0016892,0.99831364)"><tspan
+         sodipodi:role="line"
+         id="tspan4345"
+         x="246.05498"
+         y="19.177458">б)</tspan></text>
   </g>
 </svg>

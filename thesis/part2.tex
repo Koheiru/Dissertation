@@ -269,15 +269,19 @@
     (\theta, \scalar{i}) = (\alpha / 4 \mu, \alpha / 4).
 \end{equation}
 
-\todo{Области мульти-стабильности на плоскости $\alpha$-$\theta$...}
+Если объединить результаты, полученные для параметров $\alpha$ и $\theta$ по отдельности, то область существования двух устойчивых решений системы~\eqref{eq:simple_microensemble_model}, как следует из выражений~\eqref{eq:sigm_bifurcation_alpha} и~\eqref{eq:sigm_bifurcation_theta}, будет определяться в пространстве данных параметров условием: $\alpha \big/ \theta < 4 \mu$. Это продемонстрировано \onfigure~\ref{fig:analysis_sigm_alpha_vs_theta}, где области моно- и би-стабильности отвечают соответственно верхней и нижней полуплоскостям, которые разделены прямой с коэффициентом наклона $1 \big/ 4 \mu$.
+\IncludeFigure[ht]{analysis_sigm_alpha_vs_theta}{Области моно- и би-стабильности системы~\eqref{eq:simple_microensemble_model} на плоскости параметров $\alpha$ и $\theta$ (закрашены без и со штриховкой соотвественно).}
 
-\IncludeFigure[ht]{analysis_sigm_alpha_vs_theta}{\todo{Описание плоскости $\alpha$-$\theta$...}}
+Однако стоит отметить, что данное условие является необходимым, но недостаточным для наличия двух устойчивых точек в модели --- как отмечалось выше, так же необходимо, чтобы значение параметра $\scalar{i}$ лежало в интервале $\left(i^{-}; i^{+}\right)$. Таким образом, область би-стабильности будет определяться как множество: 
+\begin{equation}
+    \nonumber
+    \left\{(\alpha, \theta, \scalar{i}) \mid \alpha \big/ \theta < 4 \mu, i^{-} < \scalar{i} < i^{+}\right\}.
+\end{equation}
 
 \subsubsection{Дополнительные замечания}
 
 Согласно выражению~\eqref{eq:sigm_stability_bounds_y} параметры $\alpha$ и $\theta$ вносят пропорциональный вклад в значения точек экстремума $y^{-}$ и $y^{+}$, однако их влияние на значения бифуркационных величин $i^{+}$ и $i^{-}$ имеет более сложный характер, что графически изображено \onfigure~\ref{fig:analysis_sigm_params_dependency}, а так же можно наблюдать \onfigure~\ref{fig:analysis_sigm_bifurcations}б,г.
-
-\IncludeFigure[t]{analysis_sigm_params_dependency}{Зависящие от параметров $\alpha$ и $\theta$ поверхности точек бифуркации $i^{-}$ и $i^{+}$, проекции которых на плоскости $\left(\alpha,\scalar{i}\right)$ и $\left(\theta,\scalar{i}\right)$ изображены \onfigure~\ref{fig:analysis_sigm_bifurcations}б,г.}
+\IncludeFigure[ht]{analysis_sigm_params_dependency}{Зависящие от параметров $\alpha$ и $\theta$ поверхности точек бифуркации $i^{-}$ и $i^{+}$, проекции которых на плоскости $\left(\alpha,\scalar{i}\right)$ и $\left(\theta,\scalar{i}\right)$ изображены \onfigure~\ref{fig:analysis_sigm_bifurcations}б,г.}
 
 Для того, чтобы оценить это влияние, представим, что точки $i^{-}$ и $i^{+}$ определяются соответствующими параметрическими функциями $i^{-}(z)$ и $i^{+}(z)$ с параметром $z \in \left[z_{0}; z_{1}\right]$. Зададим эти функции, исходя из определения самих величин $i^{\mp}$~\eqref{eq:sigm_stability_bounds_i}, подставив в него выражение для корней $y^{\mp}$~\eqref{eq:sigm_stability_bounds_y} и определение обратной функции активации $g_{\sigma}$~\eqref{eq:unactivation_function_sigma}:
 \begin{equation}
@@ -529,7 +533,7 @@
 
 \todo{Области мульти-стабильности на плоскости $\alpha$-$\theta$...}
 
-\IncludeFigure[ht]{analysis_origin_alpha_vs_theta}{\todo{Описание плоскости $\alpha$-$\theta$...}}
+\IncludeFigure[ht]{analysis_origin_alpha_vs_theta}{Области моно-, би- и три-стабильности системы~\eqref{eq:simple_microensemble_model} на плоскости параметров $\alpha$ и $\theta$ (закрашены без, одинарной и двойной штриховкой соотвественно): а) в линейном масштабе; б) в логарифмическом масштабе.}
 
 %==============================================================================
 \subsection{Обобщение на семейство функций активации}  \label{subsection:analysis_custom}
