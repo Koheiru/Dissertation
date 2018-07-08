@@ -12,6 +12,10 @@ u01 = 2.6 * logsig(0.1935 * -120);
 u12 = 2.6 .* logsig((y12 - 0.1935) .* 120.0);
 f_origin = @(u) (heaviside_restricted(u - u12)) .* (1.0 - z12 ./ (u - k12 + eps)) + ...
                 (heaviside_restricted(u - u01) - heaviside_restricted(u - u12)) .* (0.1935 + log(u ./ (2.6 - u) + eps) ./ 120.0);
+
+dF_origin = @(u) (heaviside_restricted(u - u12)) .* (1.0 - z12 ./ (u - k12 + eps)) + ...
+                 (heaviside_restricted(u - u01) - heaviside_restricted(u - u12)) .* (0.1935 + log(u ./ (2.6 - u) + eps) ./ 120.0);
+              
 s_origin = @(y) (heaviside_restricted(y - y12)) .* (k12 + z12 ./ (1.0 - y + eps)) + ...
                 (heaviside_restricted(y) - heaviside_restricted(y - y12)) .* (2.6 .* logsig(120.0 .* (y - 0.1935)));
 dS_origin = @(y) (heaviside_restricted(y - y12)) .* (z12 ./ (1.0 - y + eps) .^ 2) + ...
@@ -458,6 +462,72 @@ ylabel('F''');
 xlim([-0.02 1.02]);
 ylim([-15.0 65.0]);
 
+%% [original model] equilibrium conditions using potential
+fh = figure();
+figure_adjust(fh, [17.5 10.5]);
+
+mu        = 0.75;
+threshold = 1.0;
+theta     = 1.0;
+alpha     = 75.0;
+i         = 2.0;
+alpha_soft  = 0.1;
+alpha_hard  = 10.0;
+alpha_hyper = 59.0;
+
+u = -15 : 0.01 : 35;
+F_soft  = i + alpha_soft  .* f_original(u ./ theta) - threshold - mu .* u;
+F_hard  = i + alpha_hard  .* f_original(u ./ theta) - threshold - mu .* u;
+F_hyper = i + alpha_hyper .* f_original(u ./ theta) - threshold - mu .* u;
+
+figure_subplot(2, 3, 1);
+hold on; grid off; box on;
+plot(u, F_soft, '-k');
+xlabel('u');
+ylabel('F');
+
+figure_subplot(2, 3, 2);
+hold on; grid off; box on;
+plot(u, F_hard, '-k');
+xlabel('u');
+ylabel('F');
+
+figure_subplot(2, 3, 3);
+hold on; grid off; box on;
+plot(u, F_hyper, '-k');
+xlabel('u');
+ylabel('F');
+
+dF_soft  = alpha_soft  - mu .* theta .* dS_origin(y);
+dF_hard  = alpha_hard  - mu .* theta .* dS_origin(y);
+dF_hyper = alpha_hyper .*  - mu .* theta .* dS_origin(y);
+
+figure_subplot(2, 3, 4);
+hold on; grid off; box on;
+plot(y, dF_soft, '-k');
+plot([0 1], [0 0], '--k');
+xlabel('y');
+ylabel('F''');
+xlim([-0.02 1.02]);
+ylim([-65.0 15.0]);
+
+figure_subplot(2, 3, 5);
+hold on; grid off; box on;
+plot(y, dF_hard, '-k');
+plot([0 1], [0 0], '--k');
+xlabel('y');
+ylabel('F''');
+xlim([-0.02 1.02]);
+ylim([-65.0 15.0]);
+
+figure_subplot(2, 3, 6);
+hold on; grid off; box on;
+plot(y, dF_hyper, '-k');
+plot([0 1], [0 0], '--k');
+xlabel('y');
+ylabel('F''');
+xlim([-0.02 1.02]);
+ylim([-15.0 65.0]);
 
 %% [original model] equilibrium areas
 fh = figure();
